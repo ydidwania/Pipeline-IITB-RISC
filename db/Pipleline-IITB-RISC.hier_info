@@ -1,0 +1,6 @@
+|main
+clk => ~NO_FANOUT~
+reset => ~NO_FANOUT~
+clk_50 => ~NO_FANOUT~
+
+
