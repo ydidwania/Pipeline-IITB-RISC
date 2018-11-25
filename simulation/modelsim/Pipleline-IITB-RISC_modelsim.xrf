@@ -1,4 +1,8 @@
 vendor_name = ModelSim
+source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux3bit4to1.vhd
+source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_3bit.vhd
+source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_2bit.vhd
+source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_1bit.vhd
 source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/data_memory.vhd
 source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/code_memory.vhd
 source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd
