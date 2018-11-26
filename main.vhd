@@ -218,9 +218,9 @@ dest_1_pip3	 : reg_4bit  port map( d => dest1_reg, clk => clk, reset => reset, e
 -- ALU
 mux_alu_a    : mux2to1 port map(in_1 => se6_ex, in_2 => d1_ex, sel => m5, mux_out => alu_a);
 mux_alu_b    : mux2to1 port map(in_1 => "0000000000000001", in_2 => d2_ex, sel => m6, mux_out => alu_b);
-ArithLU	     : ALU     port map(alu_a => alu_a, alu_b => alu_b, sel => alu_sel, reset => alu_reset, carry_in => cin, 
-zero_in => zin, alu_out => alu_out, carry => c_ex, zero => z_ex, a_zero => a_zero_ex);
-valid_mux_ex <= (not m11_pip4) and valid_ex;
+ArithLU	     : ALU     port map(alu_a => alu_a, alu_b => alu_b, sel => alu_sel and (valid_mux_ex), reset => alu_reset, carry_in => c_mem, 
+zero_in => z_mem, alu_out => alu_out, carry => c_out, zero => z_out, a_zero => a_zero_ex);
+--valid_mux_ex <= (not m11_pip4) and valid_ex;
 ---------------------------------
 -- Pipeline register of Ex/Mem
 d1_pip4      : reg_16bit port map( d => d1_ex_forw, clk => clk, reset =>  reset, enable => (not m12_pip4), q => d1_mem);
@@ -254,7 +254,7 @@ pc_pip5      : reg_16bit port map( d => pc_mem, clk => clk, reset =>  reset, ena
 memdata_pip5 : reg_16bit port map( d => mem_do, clk => clk, reset =>  reset, enable => (not m12_pip5), q => memdata_WB);
 RF_WR_pip5   : reg_1bit  port map( d => RF_WR_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => RF_WR_WB);
 valid_pip5   : reg_1bit  port map( d => valid_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => valid_WB);
-zero_pip5    : reg_1bit  port map( d => z_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => z_WB);
+zero_pip5    : reg_1bit  port map( d => z_mux_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => z_WB);
 carry_pip5   : reg_1bit  port map( d => c_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => c_WB);
 z7_pip5      : reg_16bit port map( d => z7_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => z7_WB);
 pe3_pip5     : reg_3bit port map( d => pe3_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => pe3_WB);
@@ -281,17 +281,21 @@ dc8: dep_check port map(src=> src2_ex, dest=>dest1_mem, check=>h42);
 alu_op_ex <= (not ir_ex(0)) and (not ir_ex(1)) and not(ir_ex(2) and ir_ex(3));
 alu_op_mem <= (not ir_mem(0)) and (not ir_mem(1)) and not(ir_mem(2) and ir_mem(3));
 
-process(all)
+process(all)-- d1 forwarding at RR
 begin
 --alu_out, alu_out_mem, WB_d3, mem_do, pc_reg
 	if(a1_reg="111") then  -- querying for R7
 		d1_reg <= pc_reg;
-	elsif(h11='1' and RF_WR_ex='1' and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and alu_op_ex='1') then -- ALU -ALU dep
+	elsif(h11='1' and RF_WR_ex='1' and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and alu_op_ex='1') then -- ALU ALU dep
 		d1_reg <= alu_out;
+	elsif(h11='1' and ir_ex(0 to 3)="0011" and valid_mux_ex ='1' and valid_mux_reg='1 and RF_RD_reg ='1') then -- (anysrc) LHI dep
+		d1_reg <= z7_ex;
 	elsif(h21 ='1' and RF_WR_mem='1' and valid_mux_mem ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and alu_op_mem='1') then -- ALU X ALU dep
 		d1_reg <= alu_out_mem;
-	elsif(h21 ='1' and RF_WR_mem='1' and RF_RD_reg ='1' and mem_WR_mem='1' and valid_mux_reg='1' and valid_mux_mem='1')  then-- ALU X LOAD dep
+	elsif(h21 ='1' and RF_WR_mem='1' and RF_RD_reg ='1' and mem_RD_mem='1' and valid_mux_reg='1' and valid_mux_mem='1')  then-- (any RF_RD) X LOAD dep
 		d1_reg <= mem_do;
+	elsif(h21='1' and RF_WR_mem='1' and valid_mux_mem ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and ir_mem(0 to 3)="0011") then
+		d1_reg <= z7_ex;
 	elsif(h31 = '1' and RF_WR_WB='1' and RF_RD_reg ='1' and valid_mux_WB='1' and valid_mux_reg='1')	then -- ALU X X any dep
 		d1_reg <= WB_d3;
 	else	-- normal 
@@ -299,16 +303,20 @@ begin
 	end if;
 end process;
 
-process(all)
+process(all) -- d2 forwarding at RR
 begin
 	if(a2_reg="111") then -- querying for R7
 		d2_reg <= pc_reg;
 	elsif(h12='1' and RF_WR_ex='1' and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and alu_op_ex='1') then -- ALU -ALU dep
 		d2_reg <= alu_out;
+	elsif(h12='1' and ir_ex(0 to 3)="0011" and valid_mux_ex ='1' and valid_mux_reg='1 and RF_RD_reg ='1') then -- (anysrc) LHI dep
+		d2_reg <= z7_ex;
 	elsif(h22 ='1' and RF_WR_mem='1' and valid_mux_mem ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and alu_op_mem='1') then -- ALU X ALU dep
 		d2_reg <= alu_out_mem;
 	elsif(h22 ='1' and RF_WR_mem='1' and RF_RD_reg ='1' and mem_RD_mem='1' and valid_mux_reg='1' and valid_mux_mem='1') then-- ALU X LOAD dep
 		d2_reg <= mem_do;
+	elsif(h22='1' and RF_WR_mem='1' and valid_mux_mem ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and ir_mem(0 to 3)="0011") then
+		d2_reg <= z7_ex;
 	elsif(h32 = '1' and RF_WR_WB='1' and RF_RD_reg ='1' and valid_mux_WB='1' and valid_mux_reg='1')	then-- ALU X X any dep
 		d2_reg <= WB_d3;
 	else	-- normal 
@@ -316,21 +324,50 @@ begin
 	end if;
 end process;
 
-process(all)
+process(all) -- d1 forw at Ex for SW, d2 forw at Ex for JLR
 begin
-	
-	if(h41='1' and mem_RD_mem='1' and RF_WR_mem='1' and mem_WR_mem='1' and valid_mux_mem='1' and valid_mux_ex='1') then
+	if(h41='1' and mem_RD_mem='1' and RF_WR_mem='1' and mem_WR_mem='1' and valid_mux_mem='1' and valid_mux_ex='1') then -- SW LW forw
 		d1_ex_forw <= mem_do;
-	else
+	else	-- normal
 		d1_ex_forw <= d1_ex;
 	end if;
 	
-	if (h42='1' and mem_RD_mem='1' and RF_WR_mem='1' and ir_ex(0 to 3)="1001" and valid_mux_mem='1' and valid_mux_ex='1')  then
+	if (h42='1' and mem_RD_mem='1' and RF_WR_mem='1' and ir_ex(0 to 3)="1001" and valid_mux_mem='1' and valid_mux_ex='1')  then -- JLR LW forw
 		d2_ex_forw <= mem_do;
-	else
+	else -- normal
 		d2_ex_forw <= d2_ex;
 	end if;
-
 end process;
+
+process(all)
+variable cond1, cond2 : std_logic;
+begin
+--	if (valid_mux_ex='1') then
+--		c_ex<=c_out;
+--	else
+--		c_ex<=c_mem;
+--	end if;
+	
+	if (valid_mux_ex='0') then
+		z_ex <= z_mux_mem
+	elsif (alu_op_ex='1') then
+		z_ex <= z_out;
+	else
+		z_ex <= z_mux_mem
+	end if;
+	
+	-- ADZ/NDZ LW modifies zero flag	
+	cond1 := z_mux_mem='0' and ir_ex(0 to 1)="00" and ir_ex(3)='0' and ir(13 to 15)="001";
+	-- ADC/NDC
+	cond2 := c_mem='0' and ir_ex(0 to 1)="00" and ir_ex(3)='0' and ir(13 to 15)="010";
+	if (cond1='1' or cond2='1') then
+		valid_mux_ex<='0'
+	else
+		valid_mux_ex<=valid_ex;
+	end if;
+		
+end process;
+
+
 
 end behave;
