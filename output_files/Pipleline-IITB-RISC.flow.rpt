@@ -1,5 +1,5 @@
 Flow report for Pipleline-IITB-RISC
-Sun Nov 25 04:46:46 2018
+Mon Nov 26 23:51:15 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -41,22 +41,22 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Nov 25 04:46:46 2018       ;
+; Flow Status                        ; Flow Failed - Mon Nov 26 23:51:15 2018      ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; Pipleline-IITB-RISC                         ;
-; Top-level Entity Name              ; main                                        ;
+; Top-level Entity Name              ; dep_check                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 0 / 22,320 ( 0 % )                          ;
-;     Total combinational functions  ; 0 / 22,320 ( 0 % )                          ;
-;     Dedicated logic registers      ; 0 / 22,320 ( 0 % )                          ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 3 / 154 ( 2 % )                             ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
-; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/25/2018 04:46:17 ;
+; Start date & time ; 11/26/2018 23:51:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Pipleline-IITB-RISC ;
 +-------------------+---------------------+
@@ -76,58 +76,46 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value       ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 66610803205901.154310137728996         ; --                  ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 220295162002240.154325646329925        ; --                  ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --                  ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>              ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --                  ; --          ; eda_simulation ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --                  ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --                  ; --          ; --             ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --                  ; --          ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                  ; main        ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                  ; main        ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                  ; main        ; Top            ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                  ; dep_check   ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                  ; dep_check   ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                  ; dep_check   ; Top            ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --                  ; --          ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --                  ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --                  ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; main                                   ; Pipleline-IITB-RISC ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; dep_check                              ; Pipleline-IITB-RISC ; --          ; --             ;
 +-------------------------------------+----------------------------------------+---------------------+-------------+----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                             ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:14     ; 1.0                     ; 956 MB              ; 00:00:30                           ;
-; Fitter                    ; 00:00:07     ; 1.0                     ; 1164 MB             ; 00:00:07                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 816 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 835 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1040 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:25     ; --                      ; --                  ; 00:00:41                           ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 947 MB              ; 00:00:31                           ;
+; Total                ; 00:00:12     ; --                      ; --                  ; 00:00:31                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                             ;
-+---------------------------+------------------+----------------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
-+---------------------------+------------------+----------------+------------+----------------+
-; Analysis & Synthesis      ; ThinkPad-E470    ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
-; Fitter                    ; ThinkPad-E470    ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
-; Assembler                 ; ThinkPad-E470    ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
-; TimeQuest Timing Analyzer ; ThinkPad-E470    ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
-; EDA Netlist Writer        ; ThinkPad-E470    ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
-+---------------------------+------------------+----------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++----------------------+------------------+----------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
++----------------------+------------------+----------------+------------+----------------+
+; Analysis & Synthesis ; ThinkPad-E470    ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
++----------------------+------------------+----------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Pipleline-IITB-RISC -c Pipleline-IITB-RISC
-quartus_fit --read_settings_files=off --write_settings_files=off Pipleline-IITB-RISC -c Pipleline-IITB-RISC
-quartus_asm --read_settings_files=off --write_settings_files=off Pipleline-IITB-RISC -c Pipleline-IITB-RISC
-quartus_sta Pipleline-IITB-RISC -c Pipleline-IITB-RISC
-quartus_eda --read_settings_files=off --write_settings_files=off Pipleline-IITB-RISC -c Pipleline-IITB-RISC
 
 
 
