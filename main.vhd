@@ -195,7 +195,7 @@ mux_reg_a    : mux3bit2to1 port map(in_1 => pe3_reg, in_2 => ir_reg(7 to 9), sel
 --mux_reg_c   : mux2to1 port map(in_1 => RF_d2, in_2 => R7, sel => reg_m1, mux_out => RF_d2_2);
 --mux_reg_d    : mux3to1 port map(in_1 => alu_out, in_2 => RF_d2_2, in_3 => mem_do, sel => m13, mux_out => d2_reg);
 RegFile     : reg_file port map(a1=>RF_a1, a2=>RF_a2, a3=>WB_a3, wr_en=>RF_WR_WB, d3=>WB_d3, clk=>clk,reset=>reset, d1=>RF_d1, d2=>RF_d2);
---mux_valid_reg : mux2to1 port map(in_1 => valid_reg, in_2 => '0', sel => m11_pip3, mux_out => vaid_mux_reg);
+mux_valid_reg : mux3bit2to1 port map(in_1 => valid_reg, in_2 => '0', sel => m11_pip3, mux_out => vaid_mux_reg);
 ---------------------------------
 -- Pipeline register of Reg_read/Ex
 d1_pip3      : reg_16bit port map( d => d1_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => d1_ex);
@@ -342,12 +342,6 @@ end process;
 process(all)
 variable cond1, cond2 : std_logic;
 begin
---	if (valid_mux_ex='1') then
---		c_ex<=c_out;
---	else
---		c_ex<=c_mem;
---	end if;
-	
 	if (valid_mux_ex='0') then
 		z_ex <= z_mux_mem
 	elsif (alu_op_ex='1') then
@@ -365,6 +359,36 @@ begin
 	else
 		valid_mux_ex<=valid_ex;
 	end if;
+end process;
+
+--  Stall 
+process(all)
+begin
+	-- LW in EX stage any register reader instruction in RR stage
+	if(h11='1' and RF_WR_ex='1' and valid_mux_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
+		if(ir_reg(0 to 3) = "0101") then -- not stalling for source 1
+			m12_pip1='0';
+			m12_pip2='0';
+			m11_pip3='0';
+		else -- not SW then stall 
+			m12_pip1='1';
+			m12_pip2='1';
+			m11_pip3='1';
+	else
+		m12_pip1='0';
+		m12_pip2='0';
+		m11_pip3='0';
+	end if;
+	
+	if(h12='1' and RF_WR_ex='1' and valid_mux_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
+		m12_pip1='1';
+		m12_pip2='1';
+		m11_pip3='1';
+	else
+		m12_pip1='0';
+		m12_pip2='0';
+		m11_pip3='0';
+	end if;			
 		
 end process;
 
