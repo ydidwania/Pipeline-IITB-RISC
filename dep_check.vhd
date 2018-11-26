@@ -8,9 +8,9 @@ entity dep_check is
 		check: out std_logic
 	);
 end entity;
-architecture behave of reg_4bit is
+architecture behave of dep_check is
 	begin
-		process(src, dest, check)
+		process(src, dest)
 			begin
 				if (src(1 to 3) = dest(1 to 3) and src(0)='1' and dest(0)='1') then
 					check<='1';

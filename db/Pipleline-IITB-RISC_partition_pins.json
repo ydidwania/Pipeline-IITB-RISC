@@ -2,7 +2,44 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "check",
+					"strict" : false
+				},
+				{
+					"name" : "src[3]",
+					"strict" : false
+				},
+				{
+					"name" : "src[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dest[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dest[3]",
+					"strict" : false
+				},
+				{
+					"name" : "src[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dest[0]",
+					"strict" : false
+				},
+				{
+					"name" : "src[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dest[1]",
+					"strict" : false
+				}
+			]
 		}
 	]
 }
