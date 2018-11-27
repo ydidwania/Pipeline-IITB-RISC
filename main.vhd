@@ -138,15 +138,15 @@ end component;
 
 --Control Signals----------------------------------------------------------------------------------------------
 signal m1,m2, reg_m1,alu_sel_dec,alu_sel_reg				: std_logic_vector(0 to 1);
-signal m3,m4,m5,m6,m7,m7_dec,m8_dec,m8_Reg,m8,m5_dec,m5_Reg 		: std_logic;
+signal m3,m4,m5,m6,m7,m7_dec,m8_dec,m8_Reg,m8,m5_dec,m5_Reg , m9		: std_logic;
 signal m6_dec,m6_reg,m3_dec,m3_reg,m3_ex,m4_dec,m4_reg,m4_ex		: std_logic;
 signal m1_dec,m1_reg,m1_ex,m1_mem,m2_dec,m2_reg,m2_ex,m2_mem		: std_logic_vector(0 to 1);
-signal m11_pip4, m12_pip4,m12_pip5, m11_pip3,m12_pip1,m12_pip2,m12_pip3 : std_logic := '0';
+signal m11_pip4,m12_pip4,m12_pip5, m11_pip3,m12_pip1,m12_pip2,m12_pip3, m11_pip5 : std_logic := '0';
 ---------------------------------------------------------------------------------------------------------------
 
 --Connecting Signals-------------------------------------------------------------------------------------------
 --signal PC							: std_logic_vector(0 to 15);
-signal  pc_if, ir_if 		   													: std_logic_vector(0 to 15);
+signal  pc_in, pc_if, ir_if 		   													: std_logic_vector(0 to 15);
 signal se6_dec, pc_dec, se9_dec, z7_dec, d1_dec, ir_dec											: std_logic_vector(0 to 15);
 signal valid_dec, RF_WR_dec, mem_WR_dec, mem_RD_dec, RF_RD_dec										: std_logic;
 signal src1_dec, src2_dec, dest1_dec													: std_logic_vector(0 to 3);
@@ -170,7 +170,10 @@ signal a_zero_ex, z_ex, z_mem, z_WB, c_ex, c_mem, c_WB 											: std_logic;
 signal cin, zin, c_out, z_out, valid_mux_ex, valid_ex, valid_mem, valid_mux_mem, valid_WB, valid_mux_reg, valid_mux_dec, valid_mux_if 	: std_logic;
 signal alu_sel, valid_alu_sel						   							      	: std_logic_vector(0 to 1);
 --Hazardous signals
-signal h11, h21, h31, h41, h12, h22, h32, h42, alu_op_ex, alu_op_mem								      	: std_logic;
+signal h11, h21, h31, h41, h12, h22, h32, h42, alu_op_ex, alu_op_mem, m10, m11_pip1, m11, m11_pip2, stall_pip3	: std_logic;
+signal r7_mux_ex, r7_select_ex, r7_select_mem, r7_select_WB, r7_mem, r7_WB, adc_adz : std_logic;
+signal r7_mux_mem, jlr_op_ex, jal_op_ex: std_logic;
+signal pc_mux_ex, pc_mux_mem,pc_mux_WB,pc_mux_reg, pc_plus_1, offset, pc_plus_offset, jmp_addr, next_pc, r7_value,r7_data_ex : std_logic_vector(0 to 15);
 ---------------------------------------------------------------------------------------------------------------
 
 begin
@@ -182,6 +185,7 @@ ir_pip1      : reg_16bit port map( d => ir_if, clk => clk, reset =>  reset, enab
 pc_pip1      : reg_16bit port map( d => pc_if, clk => clk, reset =>  reset, enable => (not m12_pip1), q => pc_dec);
 valid_pip1   : reg_1bit  port map( d => valid_mux_if, clk => clk, reset =>  reset, enable => (not m12_pip1), q => valid_dec);
 valid_mux_if <= not(m10 or m11_pip1);
+m11_pip1 <= m11;
 ---------------------------------
 -- Instruction Decoder
 PE  : priority_encoder port map(ir => ir_dec(8 to 15), clk=>clk, rst=>reset, Z=>pe3_dec, F1=>f1f0_dec(0), F0 =>f1f0_dec(1));
@@ -189,6 +193,7 @@ ins_decode : instr_dec port map(ir=>ir_dec, Mem_rd=>mem_RD_dec, Mem_wr=>mem_WR_d
 m3=> m3_dec, m4 => m4_dec, m5 => m5_dec, m6 => m6_dec, m7 => m7_dec, m8 => m8_dec, src1 => src1_dec, src2 => src2_dec,
 dst1 => dest1_dec, m1 => m1_dec, m2 => m2_dec, ALUsel => alu_sel_dec);
 valid_mux_dec <= not(m10 or m11_pip2) and valid_dec;
+m11_pip2 <= m11;
 ---------------------------------
 -- Pipeline register of Decode/Reg_read
 ir_pip2      : reg_16bit port map( d => ir_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => ir_reg);
@@ -223,6 +228,7 @@ mux_reg_a    : mux3bit2to1 port map(in_1 =>ir_reg(7 to 9), in_2 =>pe3_reg, sel =
 --mux_reg_d    : mux3to1 port map(in_1 => alu_out, in_2 => RF_d2_2, in_3 => mem_do, sel => m13, mux_out => d2_reg);
 RegFile      : reg_file    port map(a1=>RF_a1, a2=>RF_a2, a3=>WB_a3, wr_en=>(RF_WR_WB and valid_reg), d3=>WB_d3, clk=>clk,reset=>reset, d1=>RF_d1, d2=>RF_d2);
 valid_mux_reg <= not(m10 or m11_pip3 or stall_pip3) and valid_reg;
+m11_pip3 <= m11;
 ---------------------------------
 -- Pipeline register of Reg_read/Ex
 d1_pip3      : reg_16bit port map( d => d1_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => d1_ex);
@@ -248,7 +254,7 @@ m4_pip3      : reg_1bit port map( d => m4_reg, clk => clk, reset =>  reset, enab
 m5_pip3      : reg_1bit port map( d => m5_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => m5);
 m6_pip3      : reg_1bit port map( d => m6_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => m6);
 m8_pip3      : reg_1bit port map( d => m8_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => m8);
-r7_chge_pip3    : reg_1bit port map( d=> '0'
+--r7_chge_pip3    : reg_1bit port map( d=> '0'
 
 ---------------------------------
 -- ALU
@@ -259,6 +265,7 @@ mux_alu_b    : mux2to1 port map(in_1 =>d2_ex, in_2 =>"0000000000000001", sel => 
 ArithLU	     : ALU     port map(alu_a => alu_a, alu_b => alu_b, sel=>valid_alu_sel, reset => reset, carry_in => c_mem, 
 zero_in => z_mem, alu_out => alu_out, carry => c_out, zero => z_out, a_zero => a_zero_ex);
 valid_mux_ex <= not(m11_pip4 or adc_adz) and valid_ex;
+m11_pip4 <= r7_select_mem or r7_select_WB;
 ---------------------------------
 -- Pipeline register of Ex/Mem
 d1_pip4      : reg_16bit port map( d => d1_ex_forw, clk => clk, reset =>  reset, enable => (not m12_pip4), q => d1_mem);
@@ -290,6 +297,7 @@ mux_addr  : mux2to1     port map(in_1 =>alu_out_mem, in_2 =>d1_mem, sel => m4, m
 memory    : data_memory port map(Mem_di => mem_di, Mem_addr => mem_addr, clk => clk, Mem_we => (mem_WR_mem and valid_mem),
 Mem_re => (mem_RD_mem and valid_mem), Mem_do => mem_do);
 valid_mux_mem <= not(m11_pip5) and valid_mem;
+m11_pip5 <= r7_select_WB;
 ---------------------------------
 -- Pipeline register of Mem/WB 
 process(all)
@@ -409,6 +417,8 @@ begin
 		z_ex <= z_mux_mem;
 	end if;
 	
+	c_ex<=c_out;
+	
 	-- ADZ/NDZ LW modifies zero flag	
 	--cond1 := z_mux_mem='0' and ir_ex(0 to 1)="00" and ir_ex(3)='0' and ir(13 to 15)="001";
 	cond1 := not (z_mux_mem or ir_ex(0) or ir_ex(1) or ir_ex(3) or ir_ex(13) or ir_ex(14)) and ir_ex(15);
@@ -459,16 +469,16 @@ end process;
 
 -- BEGINS THE TERRITORY OF R7
 offset_adder: adder port map(a=>pc_ex, b=>offset, sum=>pc_plus_offset);
-mux_m8: mux2to1 port map(inp1=>se6_ex, inp2=>se9_ex, sel=>m8, mux_out=>offset);
-mux_m9: mux2to1 port map(inp1=>pc_plus_offset, inp2=>d2_ex, sel=>m9, mux_out=>jmp_addr);
-mux_m10: mux2to1 port map(inp1=>pc_plus_1, inp2=> jmp_addr, sel=>m10, mux_out=>next_pc);
-mux_m11: mux2to1 port map(inp1=>next_pc, inp2=> r7_value, sel=>m11, mux_out=>pc_in);
+mux_m8: mux2to1 port map(in_1=>se6_ex, in_2=>se9_ex, sel=>m8, mux_out=>offset);
+mux_m9: mux2to1 port map(in_1=>pc_plus_offset, in_2=>d2_ex, sel=>m9, mux_out=>jmp_addr);
+mux_m10: mux2to1 port map(in_1=>pc_plus_1, in_2=> jmp_addr, sel=>m10, mux_out=>next_pc);
+mux_m11: mux2to1 port map(in_1=>next_pc, in_2=> r7_value, sel=>m11, mux_out=>pc_in);
 pc_incrementer: adder port map(a=>pc_if, b=>"0000000000000001", sum=>pc_plus_1);
 
 -- 1 if JLR ir_ex(0 to 3)="1001"
 jlr_op_ex <= ir_ex(0) and ir_ex(3) and (not ir_ex(1)) and (not ir_ex(2));
 jal_op_ex <= ir_ex(0) and not(ir_ex(1) or ir_ex(2) or ir_ex(3));
-m9 <= jlr_op_ex
+m9 <= jlr_op_ex;
 m10 <= valid_mux_ex and (a_zero_ex or jlr_op_ex or jal_op_ex);
 -- R7 modify business
 m11 <= r7_select_ex or r7_select_mem or r7_select_WB;
@@ -476,7 +486,7 @@ m11 <= r7_select_ex or r7_select_mem or r7_select_WB;
 process(all)
 begin 
 	-- EX stage ALU operation or LHI
-	if(valid_mux_ex='1' and dest1_ex="1111" and (alu_op_ex='1' or ir_ex="0011")) then
+	if(valid_mux_ex='1' and dest1_ex="1111" and (alu_op_ex='1' or ir_ex(0 to 3)="0011")) then
 		r7_mux_ex<='1';
 		r7_select_ex<='1';
 	else
@@ -492,7 +502,7 @@ begin
 	if(r7_mem='1') then
 		r7_mux_mem<='1';
 		r7_select_mem<='0';
-	elsif(valid_mux_mem='1' and dest1_mem="1111" and (ir_mem="0110" or ir_mem="0100")) then
+	elsif(valid_mux_mem='1' and dest1_mem="1111" and (ir_mem(0 to 3)="0110" or ir_mem(0 to 3)="0100")) then
 		r7_mux_mem<='1';
 		r7_select_mem<='1';
 	else
@@ -502,11 +512,11 @@ begin
 	
 	--WB stage 
 	if (r7_WB='1') then
-		r7_select_WB ='0';
+		r7_select_WB <='0';
 	elsif(WB_a3="111" and valid_WB='1') then
-		r7_select_WB ='1';
+		r7_select_WB <='1';
 	else
-		r7_select_WB ='0';
+		r7_select_WB <='0';
 	end if;
 	
 	-- correct PC going into pip4 for Ex stage
@@ -544,10 +554,8 @@ begin
 	elsif(r7_select_mem='1') then
 		r7_value <= mem_do;
 	else
-		r7_value <= WB_d3
-	
-	
-	
+		r7_value <= WB_d3;
+	end if;
 	
 end process;
 
