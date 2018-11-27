@@ -391,7 +391,7 @@ end process;
 process(all)
 begin
 	-- LW in EX stage any register reader instruction in RR stage
-	if(h11='1' and RF_WR_ex='1' and valid_mux_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
+	if(h11='1' and RF_WR_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
 		if(ir_reg(0 to 3) = "0101") then -- not stalling for source 1
 			m12_pip1<='0';
 			m12_pip2<='0';
@@ -407,7 +407,7 @@ begin
 		m11_pip3<='0';
 	end if;
 	-- no SW exception for Source 2 as S2 of SW also uses ALU.
-	if(h12='1' and RF_WR_ex='1' and valid_mux_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
+	if(h12='1' and RF_WR_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
 		m12_pip1<='1';
 		m12_pip2<='1';
 		m11_pip3<='1';
