@@ -5,8 +5,8 @@ use ieee.numeric_std.all;
 
 entity code_memory is
 	port(
-	    Mem_di, Mem_addr   : in std_logic_vector(0 to 15);
-	    clk, Mem_we, Mem_re	: in std_logic;
+	    Mem_addr   : in std_logic_vector(0 to 15);
+	    clk, Mem_re	: in std_logic;
 	    Mem_do: out std_logic_vector(0 to 15)
 	);
 end entity;
@@ -64,17 +64,17 @@ signal short_address : std_logic_vector(0 to 5);
 
 begin
 	short_address <= Mem_addr(10 to 15);
-	Synch_RAM: process(clk)
-	begin
-		if rising_edge (clk) then
-			if Mem_we='1' then
-				RAM(to_integer(unsigned(short_address))) <= Mem_di ;
-			end if;	
-		end if;
+--	Synch_RAM: process(clk)
+--	begin
+--		if rising_edge (clk) then
+--			if Mem_we='1' then
+--				RAM(to_integer(unsigned(short_address))) <= Mem_di ;
+--			end if;	
+--		end if;
 		
 		--if Mem_re='1' then
 		--	Mem_do <=	RAM(to_integer(unsigned(short_address)));
 		--end if;
-	end process;
+--	end process;
 	Mem_do <=	RAM(to_integer(unsigned(short_address)));
 end comb;

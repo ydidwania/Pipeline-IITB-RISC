@@ -17,7 +17,7 @@ end entity;
 
 architecture behave of alu is
 	begin
-		process(alu_a,alu_b,sel, reset)
+		process(alu_a,alu_b,sel, reset, carry_in, zero_in)
 		variable op : std_logic_vector(0 to 15);
 		variable z,c : std_logic :='0';
 		begin

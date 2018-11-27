@@ -29,14 +29,15 @@ component reg_file is
 	port (
 		a1,a2,a3: in std_logic_vector (0 to 2);
 		d3, d_R7: in std_logic_vector (0 to 15);
-		wr_en,clk, reset, valid: in std_logic;
+		wr_en,clk, reset, valid, z_in, c_in: in std_logic;
 		d1,d2: out std_logic_vector(0 to 15)
 	);
 end component;
 component code_memory is
-	port(	Mem_di, Mem_addr   : in std_logic_vector(0 to 15);
-			clk, Mem_we, Mem_re	: in std_logic;
-			Mem_do: out std_logic_vector(0 to 15)
+	port(
+	    Mem_addr   : in std_logic_vector(0 to 15);
+	    clk, Mem_re	: in std_logic;
+	    Mem_do: out std_logic_vector(0 to 15)
 	);
 end component;
 -- Disable write to code mem by Mem_we=0 permanently
@@ -134,6 +135,26 @@ component instr_dec is
 	        Src1, Src2, Dst1 : out std_logic_vector(0 to 3);
 	        m1, m2, ALUsel  : out std_logic_vector(0 to 1));
 end component;
+component z9 is
+	port(
+		z9_in  : in std_logic_vector(0 to 8);
+		z9_out : out std_logic_vector(0 to 15)
+	);
+end component;
+component se9 is
+	port(
+		se9_in  : in std_logic_vector(0 to 8);
+		se9_out : out std_logic_vector(0 to 15)
+	);
+end component;
+component se6 is
+	port(
+		se6_in  : in std_logic_vector(0 to 5);
+		se6_out : out std_logic_vector(0 to 15)
+	);
+end component;
+
+
 
 -- Add more components
 
@@ -142,7 +163,7 @@ signal m1,m2, reg_m1,alu_sel_dec,alu_sel_reg				: std_logic_vector(0 to 1);
 signal m3,m4,m5,m6,m7,m7_dec,m8_dec,m8_Reg,m8,m5_dec,m5_Reg , m9		: std_logic;
 signal m6_dec,m6_reg,m3_dec,m3_reg,m3_ex,m4_dec,m4_reg,m4_ex		: std_logic;
 signal m1_dec,m1_reg,m1_ex,m1_mem,m2_dec,m2_reg,m2_ex,m2_mem		: std_logic_vector(0 to 1);
-signal m11_pip4,m12_pip4,m12_pip5, m11_pip3,m12_pip1,m12_pip2,m12_pip3, m11_pip5 : std_logic := '0';
+signal m11_pip4,m12_pip4,m12_pip5, m11_pip3,m12_pip1,m12_pip2,m12_pip3, m11_pip5, m12_pc : std_logic := '0';
 ---------------------------------------------------------------------------------------------------------------
 
 --Connecting Signals-------------------------------------------------------------------------------------------
@@ -179,8 +200,10 @@ signal r7_RF_input, next_pc, r7_value,r7_data_ex, pc_WB_plus_1 : std_logic_vecto
 ---------------------------------------------------------------------------------------------------------------
 
 begin
+ProgC : reg_16bit port map(d=>pc_in, clk=>clk, reset=>reset, enable=>(not m12_pc), q=>pc_if); 
 ---------------------------------
 -- PC fetches  instruction from code memory
+code_mem : code_memory port map(Mem_addr=>pc_if, clk=>clk, Mem_re=>'1', Mem_do=>ir_if);
 ---------------------------------
 -- Pipeline register of IF/Decode 
 ir_pip1      : reg_16bit port map( d => ir_if, clk => clk, reset =>  reset, enable => (not m12_pip1), q => ir_dec);
@@ -196,6 +219,9 @@ m3=> m3_dec, m4 => m4_dec, m5 => m5_dec, m6 => m6_dec, m7 => m7_dec, m8 => m8_de
 dst1 => dest1_dec, m1 => m1_dec, m2 => m2_dec, ALUsel => alu_sel_dec);
 valid_mux_dec <= not(m10 or m11_pip2) and valid_dec;
 m11_pip2 <= m11;
+se9_gen:	se9 port map(se9_in=>ir_dec(7 to 15), se9_out=>se9_dec);
+se6_gen:	se6 port map(se6_in=>ir_dec(10 to 15), se6_out=>se6_dec);
+z7_gen:  z9 port map(z9_in=>ir_dec(7 to 15), z9_out=>z7_dec);
 ---------------------------------
 -- Pipeline register of Decode/Reg_read
 ir_pip2      : reg_16bit port map( d => ir_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => ir_reg);
@@ -221,6 +247,7 @@ m5_pip2      : reg_1bit port map( d => m5_dec, clk => clk, reset =>  reset, enab
 m6_pip2      : reg_1bit port map( d => m6_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => m6_reg);
 m7_pip2      : reg_1bit port map( d => m7_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => m7);
 m8_pip2      : reg_1bit port map( d => m8_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => m8_reg);
+alu_sel_pip2 : reg_2bit port map( d => alu_sel_dec, clk=>clk, reset=>reset, enable => (not m12_pip2), q => alu_sel_reg);
 ---------------------------------
 -- Register Read
 RF_a1 <= ir_reg(4 to 6);
@@ -229,7 +256,7 @@ mux_reg_a    : mux3bit2to1 port map(in_1 =>ir_reg(7 to 9), in_2 =>pe3_reg, sel =
 --mux_reg_c   : mux2to1 port map(in_1 => RF_d2, in_2 => R7, sel => reg_m1, mux_out => RF_d2_2);
 --mux_reg_d    : mux3to1 port map(in_1 => alu_out, in_2 => RF_d2_2, in_3 => mem_do, sel => m13, mux_out => d2_reg);
 RegFile      : reg_file    port map(a1=>RF_a1, a2=>RF_a2, a3=>WB_a3, wr_en=>(RF_WR_WB and valid_reg), d3=>WB_d3,
-d_R7=>r7_RF_input,valid=>valid_WB, clk=>clk,reset=>reset, d1=>RF_d1, d2=>RF_d2);
+d_R7=>r7_RF_input,valid=>valid_WB, clk=>clk,reset=>reset, c_in=>c_WB, z_in=>z_WB, d1=>RF_d1, d2=>RF_d2);
 valid_mux_reg <= not(m10 or m11_pip3 or stall_pip3) and valid_reg;
 m11_pip3 <= m11;
 ---------------------------------
@@ -257,6 +284,7 @@ m4_pip3      : reg_1bit port map( d => m4_reg, clk => clk, reset =>  reset, enab
 m5_pip3      : reg_1bit port map( d => m5_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => m5);
 m6_pip3      : reg_1bit port map( d => m6_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => m6);
 m8_pip3      : reg_1bit port map( d => m8_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => m8);
+alu_sel_pip3 : reg_2bit port map( d => alu_sel_reg, clk=>clk, reset=>reset, enable => (not m12_pip2), q => alu_sel);
 --r7_chge_pip3    : reg_1bit port map( d=> '0'
 
 ---------------------------------
@@ -447,15 +475,18 @@ begin
 	-- LW in EX stage any register reader instruction in RR stage
 	if(h11='1' and RF_WR_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
 		if(ir_reg(0 to 3) = "0101") then -- not stalling for source 1
+			m12_pc<='0';
 			m12_pip1<='0';
 			m12_pip2<='0';
 			stall_pip3<='0';
 		else -- not SW then stall 
+			m12_pc<='1';
 			m12_pip1<='1';
 			m12_pip2<='1';
 			stall_pip3<='1';
 		end if;
 	else
+		m12_pc<='0';
 		m12_pip1<='0';
 		m12_pip2<='0';
 		stall_pip3<='0';
