@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pipleline-IITB-RISC
-Tue Nov 27 04:57:43 2018
+Tue Nov 27 06:00:14 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -14,9 +14,133 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Parameter Settings for User Entity Instance: reg_16bit:ir_pip1
+ 10. Parameter Settings for User Entity Instance: reg_16bit:pc_pip1
+ 11. Parameter Settings for User Entity Instance: reg_1bit:valid_pip1
+ 12. Parameter Settings for User Entity Instance: reg_16bit:ir_pip2
+ 13. Parameter Settings for User Entity Instance: reg_16bit:pc_pip2
+ 14. Parameter Settings for User Entity Instance: reg_1bit:RF_WR_pip2
+ 15. Parameter Settings for User Entity Instance: reg_1bit:RF_RD_pip2
+ 16. Parameter Settings for User Entity Instance: reg_1bit:mem_WR_pip2
+ 17. Parameter Settings for User Entity Instance: reg_1bit:mem_RD_pip2
+ 18. Parameter Settings for User Entity Instance: reg_1bit:valid_pip2
+ 19. Parameter Settings for User Entity Instance: reg_16bit:z7_pip2
+ 20. Parameter Settings for User Entity Instance: reg_3bit:pe3_pip2
+ 21. Parameter Settings for User Entity Instance: reg_2bit:f1f0_pip2
+ 22. Parameter Settings for User Entity Instance: reg_16bit:se6_pip2
+ 23. Parameter Settings for User Entity Instance: reg_16bit:se9_pip2
+ 24. Parameter Settings for User Entity Instance: reg_4bit:src_1_pip2
+ 25. Parameter Settings for User Entity Instance: reg_4bit:src_2_pip2
+ 26. Parameter Settings for User Entity Instance: reg_4bit:dest_1_pip2
+ 27. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r0
+ 28. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r1
+ 29. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r2
+ 30. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r3
+ 31. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r4
+ 32. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r5
+ 33. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r6
+ 34. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:reg7
+ 35. Parameter Settings for User Entity Instance: reg_16bit:d1_pip3
+ 36. Parameter Settings for User Entity Instance: reg_16bit:d2_pip3
+ 37. Parameter Settings for User Entity Instance: reg_16bit:ir_pip3
+ 38. Parameter Settings for User Entity Instance: reg_16bit:pc_pip3
+ 39. Parameter Settings for User Entity Instance: reg_1bit:RF_WR_pip3
+ 40. Parameter Settings for User Entity Instance: reg_1bit:mem_WR_pip3
+ 41. Parameter Settings for User Entity Instance: reg_1bit:mem_RD_pip3
+ 42. Parameter Settings for User Entity Instance: reg_1bit:valid_pip3
+ 43. Parameter Settings for User Entity Instance: reg_16bit:z7_pip3
+ 44. Parameter Settings for User Entity Instance: reg_3bit:pe3_pip3
+ 45. Parameter Settings for User Entity Instance: reg_16bit:se6_pip3
+ 46. Parameter Settings for User Entity Instance: reg_16bit:se9_pip3
+ 47. Parameter Settings for User Entity Instance: reg_4bit:src_1_pip3
+ 48. Parameter Settings for User Entity Instance: reg_4bit:src_2_pip3
+ 49. Parameter Settings for User Entity Instance: reg_4bit:dest_1_pip3
+ 50. Parameter Settings for User Entity Instance: alu:ArithLU
+ 51. Parameter Settings for User Entity Instance: reg_16bit:d1_pip4
+ 52. Parameter Settings for User Entity Instance: reg_16bit:d2_pip4
+ 53. Parameter Settings for User Entity Instance: reg_16bit:alu_out_pip4
+ 54. Parameter Settings for User Entity Instance: reg_16bit:ir_pip4
+ 55. Parameter Settings for User Entity Instance: reg_16bit:pc_pip4
+ 56. Parameter Settings for User Entity Instance: reg_1bit:RF_WR_pip4
+ 57. Parameter Settings for User Entity Instance: reg_1bit:mem_WR_pip4
+ 58. Parameter Settings for User Entity Instance: reg_1bit:mem_RD_pip4
+ 59. Parameter Settings for User Entity Instance: reg_1bit:valid_pip4
+ 60. Parameter Settings for User Entity Instance: reg_1bit:zero_pip4
+ 61. Parameter Settings for User Entity Instance: reg_1bit:carry_pip4
+ 62. Parameter Settings for User Entity Instance: reg_16bit:z7_pip4
+ 63. Parameter Settings for User Entity Instance: reg_3bit:pe3_pip4
+ 64. Parameter Settings for User Entity Instance: reg_4bit:src_1_pip4
+ 65. Parameter Settings for User Entity Instance: reg_4bit:src_2_pip4
+ 66. Parameter Settings for User Entity Instance: reg_4bit:dest1_pip4
+ 67. Parameter Settings for User Entity Instance: reg_16bit:alu_out_pip5
+ 68. Parameter Settings for User Entity Instance: reg_16bit:ir_pip5
+ 69. Parameter Settings for User Entity Instance: reg_16bit:pc_pip5
+ 70. Parameter Settings for User Entity Instance: reg_16bit:memdata_pip5
+ 71. Parameter Settings for User Entity Instance: reg_1bit:RF_WR_pip5
+ 72. Parameter Settings for User Entity Instance: reg_1bit:valid_pip5
+ 73. Parameter Settings for User Entity Instance: reg_1bit:zero_pip5
+ 74. Parameter Settings for User Entity Instance: reg_1bit:carry_pip5
+ 75. Parameter Settings for User Entity Instance: reg_16bit:z7_pip5
+ 76. Parameter Settings for User Entity Instance: reg_3bit:pe3_pip5
+ 77. Parameter Settings for User Entity Instance: reg_4bit:src_1_pip5
+ 78. Parameter Settings for User Entity Instance: reg_4bit:src_2_pip5
+ 79. Parameter Settings for User Entity Instance: reg_4bit:dest1_pip5
+ 80. Port Connectivity Checks: "dep_check:dc8"
+ 81. Port Connectivity Checks: "dep_check:dc7"
+ 82. Port Connectivity Checks: "dep_check:dc5"
+ 83. Port Connectivity Checks: "dep_check:dc2"
+ 84. Port Connectivity Checks: "reg_4bit:dest1_pip5"
+ 85. Port Connectivity Checks: "reg_4bit:src_2_pip5"
+ 86. Port Connectivity Checks: "reg_4bit:src_1_pip5"
+ 87. Port Connectivity Checks: "reg_3bit:pe3_pip5"
+ 88. Port Connectivity Checks: "reg_16bit:z7_pip5"
+ 89. Port Connectivity Checks: "reg_1bit:carry_pip5"
+ 90. Port Connectivity Checks: "reg_1bit:zero_pip5"
+ 91. Port Connectivity Checks: "reg_1bit:valid_pip5"
+ 92. Port Connectivity Checks: "reg_1bit:RF_WR_pip5"
+ 93. Port Connectivity Checks: "reg_16bit:memdata_pip5"
+ 94. Port Connectivity Checks: "reg_16bit:pc_pip5"
+ 95. Port Connectivity Checks: "reg_16bit:ir_pip5"
+ 96. Port Connectivity Checks: "reg_16bit:alu_out_pip5"
+ 97. Port Connectivity Checks: "reg_4bit:dest1_pip4"
+ 98. Port Connectivity Checks: "reg_4bit:src_2_pip4"
+ 99. Port Connectivity Checks: "reg_4bit:src_1_pip4"
+100. Port Connectivity Checks: "reg_3bit:pe3_pip4"
+101. Port Connectivity Checks: "reg_16bit:z7_pip4"
+102. Port Connectivity Checks: "reg_1bit:carry_pip4"
+103. Port Connectivity Checks: "reg_1bit:zero_pip4"
+104. Port Connectivity Checks: "reg_1bit:valid_pip4"
+105. Port Connectivity Checks: "reg_1bit:mem_RD_pip4"
+106. Port Connectivity Checks: "reg_1bit:mem_WR_pip4"
+107. Port Connectivity Checks: "reg_1bit:RF_WR_pip4"
+108. Port Connectivity Checks: "reg_16bit:pc_pip4"
+109. Port Connectivity Checks: "reg_16bit:ir_pip4"
+110. Port Connectivity Checks: "reg_16bit:alu_out_pip4"
+111. Port Connectivity Checks: "reg_16bit:d2_pip4"
+112. Port Connectivity Checks: "reg_16bit:d1_pip4"
+113. Port Connectivity Checks: "alu:ArithLU"
+114. Port Connectivity Checks: "mux2to1:mux_alu_b"
+115. Port Connectivity Checks: "reg_4bit:dest_1_pip3"
+116. Port Connectivity Checks: "reg_4bit:src_2_pip3"
+117. Port Connectivity Checks: "reg_4bit:src_1_pip3"
+118. Port Connectivity Checks: "reg_16bit:se9_pip3"
+119. Port Connectivity Checks: "reg_16bit:se6_pip3"
+120. Port Connectivity Checks: "reg_3bit:pe3_pip3"
+121. Port Connectivity Checks: "reg_16bit:z7_pip3"
+122. Port Connectivity Checks: "reg_1bit:valid_pip3"
+123. Port Connectivity Checks: "reg_1bit:mem_RD_pip3"
+124. Port Connectivity Checks: "reg_1bit:mem_WR_pip3"
+125. Port Connectivity Checks: "reg_1bit:RF_WR_pip3"
+126. Port Connectivity Checks: "reg_16bit:pc_pip3"
+127. Port Connectivity Checks: "reg_16bit:ir_pip3"
+128. Port Connectivity Checks: "reg_16bit:d2_pip3"
+129. Port Connectivity Checks: "reg_16bit:d1_pip3"
+130. Port Connectivity Checks: "reg_file:RegFile"
+131. Port Connectivity Checks: "reg_2bit:f1f0_pip2"
+132. Port Connectivity Checks: "reg_1bit:valid_pip1"
+133. Post-Synthesis Netlist Statistics for Top Partition
+134. Elapsed Time Per Partition
+135. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +167,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 27 04:57:43 2018       ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 27 06:00:14 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; Pipleline-IITB-RISC                         ;
-; Top-level Entity Name              ; dep_check                                   ;
+; Top-level Entity Name              ; main                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 3                                           ;
-;     Total combinational functions  ; 3                                           ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 9                                           ;
+; Total pins                         ; 3                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -66,7 +190,7 @@ agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value       ;
 +----------------------------------------------------------------------------+--------------------+---------------------+
 ; Device                                                                     ; EP4CE22F17C6       ;                     ;
-; Top-level entity name                                                      ; dep_check          ; Pipleline-IITB-RISC ;
+; Top-level entity name                                                      ; main               ; Pipleline-IITB-RISC ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V           ;
 ; VHDL Show LMF Mapping Messages                                             ; Off                ;                     ;
 ; VHDL Version                                                               ; VHDL_2008          ; VHDL_1993           ;
@@ -163,45 +287,58 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                     ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                              ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
-; dep_check.vhd                    ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/dep_check.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
+; dep_check.vhd                    ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/dep_check.vhd        ;         ;
+; priority_encoder.vhd             ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/priority_encoder.vhd ;         ;
+; reg_4bit.vhd                     ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_4bit.vhd         ;         ;
+; mux3bit4to1.vhd                  ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux3bit4to1.vhd      ;         ;
+; reg_3bit.vhd                     ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_3bit.vhd         ;         ;
+; reg_2bit.vhd                     ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_2bit.vhd         ;         ;
+; reg_1bit.vhd                     ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_1bit.vhd         ;         ;
+; data_memory.vhd                  ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/data_memory.vhd      ;         ;
+; main.vhd                         ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd             ;         ;
+; reg_file.vhd                     ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd         ;         ;
+; reg_16bit.vhd                    ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_16bit.vhd        ;         ;
+; mux4to1.vhd                      ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux4to1.vhd          ;         ;
+; mux3bit2to1.vhd                  ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux3bit2to1.vhd      ;         ;
+; mux2to1.vhd                      ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux2to1.vhd          ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File  ; /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd              ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 3           ;
-;                                             ;             ;
-; Total combinational functions               ; 3           ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 2           ;
-;     -- 3 input functions                    ; 0           ;
-;     -- <=2 input functions                  ; 1           ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 3           ;
-;     -- arithmetic mode                      ; 0           ;
-;                                             ;             ;
-; Total registers                             ; 0           ;
-;     -- Dedicated logic registers            ; 0           ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 9           ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; process_0~0 ;
-; Maximum fan-out                             ; 1           ;
-; Total fan-out                               ; 20          ;
-; Average fan-out                             ; 0.95        ;
-+---------------------------------------------+-------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 3     ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 3     ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -209,7 +346,7 @@ agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |dep_check                 ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 9    ; 0            ; |dep_check          ; dep_check   ; work         ;
+; |main                      ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 3    ; 0            ; |main               ; main        ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -229,20 +366,1284 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:ir_pip1 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:pc_pip1 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:valid_pip1 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero1          ; '0'   ; Enumerated                              ;
+; one1           ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:ir_pip2 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:pc_pip2 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:RF_WR_pip2 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero1          ; '0'   ; Enumerated                              ;
+; one1           ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:RF_RD_pip2 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero1          ; '0'   ; Enumerated                              ;
+; one1           ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:mem_WR_pip2 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; zero1          ; '0'   ; Enumerated                               ;
+; one1           ; '1'   ; Enumerated                               ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:mem_RD_pip2 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; zero1          ; '0'   ; Enumerated                               ;
+; one1           ; '1'   ; Enumerated                               ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:valid_pip2 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero1          ; '0'   ; Enumerated                              ;
+; one1           ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:z7_pip2 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_3bit:pe3_pip2 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; zero3          ; 000   ; Unsigned Binary                       ;
+; one3           ; 001   ; Unsigned Binary                       ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_2bit:f1f0_pip2 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; zero2          ; 00    ; Unsigned Binary                        ;
+; one2           ; 01    ; Unsigned Binary                        ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:se6_pip2 ;
++----------------+------------------+-----------------------------+
+; Parameter Name ; Value            ; Type                        ;
++----------------+------------------+-----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary             ;
+; one16          ; 0000000000000001 ; Unsigned Binary             ;
++----------------+------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:se9_pip2 ;
++----------------+------------------+-----------------------------+
+; Parameter Name ; Value            ; Type                        ;
++----------------+------------------+-----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary             ;
+; one16          ; 0000000000000001 ; Unsigned Binary             ;
++----------------+------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_4bit:src_1_pip2 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero4          ; 0000  ; Unsigned Binary                         ;
+; one4           ; 0001  ; Unsigned Binary                         ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_4bit:src_2_pip2 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero4          ; 0000  ; Unsigned Binary                         ;
+; one4           ; 0001  ; Unsigned Binary                         ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_4bit:dest_1_pip2 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; zero4          ; 0000  ; Unsigned Binary                          ;
+; one4           ; 0001  ; Unsigned Binary                          ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r0 ;
++----------------+------------------+----------------------------------------+
+; Parameter Name ; Value            ; Type                                   ;
++----------------+------------------+----------------------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary                        ;
+; one16          ; 0000000000000001 ; Unsigned Binary                        ;
++----------------+------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r1 ;
++----------------+------------------+----------------------------------------+
+; Parameter Name ; Value            ; Type                                   ;
++----------------+------------------+----------------------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary                        ;
+; one16          ; 0000000000000001 ; Unsigned Binary                        ;
++----------------+------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r2 ;
++----------------+------------------+----------------------------------------+
+; Parameter Name ; Value            ; Type                                   ;
++----------------+------------------+----------------------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary                        ;
+; one16          ; 0000000000000001 ; Unsigned Binary                        ;
++----------------+------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r3 ;
++----------------+------------------+----------------------------------------+
+; Parameter Name ; Value            ; Type                                   ;
++----------------+------------------+----------------------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary                        ;
+; one16          ; 0000000000000001 ; Unsigned Binary                        ;
++----------------+------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r4 ;
++----------------+------------------+----------------------------------------+
+; Parameter Name ; Value            ; Type                                   ;
++----------------+------------------+----------------------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary                        ;
+; one16          ; 0000000000000001 ; Unsigned Binary                        ;
++----------------+------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r5 ;
++----------------+------------------+----------------------------------------+
+; Parameter Name ; Value            ; Type                                   ;
++----------------+------------------+----------------------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary                        ;
+; one16          ; 0000000000000001 ; Unsigned Binary                        ;
++----------------+------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r6 ;
++----------------+------------------+----------------------------------------+
+; Parameter Name ; Value            ; Type                                   ;
++----------------+------------------+----------------------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary                        ;
+; one16          ; 0000000000000001 ; Unsigned Binary                        ;
++----------------+------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:reg7 ;
++----------------+------------------+------------------------------------------+
+; Parameter Name ; Value            ; Type                                     ;
++----------------+------------------+------------------------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary                          ;
+; one16          ; 0000000000000001 ; Unsigned Binary                          ;
++----------------+------------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:d1_pip3 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:d2_pip3 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:ir_pip3 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:pc_pip3 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:RF_WR_pip3 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero1          ; '0'   ; Enumerated                              ;
+; one1           ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:mem_WR_pip3 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; zero1          ; '0'   ; Enumerated                               ;
+; one1           ; '1'   ; Enumerated                               ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:mem_RD_pip3 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; zero1          ; '0'   ; Enumerated                               ;
+; one1           ; '1'   ; Enumerated                               ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:valid_pip3 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero1          ; '0'   ; Enumerated                              ;
+; one1           ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:z7_pip3 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_3bit:pe3_pip3 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; zero3          ; 000   ; Unsigned Binary                       ;
+; one3           ; 001   ; Unsigned Binary                       ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:se6_pip3 ;
++----------------+------------------+-----------------------------+
+; Parameter Name ; Value            ; Type                        ;
++----------------+------------------+-----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary             ;
+; one16          ; 0000000000000001 ; Unsigned Binary             ;
++----------------+------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:se9_pip3 ;
++----------------+------------------+-----------------------------+
+; Parameter Name ; Value            ; Type                        ;
++----------------+------------------+-----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary             ;
+; one16          ; 0000000000000001 ; Unsigned Binary             ;
++----------------+------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_4bit:src_1_pip3 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero4          ; 0000  ; Unsigned Binary                         ;
+; one4           ; 0001  ; Unsigned Binary                         ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_4bit:src_2_pip3 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero4          ; 0000  ; Unsigned Binary                         ;
+; one4           ; 0001  ; Unsigned Binary                         ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_4bit:dest_1_pip3 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; zero4          ; 0000  ; Unsigned Binary                          ;
+; one4           ; 0001  ; Unsigned Binary                          ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: alu:ArithLU ;
++----------------+------------------+----------------------+
+; Parameter Name ; Value            ; Type                 ;
++----------------+------------------+----------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary      ;
+; one16          ; 0000000000000001 ; Unsigned Binary      ;
++----------------+------------------+----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:d1_pip4 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:d2_pip4 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:alu_out_pip4 ;
++----------------+------------------+---------------------------------+
+; Parameter Name ; Value            ; Type                            ;
++----------------+------------------+---------------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary                 ;
+; one16          ; 0000000000000001 ; Unsigned Binary                 ;
++----------------+------------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:ir_pip4 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:pc_pip4 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:RF_WR_pip4 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero1          ; '0'   ; Enumerated                              ;
+; one1           ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:mem_WR_pip4 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; zero1          ; '0'   ; Enumerated                               ;
+; one1           ; '1'   ; Enumerated                               ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:mem_RD_pip4 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; zero1          ; '0'   ; Enumerated                               ;
+; one1           ; '1'   ; Enumerated                               ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:valid_pip4 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero1          ; '0'   ; Enumerated                              ;
+; one1           ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:zero_pip4 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; zero1          ; '0'   ; Enumerated                             ;
+; one1           ; '1'   ; Enumerated                             ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:carry_pip4 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero1          ; '0'   ; Enumerated                              ;
+; one1           ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:z7_pip4 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_3bit:pe3_pip4 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; zero3          ; 000   ; Unsigned Binary                       ;
+; one3           ; 001   ; Unsigned Binary                       ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_4bit:src_1_pip4 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero4          ; 0000  ; Unsigned Binary                         ;
+; one4           ; 0001  ; Unsigned Binary                         ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_4bit:src_2_pip4 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero4          ; 0000  ; Unsigned Binary                         ;
+; one4           ; 0001  ; Unsigned Binary                         ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_4bit:dest1_pip4 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero4          ; 0000  ; Unsigned Binary                         ;
+; one4           ; 0001  ; Unsigned Binary                         ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:alu_out_pip5 ;
++----------------+------------------+---------------------------------+
+; Parameter Name ; Value            ; Type                            ;
++----------------+------------------+---------------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary                 ;
+; one16          ; 0000000000000001 ; Unsigned Binary                 ;
++----------------+------------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:ir_pip5 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:pc_pip5 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:memdata_pip5 ;
++----------------+------------------+---------------------------------+
+; Parameter Name ; Value            ; Type                            ;
++----------------+------------------+---------------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary                 ;
+; one16          ; 0000000000000001 ; Unsigned Binary                 ;
++----------------+------------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:RF_WR_pip5 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero1          ; '0'   ; Enumerated                              ;
+; one1           ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:valid_pip5 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero1          ; '0'   ; Enumerated                              ;
+; one1           ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:zero_pip5 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; zero1          ; '0'   ; Enumerated                             ;
+; one1           ; '1'   ; Enumerated                             ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_1bit:carry_pip5 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero1          ; '0'   ; Enumerated                              ;
+; one1           ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_16bit:z7_pip5 ;
++----------------+------------------+----------------------------+
+; Parameter Name ; Value            ; Type                       ;
++----------------+------------------+----------------------------+
+; zero16         ; 0000000000000000 ; Unsigned Binary            ;
+; one16          ; 0000000000000001 ; Unsigned Binary            ;
++----------------+------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_3bit:pe3_pip5 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; zero3          ; 000   ; Unsigned Binary                       ;
+; one3           ; 001   ; Unsigned Binary                       ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_4bit:src_1_pip5 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero4          ; 0000  ; Unsigned Binary                         ;
+; one4           ; 0001  ; Unsigned Binary                         ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_4bit:src_2_pip5 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero4          ; 0000  ; Unsigned Binary                         ;
+; one4           ; 0001  ; Unsigned Binary                         ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_4bit:dest1_pip5 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; zero4          ; 0000  ; Unsigned Binary                         ;
+; one4           ; 0001  ; Unsigned Binary                         ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dep_check:dc8"                                                                       ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; check ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dep_check:dc7"                                                                       ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; check ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dep_check:dc5"                                                                       ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; check ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dep_check:dc2"                                                                       ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; check ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "reg_4bit:dest1_pip5" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; enable ; Input ; Info     ; Stuck at VCC        ;
++--------+-------+----------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg_4bit:src_2_pip5"                                                                  ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; q      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg_4bit:src_1_pip5"                                                                  ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; q      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_3bit:pe3_pip5" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:z7_pip5" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:carry_pip5"                                                                  ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; q      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:zero_pip5"                                                                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; q      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:valid_pip5" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; enable ; Input ; Info     ; Stuck at VCC        ;
++--------+-------+----------+---------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:RF_WR_pip5" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; enable ; Input ; Info     ; Stuck at VCC        ;
++--------+-------+----------+---------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:memdata_pip5" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; enable ; Input ; Info     ; Stuck at VCC           ;
++--------+-------+----------+------------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:pc_pip5" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:ir_pip5"                                                                       ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; enable    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; q[0..3]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; q[13..15] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:alu_out_pip5" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; enable ; Input ; Info     ; Stuck at VCC           ;
++--------+-------+----------+------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "reg_4bit:dest1_pip4" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; enable ; Input ; Info     ; Stuck at VCC        ;
++--------+-------+----------+---------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "reg_4bit:src_2_pip4" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; enable ; Input ; Info     ; Stuck at VCC        ;
++--------+-------+----------+---------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "reg_4bit:src_1_pip4" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; enable ; Input ; Info     ; Stuck at VCC        ;
++--------+-------+----------+---------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_3bit:pe3_pip4" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:z7_pip4" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:carry_pip4" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; enable ; Input ; Info     ; Stuck at VCC        ;
++--------+-------+----------+---------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:zero_pip4" ;
++--------+-------+----------+--------------------+
+; Port   ; Type  ; Severity ; Details            ;
++--------+-------+----------+--------------------+
+; enable ; Input ; Info     ; Stuck at VCC       ;
++--------+-------+----------+--------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:valid_pip4" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; enable ; Input ; Info     ; Stuck at VCC        ;
++--------+-------+----------+---------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:mem_RD_pip4" ;
++--------+-------+----------+----------------------+
+; Port   ; Type  ; Severity ; Details              ;
++--------+-------+----------+----------------------+
+; enable ; Input ; Info     ; Stuck at VCC         ;
++--------+-------+----------+----------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:mem_WR_pip4" ;
++--------+-------+----------+----------------------+
+; Port   ; Type  ; Severity ; Details              ;
++--------+-------+----------+----------------------+
+; enable ; Input ; Info     ; Stuck at VCC         ;
++--------+-------+----------+----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:RF_WR_pip4" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; enable ; Input ; Info     ; Stuck at VCC        ;
++--------+-------+----------+---------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:pc_pip4" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:ir_pip4" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:alu_out_pip4" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; enable ; Input ; Info     ; Stuck at VCC           ;
++--------+-------+----------+------------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:d2_pip4" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:d1_pip4" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:ArithLU"                                                                          ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; sel    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; carry  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; a_zero ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "mux2to1:mux_alu_b" ;
++-------------+-------+----------+--------------+
+; Port        ; Type  ; Severity ; Details      ;
++-------------+-------+----------+--------------+
+; in_2[0..14] ; Input ; Info     ; Stuck at GND ;
+; in_2[15]    ; Input ; Info     ; Stuck at VCC ;
++-------------+-------+----------+--------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "reg_4bit:dest_1_pip3" ;
++--------+-------+----------+----------------------+
+; Port   ; Type  ; Severity ; Details              ;
++--------+-------+----------+----------------------+
+; enable ; Input ; Info     ; Stuck at VCC         ;
++--------+-------+----------+----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "reg_4bit:src_2_pip3" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; enable ; Input ; Info     ; Stuck at VCC        ;
++--------+-------+----------+---------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "reg_4bit:src_1_pip3" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; enable ; Input ; Info     ; Stuck at VCC        ;
++--------+-------+----------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:se9_pip3"                                                                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; q      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:se6_pip3" ;
++--------+-------+----------+--------------------+
+; Port   ; Type  ; Severity ; Details            ;
++--------+-------+----------+--------------------+
+; enable ; Input ; Info     ; Stuck at VCC       ;
++--------+-------+----------+--------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_3bit:pe3_pip3" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:z7_pip3" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:valid_pip3" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; enable ; Input ; Info     ; Stuck at VCC        ;
++--------+-------+----------+---------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:mem_RD_pip3" ;
++--------+-------+----------+----------------------+
+; Port   ; Type  ; Severity ; Details              ;
++--------+-------+----------+----------------------+
+; enable ; Input ; Info     ; Stuck at VCC         ;
++--------+-------+----------+----------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:mem_WR_pip3" ;
++--------+-------+----------+----------------------+
+; Port   ; Type  ; Severity ; Details              ;
++--------+-------+----------+----------------------+
+; enable ; Input ; Info     ; Stuck at VCC         ;
++--------+-------+----------+----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:RF_WR_pip3" ;
++--------+-------+----------+---------------------+
+; Port   ; Type  ; Severity ; Details             ;
++--------+-------+----------+---------------------+
+; enable ; Input ; Info     ; Stuck at VCC        ;
++--------+-------+----------+---------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:pc_pip3" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:ir_pip3" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:d2_pip3" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "reg_16bit:d1_pip3" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg_file:RegFile"                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; r7   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg_2bit:f1f0_pip2"                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg_1bit:valid_pip1"                                                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 9                           ;
-; cycloneiii_lcell_comb ; 3                           ;
-;     normal            ; 3                           ;
-;         2 data inputs ; 1                           ;
-;         4 data inputs ; 2                           ;
-;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 2.00                        ;
-+-----------------------+-----------------------------+
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; boundary_port     ; 3                               ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
 
 
 +-------------------------------+
@@ -260,10 +1661,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Tue Nov 27 04:57:30 2018
+    Info: Processing started: Tue Nov 27 06:00:01 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pipleline-IITB-RISC -c Pipleline-IITB-RISC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file adder.vhd
+    Info (12022): Found design unit 1: adder-behave File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/adder.vhd Line: 15
+    Info (12023): Found entity 1: adder File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/adder.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file dep_check.vhd
     Info (12022): Found design unit 1: dep_check-behave File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/dep_check.vhd Line: 11
     Info (12023): Found entity 1: dep_check File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/dep_check.vhd Line: 4
@@ -327,17 +1731,77 @@ Info (12021): Found 2 design units, including 1 entities, in source file mux2to1
 Info (12021): Found 2 design units, including 1 entities, in source file ALU.vhd
     Info (12022): Found design unit 1: alu-behave File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd Line: 18
     Info (12023): Found entity 1: alu File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd Line: 5
-Info (12127): Elaborating entity "dep_check" for the top level hierarchy
-Info (286030): Timing-Driven Synthesis is running
+Info (12127): Elaborating entity "main" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at main.vhd(133): used implicit default value for signal "m1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 133
+Warning (10541): VHDL Signal Declaration warning at main.vhd(133): used implicit default value for signal "m2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 133
+Warning (10541): VHDL Signal Declaration warning at main.vhd(134): used implicit default value for signal "m3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 134
+Warning (10541): VHDL Signal Declaration warning at main.vhd(134): used implicit default value for signal "m4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 134
+Warning (10541): VHDL Signal Declaration warning at main.vhd(134): used implicit default value for signal "m5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 134
+Warning (10541): VHDL Signal Declaration warning at main.vhd(134): used implicit default value for signal "m6" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 134
+Warning (10541): VHDL Signal Declaration warning at main.vhd(134): used implicit default value for signal "m7" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 134
+Warning (10540): VHDL Signal Declaration warning at main.vhd(135): used explicit default value for signal "m12_pip4" because signal was never assigned a value File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 135
+Warning (10540): VHDL Signal Declaration warning at main.vhd(135): used explicit default value for signal "m12_pip5" because signal was never assigned a value File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 135
+Warning (10540): VHDL Signal Declaration warning at main.vhd(135): used explicit default value for signal "m12_pip3" because signal was never assigned a value File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 135
+Warning (10541): VHDL Signal Declaration warning at main.vhd(139): used implicit default value for signal "pc_if" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 139
+Warning (10541): VHDL Signal Declaration warning at main.vhd(139): used implicit default value for signal "ir_if" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 139
+Warning (10541): VHDL Signal Declaration warning at main.vhd(140): used implicit default value for signal "se6_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 140
+Warning (10541): VHDL Signal Declaration warning at main.vhd(140): used implicit default value for signal "se9_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 140
+Warning (10541): VHDL Signal Declaration warning at main.vhd(140): used implicit default value for signal "z7_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 140
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(141): object "valid_dec" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 141
+Warning (10541): VHDL Signal Declaration warning at main.vhd(141): used implicit default value for signal "RF_WR_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 141
+Warning (10541): VHDL Signal Declaration warning at main.vhd(141): used implicit default value for signal "mem_WR_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 141
+Warning (10541): VHDL Signal Declaration warning at main.vhd(141): used implicit default value for signal "mem_RD_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 141
+Warning (10541): VHDL Signal Declaration warning at main.vhd(141): used implicit default value for signal "RF_RD_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 141
+Warning (10541): VHDL Signal Declaration warning at main.vhd(142): used implicit default value for signal "src1_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 142
+Warning (10541): VHDL Signal Declaration warning at main.vhd(142): used implicit default value for signal "src2_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 142
+Warning (10541): VHDL Signal Declaration warning at main.vhd(142): used implicit default value for signal "dest1_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 142
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(143): object "f1f0_reg" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 143
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(148): object "se9_ex" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 148
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(153): object "src1_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 153
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(153): object "src2_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 153
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(159): object "a_zero_ex" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 159
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(159): object "z_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 159
+Warning (10541): VHDL Signal Declaration warning at main.vhd(159): used implicit default value for signal "c_ex" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 159
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(159): object "c_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 159
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(160): object "c_out" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 160
+Warning (10541): VHDL Signal Declaration warning at main.vhd(160): used implicit default value for signal "valid_mux_mem" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 160
+Warning (10541): VHDL Signal Declaration warning at main.vhd(160): used implicit default value for signal "valid_mux_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 160
+Warning (10541): VHDL Signal Declaration warning at main.vhd(160): used implicit default value for signal "valid_mux_if" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 160
+Warning (10541): VHDL Signal Declaration warning at main.vhd(161): used implicit default value for signal "alu_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 161
+Info (12128): Elaborating entity "reg_16bit" for hierarchy "reg_16bit:ir_pip1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 171
+Info (12128): Elaborating entity "reg_1bit" for hierarchy "reg_1bit:valid_pip1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 173
+Info (12128): Elaborating entity "priority_encoder" for hierarchy "priority_encoder:PE" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 176
+Info (12128): Elaborating entity "reg_3bit" for hierarchy "reg_3bit:pe3_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 188
+Info (12128): Elaborating entity "reg_2bit" for hierarchy "reg_2bit:f1f0_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 189
+Info (12128): Elaborating entity "reg_4bit" for hierarchy "reg_4bit:src_1_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 192
+Info (12128): Elaborating entity "mux3bit2to1" for hierarchy "mux3bit2to1:mux_reg_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 199
+Info (12128): Elaborating entity "reg_file" for hierarchy "reg_file:RegFile" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 203
+Warning (10492): VHDL Process Statement warning at reg_file.vhd(46): signal "registers_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 46
+Warning (10492): VHDL Process Statement warning at reg_file.vhd(49): signal "registers_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 49
+Info (12128): Elaborating entity "reg_16bit" for hierarchy "reg_file:RegFile|reg_16bit:r0" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 30
+Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:mux_alu_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 228
+Info (12128): Elaborating entity "alu" for hierarchy "alu:ArithLU" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 230
+Warning (10492): VHDL Process Statement warning at ALU.vhd(27): signal "carry_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd Line: 27
+Warning (10492): VHDL Process Statement warning at ALU.vhd(28): signal "zero_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at ALU.vhd(47): signal "carry_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd Line: 47
+Warning (10492): VHDL Process Statement warning at ALU.vhd(57): signal "carry_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at ALU.vhd(58): signal "zero_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd Line: 58
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:memory" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 257
+Info (12128): Elaborating entity "mux3bit4to1" for hierarchy "mux3bit4to1:mux_a3" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 290
+Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:mux_d3" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 291
+Info (12128): Elaborating entity "dep_check" for hierarchy "dep_check:dc1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 295
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 12 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 3 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 959 megabytes
-    Info: Processing ended: Tue Nov 27 04:57:43 2018
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 6
+    Warning (15610): No output dependent on input pin "reset" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 6
+    Warning (15610): No output dependent on input pin "clk_50" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 6
+Info (21057): Implemented 3 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
+    Info: Peak virtual memory: 957 megabytes
+    Info: Processing ended: Tue Nov 27 06:00:14 2018
     Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:29
 

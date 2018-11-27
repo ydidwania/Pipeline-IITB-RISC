@@ -24,48 +24,50 @@ architecture behave of alu is
 			case (sel) is			
 				when "00" =>			--add without modifying flags
 					op 		:= std_logic_vector(unsigned(alu_a) + unsigned(alu_b));
+					carry <= carry_in;
+					zero <= zero_in;
+					a_zero <='0';
+				
 				when "01" =>			--add and modify zero and carry flag
 					op 		:= std_logic_vector(unsigned(alu_a) + unsigned(alu_b));
+					a_zero <='0';
+					if (alu_a(0) = alu_b(0) and op(0) /= alu_a(0)) then
+						carry<='1';
+					else
+						carry<='0';
+					end if;
+					if(op = "0000000000000000") then
+						zero<= '1';
+					else
+						zero<='0';
+					end if;
+					
 				when "10" =>			--NAND and modify zero flags
 					op 		:= (alu_a nand alu_b);
+					carry<=carry_in;
+					a_zero <='0';
+					if(op = "0000000000000000") then
+						zero<= '1';
+					else
+						zero<='0';
+					end if;
+					
 				when  others=>
 					op 		:= std_logic_vector(unsigned(alu_a) - unsigned(alu_b));
+					carry<= carry_in;
+					zero <= zero_in;
+					if(op = "0000000000000000") then
+						a_zero <= '1';
+					else
+						a_zero <='0';
+					end if;
+
 			end case;
 		
 		if reset='1' then
 			alu_out<=zero16;
 		else
 			alu_out <= op;
-		end if;
-		
-		if(op = "0000000000000000") then
-			z := '1';
-		else
-			z :='0';
-		end if;
-		
-		if (alu_a(0) = alu_b(0) and op(0) /= alu_a(0)) then
-			c:='1';
-		else
-			c:='0';
-		end if;
-		
-		a_zero <= z;
-		
-		if reset = '1' then
-			carry <= '0';
-		elsif sel="01" then
-			carry  <= c;
-		else
-			carry <= carry_in;
-		end if;
-		
-		if reset = '1' then
-			zero <= '0';
-		elsif (sel="01" or sel="10") then
-			zero   <= z;			
-		else 
-			zero <= zero_in;
 		end if;
 	end process;
 end behave;	

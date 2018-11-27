@@ -1,5 +1,5 @@
 Flow report for Pipleline-IITB-RISC
-Tue Nov 27 04:57:53 2018
+Tue Nov 27 06:00:25 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Nov 27 04:57:53 2018       ;
+; Flow Status                        ; Successful - Tue Nov 27 06:00:25 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; Pipleline-IITB-RISC                         ;
-; Top-level Entity Name              ; dep_check                                   ;
+; Top-level Entity Name              ; main                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3 / 22,320 ( < 1 % )                        ;
-;     Total combinational functions  ; 3 / 22,320 ( < 1 % )                        ;
+; Total logic elements               ; 0 / 22,320 ( 0 % )                          ;
+;     Total combinational functions  ; 0 / 22,320 ( 0 % )                          ;
 ;     Dedicated logic registers      ; 0 / 22,320 ( 0 % )                          ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 9 / 154 ( 6 % )                             ;
+; Total pins                         ; 3 / 154 ( 2 % )                             ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
 ; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/27/2018 04:57:31 ;
+; Start date & time ; 11/27/2018 06:00:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Pipleline-IITB-RISC ;
 +-------------------+---------------------+
@@ -76,20 +76,20 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value       ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 220295162002240.154327485014888        ; --                  ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 220295162002240.154327860117166        ; --                  ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --                  ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>              ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --                  ; --          ; eda_simulation ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --                  ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --                  ; --          ; --             ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --                  ; --          ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                  ; dep_check   ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                  ; dep_check   ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                  ; dep_check   ; Top            ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                  ; main        ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                  ; main        ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                  ; main        ; Top            ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --                  ; --          ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --                  ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --                  ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; dep_check                              ; Pipleline-IITB-RISC ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; main                                   ; Pipleline-IITB-RISC ; --          ; --             ;
 ; VHDL_INPUT_VERSION                  ; VHDL_2008                              ; VHDL_1993           ; --          ; --             ;
 ; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                    ; --                  ; --          ; --             ;
 +-------------------------------------+----------------------------------------+---------------------+-------------+----------------+
@@ -100,12 +100,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 956 MB              ; 00:00:28                           ;
-; Fitter                    ; 00:00:04     ; 1.0                     ; 1165 MB             ; 00:00:05                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 815 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 829 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1049 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:20     ; --                      ; --                  ; 00:00:36                           ;
+; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 957 MB              ; 00:00:29                           ;
+; Fitter                    ; 00:00:05     ; 1.0                     ; 1166 MB             ; 00:00:05                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 817 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 832 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 1044 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:21     ; --                      ; --                  ; 00:00:38                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

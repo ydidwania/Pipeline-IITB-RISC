@@ -66,19 +66,16 @@ generic(
 		q: out std_logic_vector(0 to 15)
 	);
 end component;
-
 component mux3bit4to1 is
 	port(in_1,in_2,in_3,in_4 : in std_logic_vector(0 to 2);
 		sel 	         : in std_logic_vector(0 to 1);
 		mux_out	         : out std_logic_vector(0 to 2));
 end component;
-
 component mux4to1 is
 	port(in_1,in_2,in_3,in_4 : in std_logic_vector(0 to 15);
 		sel 	         : in std_logic_vector(0 to 1);
 		mux_out	         : out std_logic_vector(0 to 15));
 end component;
-
 component reg_1bit is
 	port (
 		d: in std_logic;
@@ -120,6 +117,13 @@ component dep_check is
 		src: in std_logic_vector(0 to 3);
 		dest: in std_logic_vector(0 to 3);
 		check: out std_logic
+	);
+end component;
+component adder is
+	port (
+		a: in std_logic_vector(0 to 15);
+		b: in std_logic_vector(0 to 15);
+		sum: out std_logic_vector(0 to 15)
 	);
 end component;
 
@@ -171,7 +175,6 @@ valid_pip1   : reg_1bit  port map( d => valid_mux_if, clk => clk, reset =>  rese
 -- Instruction Decoder
 PE  : priority_encoder port map(ir => ir_dec(8 to 15), clk=>clk, rst=>reset, Z=>pe3_dec, F1=>f1f0_dec(0), F0 =>f1f0_dec(1));
 
-
 ---------------------------------
 -- Pipeline register of Decode/Reg_read
 ir_pip2      : reg_16bit port map( d => ir_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => ir_reg);
@@ -197,7 +200,7 @@ mux_reg_a    : mux3bit2to1 port map(in_1 =>ir_reg(7 to 9), in_2 =>pe3_reg, sel =
 --mux_reg_b    : mux3to1 port map(in_1 => alu_out, in_2 => RF_d1, in_3 => mem_do, sel => m14, mux_out => d1_reg);
 --mux_reg_c   : mux2to1 port map(in_1 => RF_d2, in_2 => R7, sel => reg_m1, mux_out => RF_d2_2);
 --mux_reg_d    : mux3to1 port map(in_1 => alu_out, in_2 => RF_d2_2, in_3 => mem_do, sel => m13, mux_out => d2_reg);
-RegFile     : reg_file port map(a1=>RF_a1, a2=>RF_a2, a3=>WB_a3, wr_en=>RF_WR_WB, d3=>WB_d3, clk=>clk,reset=>reset, d1=>RF_d1, d2=>RF_d2);
+RegFile     : reg_file port map(a1=>RF_a1, a2=>RF_a2, a3=>WB_a3, wr_en=>(RF_WR_WB and valid_reg), d3=>WB_d3, clk=>clk,reset=>reset, d1=>RF_d1, d2=>RF_d2);
 valid_mux_reg <= (not m11_pip3);
 ---------------------------------
 -- Pipeline register of Reg_read/Ex
@@ -222,8 +225,8 @@ dest_1_pip3	 : reg_4bit  port map( d => dest1_reg, clk => clk, reset => reset, e
 -- ALU
 valid_alu_sel(0) <= alu_sel(0) and valid_mux_ex;
 valid_alu_sel(1) <= alu_sel(1) and valid_mux_ex;
-mux_alu_a    : mux2to1 port map(in_1 => se6_ex, in_2 => d1_ex, sel=>m5, mux_out=>alu_a);
-mux_alu_b    : mux2to1 port map(in_1 =>d2_ex, in_2 =>"X0001", sel => m6, mux_out => alu_b);
+mux_alu_a    : mux2to1 port map(in_1 =>d1_ex, in_2 =>se6_ex, sel=>m5, mux_out=>alu_a);
+mux_alu_b    : mux2to1 port map(in_1 =>d2_ex, in_2 =>"0000000000000001", sel => m6, mux_out => alu_b);
 ArithLU	     : ALU     port map(alu_a => alu_a, alu_b => alu_b, sel=>valid_alu_sel, reset => reset, carry_in => c_mem, 
 zero_in => z_mem, alu_out => alu_out, carry => c_out, zero => z_out, a_zero => a_zero_ex);
 --valid_mux_ex <= (not m11_pip4) and valid_ex;
@@ -249,12 +252,25 @@ dest1_pip4	 : reg_4bit  port map( d => dest1_ex, clk => clk, reset => reset, ena
 
 ---------------------------------
 -- Reading, writing from memory
-mux_di    : mux2to1     port map(in_1 => d1_mem, in_2 => d2_mem, sel => m3, mux_out => mem_di);
-mux_addr  : mux2to1     port map(in_1 => d1_mem, in_2 => alu_out_mem, sel => m4, mux_out => mem_addr);
-memory    : data_memory port map(Mem_di => mem_di, Mem_addr => mem_addr, clk => clk, Mem_we => mem_WR_mem,
-Mem_re => mem_RD_mem, Mem_do => mem_do);
+mux_di    : mux2to1     port map(in_1 =>d2_mem, in_2 =>d1_mem, sel => m3, mux_out => mem_di);
+mux_addr  : mux2to1     port map(in_1 =>alu_out_mem, in_2 =>d1_mem, sel => m4, mux_out => mem_addr);
+memory    : data_memory port map(Mem_di => mem_di, Mem_addr => mem_addr, clk => clk, Mem_we => (mem_WR_mem and valid_mem),
+Mem_re => (mem_RD_mem and valid_mem), Mem_do => mem_do);
 ---------------------------------
 -- Pipeline register of Mem/WB 
+process(all)
+begin
+if(ir_mem(0 to 3) = "0100" and valid_mem='1') then
+	if(mem_do="0000000000000000") then
+		z_mux_mem<='1';
+	else
+		z_mux_mem<='0';
+	end if;
+else
+	z_mux_mem<=z_mem;
+end if;
+end process;
+		
 alu_out_pip5 : reg_16bit port map( d => alu_out_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => alu_out_WB);
 ir_pip5      : reg_16bit port map( d => ir_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => ir_WB);
 pc_pip5      : reg_16bit port map( d => pc_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => pc_WB);
@@ -271,8 +287,8 @@ dest1_pip5	 : reg_4bit  port map( d => dest1_mem, clk => clk, reset => reset, en
 
 ---------------------------------
 -- Write back (passing apppropriate a3,d3, rf_write_enable)because reg_file already there in reg read stage
-mux_a3 : mux3bit4to1 port map(in_1 => pe3_WB, in_2 => ir_WB(10 to 12), in_3 => ir_WB(7 to 9), in_4 => ir_WB(4 to 6), sel => m1, mux_out => WB_a3);
-mux_d3 : mux4to1     port map(in_1 => alu_out_WB, in_2 => z7_WB, in_3 => memdata_WB, in_4 => pc_WB, sel =>m2, mux_out => WB_d3);
+mux_a3 : mux3bit4to1 port map(in_1 => ir_WB(4 to 6), in_2 => ir_WB(7 to 9), in_3 => ir_WB(10 to 12), in_4 => pe3_WB, sel => m1, mux_out => WB_a3);
+mux_d3 : mux4to1     port map(in_1 => pc_WB, in_2 => memdata_WB, in_3 => z7_WB, in_4 => alu_out_WB, sel =>m2, mux_out => WB_d3);
 -- corresponding outputs will be connected to RF   
 ---------------------------------
 -- Hazardous - keep out of reach of children

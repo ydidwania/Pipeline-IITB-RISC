@@ -1,29 +1,23 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all; 
 
-entity reg_16bit is
+entity adder is
 generic(
-		zero16 : std_logic_vector := "0000000000000000";
 		one16 : std_logic_vector := "0000000000000001"
 	);
 	port (
-		d: in std_logic_vector(0 to 15);
-        clk, reset, enable : in std_logic;
-		q: out std_logic_vector(0 to 15)
+		a: in std_logic_vector(0 to 15);
+		b: in std_logic_vector(0 to 15);
+		sum: out std_logic_vector(0 to 15)
 	);
 end entity;
-architecture behave of reg_16bit is
+architecture behave of adder is
 	begin
-		process(clk, enable, reset)
+		process(a, b)
+			variable op : std_logic_vector(0 to 15);
 			begin
-				if reset='1' then
-					q<=zero16;
-				elsif (rising_edge(clk) and enable='1') then
---					if reset='1' then
---						q<=zero16;
---					elsif enable='1' then
-						q<=d;
-					--end if;
-				end if;
+				op := std_logic_vector(unsigned(a) + unsigned(b));
+				sum <= op;
 		end process;
 end behave;
