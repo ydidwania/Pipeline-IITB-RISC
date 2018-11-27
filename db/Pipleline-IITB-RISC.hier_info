@@ -18,6 +18,14 @@ clk => reg_16bit:se9_pip2.clk
 clk => reg_4bit:src_1_pip2.clk
 clk => reg_4bit:src_2_pip2.clk
 clk => reg_4bit:dest_1_pip2.clk
+clk => reg_2bit:m1_pip2.clk
+clk => reg_2bit:m2_pip2.clk
+clk => reg_1bit:m3_pip2.clk
+clk => reg_1bit:m4_pip2.clk
+clk => reg_1bit:m5_pip2.clk
+clk => reg_1bit:m6_pip2.clk
+clk => reg_1bit:m7_pip2.clk
+clk => reg_1bit:m8_pip2.clk
 clk => reg_file:RegFile.clk
 clk => reg_16bit:d1_pip3.clk
 clk => reg_16bit:d2_pip3.clk
@@ -34,6 +42,13 @@ clk => reg_16bit:se9_pip3.clk
 clk => reg_4bit:src_1_pip3.clk
 clk => reg_4bit:src_2_pip3.clk
 clk => reg_4bit:dest_1_pip3.clk
+clk => reg_2bit:m1_pip3.clk
+clk => reg_2bit:m2_pip3.clk
+clk => reg_1bit:m3_pip3.clk
+clk => reg_1bit:m4_pip3.clk
+clk => reg_1bit:m5_pip3.clk
+clk => reg_1bit:m6_pip3.clk
+clk => reg_1bit:m8_pip3.clk
 clk => reg_16bit:d1_pip4.clk
 clk => reg_16bit:d2_pip4.clk
 clk => reg_16bit:alu_out_pip4.clk
@@ -50,6 +65,10 @@ clk => reg_3bit:pe3_pip4.clk
 clk => reg_4bit:src_1_pip4.clk
 clk => reg_4bit:src_2_pip4.clk
 clk => reg_4bit:dest1_pip4.clk
+clk => reg_2bit:m1_pip4.clk
+clk => reg_2bit:m2_pip4.clk
+clk => reg_1bit:m3_pip4.clk
+clk => reg_1bit:m4_pip4.clk
 clk => data_memory:memory.clk
 clk => reg_16bit:alu_out_pip5.clk
 clk => reg_16bit:ir_pip5.clk
@@ -64,6 +83,8 @@ clk => reg_3bit:pe3_pip5.clk
 clk => reg_4bit:src_1_pip5.clk
 clk => reg_4bit:src_2_pip5.clk
 clk => reg_4bit:dest1_pip5.clk
+clk => reg_2bit:m1_pip5.clk
+clk => reg_2bit:m2_pip5.clk
 reset => reg_16bit:ir_pip1.reset
 reset => reg_16bit:pc_pip1.reset
 reset => reg_1bit:valid_pip1.reset
@@ -83,6 +104,14 @@ reset => reg_16bit:se9_pip2.reset
 reset => reg_4bit:src_1_pip2.reset
 reset => reg_4bit:src_2_pip2.reset
 reset => reg_4bit:dest_1_pip2.reset
+reset => reg_2bit:m1_pip2.reset
+reset => reg_2bit:m2_pip2.reset
+reset => reg_1bit:m3_pip2.reset
+reset => reg_1bit:m4_pip2.reset
+reset => reg_1bit:m5_pip2.reset
+reset => reg_1bit:m6_pip2.reset
+reset => reg_1bit:m7_pip2.reset
+reset => reg_1bit:m8_pip2.reset
 reset => reg_file:RegFile.reset
 reset => reg_16bit:d1_pip3.reset
 reset => reg_16bit:d2_pip3.reset
@@ -99,6 +128,13 @@ reset => reg_16bit:se9_pip3.reset
 reset => reg_4bit:src_1_pip3.reset
 reset => reg_4bit:src_2_pip3.reset
 reset => reg_4bit:dest_1_pip3.reset
+reset => reg_2bit:m1_pip3.reset
+reset => reg_2bit:m2_pip3.reset
+reset => reg_1bit:m3_pip3.reset
+reset => reg_1bit:m4_pip3.reset
+reset => reg_1bit:m5_pip3.reset
+reset => reg_1bit:m6_pip3.reset
+reset => reg_1bit:m8_pip3.reset
 reset => ALU:ArithLU.reset
 reset => reg_16bit:d1_pip4.reset
 reset => reg_16bit:d2_pip4.reset
@@ -116,6 +152,10 @@ reset => reg_3bit:pe3_pip4.reset
 reset => reg_4bit:src_1_pip4.reset
 reset => reg_4bit:src_2_pip4.reset
 reset => reg_4bit:dest1_pip4.reset
+reset => reg_2bit:m1_pip4.reset
+reset => reg_2bit:m2_pip4.reset
+reset => reg_1bit:m3_pip4.reset
+reset => reg_1bit:m4_pip4.reset
 reset => reg_16bit:alu_out_pip5.reset
 reset => reg_16bit:ir_pip5.reset
 reset => reg_16bit:pc_pip5.reset
@@ -129,6 +169,8 @@ reset => reg_3bit:pe3_pip5.reset
 reset => reg_4bit:src_1_pip5.reset
 reset => reg_4bit:src_2_pip5.reset
 reset => reg_4bit:dest1_pip5.reset
+reset => reg_2bit:m1_pip5.reset
+reset => reg_2bit:m2_pip5.reset
 clk_50 => ~NO_FANOUT~
 
 
@@ -357,6 +399,89 @@ Z[1] <> Z[1]
 Z[0] <> Z[0]
 F1 <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 F0 <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|instr_dec:ins_decode
+ir[15] => ~NO_FANOUT~
+ir[14] => ~NO_FANOUT~
+ir[13] => ~NO_FANOUT~
+ir[12] => Dst1.DATAA
+ir[11] => Dst1.DATAA
+ir[10] => Dst1.DATAA
+ir[9] => Dst1.DATAB
+ir[9] => Src2[3].DATAIN
+ir[8] => Dst1.DATAB
+ir[8] => Src2[2].DATAIN
+ir[7] => Dst1.DATAB
+ir[7] => Src2[1].DATAIN
+ir[6] => Dst1.DATAB
+ir[6] => Src1[3].DATAIN
+ir[5] => Dst1.DATAB
+ir[5] => Src1[2].DATAIN
+ir[4] => Dst1.DATAB
+ir[4] => Src1[1].DATAIN
+ir[3] => Mem_wr.IN1
+ir[3] => RF_rd.IN1
+ir[3] => m3.IN1
+ir[3] => Src2.IN1
+ir[3] => Dst1.IN1
+ir[3] => Mem_rd.IN1
+ir[3] => RF_rd.IN1
+ir[3] => RF_wr.IN1
+ir[3] => Src1.IN1
+ir[3] => Src1.IN1
+ir[3] => m1.IN1
+ir[3] => m1.IN1
+ir[3] => ALUsel.IN1
+ir[3] => Equal0.IN3
+ir[2] => RF_rd.IN1
+ir[2] => m7.IN1
+ir[2] => m6.IN1
+ir[2] => RF_rd.IN1
+ir[2] => RF_wr.IN1
+ir[2] => m5.IN1
+ir[2] => Src1.IN0
+ir[2] => Src2.IN1
+ir[2] => Equal0.IN2
+ir[1] => Mem_rd.IN0
+ir[1] => RF_wr.IN0
+ir[1] => RF_rd.IN0
+ir[1] => RF_rd.IN0
+ir[1] => Equal0.IN1
+ir[0] => RF_rd.IN1
+ir[0] => RF_wr.IN1
+ir[0] => Src1.IN1
+ir[0] => Mem_rd.IN1
+ir[0] => RF_rd.IN1
+ir[0] => Equal0.IN0
+Mem_rd <= Mem_rd.DB_MAX_OUTPUT_PORT_TYPE
+Mem_wr <= Mem_wr.DB_MAX_OUTPUT_PORT_TYPE
+RF_rd <= RF_rd.DB_MAX_OUTPUT_PORT_TYPE
+RF_wr <= RF_wr.DB_MAX_OUTPUT_PORT_TYPE
+m7 <= m7.DB_MAX_OUTPUT_PORT_TYPE
+m5 <= m5.DB_MAX_OUTPUT_PORT_TYPE
+m6 <= m6.DB_MAX_OUTPUT_PORT_TYPE
+m3 <= m3.DB_MAX_OUTPUT_PORT_TYPE
+m4 <= m5.DB_MAX_OUTPUT_PORT_TYPE
+m8 <= RF_rd.DB_MAX_OUTPUT_PORT_TYPE
+Src1[3] <= ir[6].DB_MAX_OUTPUT_PORT_TYPE
+Src1[2] <= ir[5].DB_MAX_OUTPUT_PORT_TYPE
+Src1[1] <= ir[4].DB_MAX_OUTPUT_PORT_TYPE
+Src1[0] <= Src1.DB_MAX_OUTPUT_PORT_TYPE
+Src2[3] <= ir[9].DB_MAX_OUTPUT_PORT_TYPE
+Src2[2] <= ir[8].DB_MAX_OUTPUT_PORT_TYPE
+Src2[1] <= ir[7].DB_MAX_OUTPUT_PORT_TYPE
+Src2[0] <= Src2.DB_MAX_OUTPUT_PORT_TYPE
+Dst1[3] <= Dst1.DB_MAX_OUTPUT_PORT_TYPE
+Dst1[2] <= Dst1.DB_MAX_OUTPUT_PORT_TYPE
+Dst1[1] <= Dst1.DB_MAX_OUTPUT_PORT_TYPE
+Dst1[0] <= Dst1.DB_MAX_OUTPUT_PORT_TYPE
+m1[1] <= m1.DB_MAX_OUTPUT_PORT_TYPE
+m1[0] <= m1.DB_MAX_OUTPUT_PORT_TYPE
+m2[1] <= m2.DB_MAX_OUTPUT_PORT_TYPE
+m2[0] <= m2.DB_MAX_OUTPUT_PORT_TYPE
+ALUsel[1] <= ALUsel.DB_MAX_OUTPUT_PORT_TYPE
+ALUsel[0] <= ALUsel.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|reg_16bit:ir_pip2
@@ -912,6 +1037,80 @@ q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_2bit:m1_pip2
+d[1] => q[1]~reg0.DATAIN
+d[0] => q[0]~reg0.DATAIN
+clk => q[1]~reg0.CLK
+clk => q[0]~reg0.CLK
+reset => q[1]~reg0.ACLR
+reset => q[0]~reg0.ACLR
+enable => q[1]~reg0.ENA
+enable => q[0]~reg0.ENA
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_2bit:m2_pip2
+d[1] => q[1]~reg0.DATAIN
+d[0] => q[0]~reg0.DATAIN
+clk => q[1]~reg0.CLK
+clk => q[0]~reg0.CLK
+reset => q[1]~reg0.ACLR
+reset => q[0]~reg0.ACLR
+enable => q[1]~reg0.ENA
+enable => q[0]~reg0.ENA
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_1bit:m3_pip2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_1bit:m4_pip2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_1bit:m5_pip2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_1bit:m6_pip2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_1bit:m7_pip2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_1bit:m8_pip2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|mux3bit2to1:mux_reg_a
@@ -2595,6 +2794,72 @@ q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|main|reg_2bit:m1_pip3
+d[1] => q[1]~reg0.DATAIN
+d[0] => q[0]~reg0.DATAIN
+clk => q[1]~reg0.CLK
+clk => q[0]~reg0.CLK
+reset => q[1]~reg0.ACLR
+reset => q[0]~reg0.ACLR
+enable => q[1]~reg0.ENA
+enable => q[0]~reg0.ENA
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_2bit:m2_pip3
+d[1] => q[1]~reg0.DATAIN
+d[0] => q[0]~reg0.DATAIN
+clk => q[1]~reg0.CLK
+clk => q[0]~reg0.CLK
+reset => q[1]~reg0.ACLR
+reset => q[0]~reg0.ACLR
+enable => q[1]~reg0.ENA
+enable => q[0]~reg0.ENA
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_1bit:m3_pip3
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_1bit:m4_pip3
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_1bit:m5_pip3
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_1bit:m6_pip3
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_1bit:m8_pip3
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |main|mux2to1:mux_alu_a
 in_1[15] => mux_out.DATAB
 in_1[14] => mux_out.DATAB
@@ -3542,6 +3807,48 @@ q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|main|reg_2bit:m1_pip4
+d[1] => q[1]~reg0.DATAIN
+d[0] => q[0]~reg0.DATAIN
+clk => q[1]~reg0.CLK
+clk => q[0]~reg0.CLK
+reset => q[1]~reg0.ACLR
+reset => q[0]~reg0.ACLR
+enable => q[1]~reg0.ENA
+enable => q[0]~reg0.ENA
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_2bit:m2_pip4
+d[1] => q[1]~reg0.DATAIN
+d[0] => q[0]~reg0.DATAIN
+clk => q[1]~reg0.CLK
+clk => q[0]~reg0.CLK
+reset => q[1]~reg0.ACLR
+reset => q[0]~reg0.ACLR
+enable => q[1]~reg0.ENA
+enable => q[0]~reg0.ENA
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_1bit:m3_pip4
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_1bit:m4_pip4
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |main|mux2to1:mux_di
 in_1[15] => mux_out.DATAB
 in_1[14] => mux_out.DATAB
@@ -4312,6 +4619,32 @@ enable => q[1]~reg0.ENA
 enable => q[0]~reg0.ENA
 q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_2bit:m1_pip5
+d[1] => q[1]~reg0.DATAIN
+d[0] => q[0]~reg0.DATAIN
+clk => q[1]~reg0.CLK
+clk => q[0]~reg0.CLK
+reset => q[1]~reg0.ACLR
+reset => q[0]~reg0.ACLR
+enable => q[1]~reg0.ENA
+enable => q[0]~reg0.ENA
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg_2bit:m2_pip5
+d[1] => q[1]~reg0.DATAIN
+d[0] => q[0]~reg0.DATAIN
+clk => q[1]~reg0.CLK
+clk => q[0]~reg0.CLK
+reset => q[1]~reg0.ACLR
+reset => q[0]~reg0.ACLR
+enable => q[1]~reg0.ENA
+enable => q[0]~reg0.ENA
 q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 

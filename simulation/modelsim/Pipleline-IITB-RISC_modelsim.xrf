@@ -1,4 +1,5 @@
 vendor_name = ModelSim
+source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/instr_decod.vhd
 source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/adder.vhd
 source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/dep_check.vhd
 source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/priority_encoder.vhd

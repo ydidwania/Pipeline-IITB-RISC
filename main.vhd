@@ -126,41 +126,51 @@ component adder is
 		sum: out std_logic_vector(0 to 15)
 	);
 end component;
+component instr_dec is
+	port(
+		ir : in std_logic_vector(0 to 15);
+		Mem_rd, Mem_wr, RF_rd, RF_wr, m7, m5, m6, m3, m4, m8  : out std_logic;
+	        Src1, Src2, Dst1 : out std_logic_vector(0 to 3);
+	        m1, m2, ALUsel  : out std_logic_vector(0 to 1));
+end component;
 
 -- Add more components
 
 --Control Signals----------------------------------------------------------------------------------------------
-signal m1,m2, reg_m1							: std_logic_vector(0 to 1);
-signal m3,m4,m5,m6,m7 		        			: std_logic;
-signal m11_pip4, m12_pip4,m12_pip5, m11_pip3,m12_pip1,m12_pip2,m12_pip3  : std_logic := '0';
+signal m1,m2, reg_m1,alu_sel_dec,alu_sel_reg				: std_logic_vector(0 to 1);
+signal m3,m4,m5,m6,m7,m7_dec,m8_dec,m8_Reg,m8,m5_dec,m5_Reg 		: std_logic;
+signal m6_dec,m6_reg,m3_dec,m3_reg,m3_ex,m4_dec,m4_reg,m4_ex		: std_logic;
+signal m1_dec,m1_reg,m1_ex,m1_mem,m2_dec,m2_reg,m2_ex,m2_mem		: std_logic_vector(0 to 1);
+signal m11_pip4, m12_pip4,m12_pip5, m11_pip3,m12_pip1,m12_pip2,m12_pip3 : std_logic := '0';
 ---------------------------------------------------------------------------------------------------------------
 
 --Connecting Signals-------------------------------------------------------------------------------------------
-signal  pc_if, ir_if 		   : std_logic_vector(0 to 15);
-signal se6_dec, pc_dec, se9_dec, z7_dec, d1_dec, ir_dec: std_logic_vector(0 to 15);
-signal valid_dec, RF_WR_dec, mem_WR_dec, mem_RD_dec, RF_RD_dec: std_logic;
-signal src1_dec, src2_dec, dest1_dec						: std_logic_vector(0 to 3);
-signal f1f0_dec, f1f0_reg										: std_logic_vector(0 to 1);
-signal se6_reg, pc_reg, se9_reg, z7_reg, d1_reg, ir_reg, d2_reg, RF_d1, RF_d2, RF_d3 	: std_logic_vector(0 to 15);
+--signal PC							: std_logic_vector(0 to 15);
+signal  pc_if, ir_if 		   													: std_logic_vector(0 to 15);
+signal se6_dec, pc_dec, se9_dec, z7_dec, d1_dec, ir_dec											: std_logic_vector(0 to 15);
+signal valid_dec, RF_WR_dec, mem_WR_dec, mem_RD_dec, RF_RD_dec										: std_logic;
+signal src1_dec, src2_dec, dest1_dec													: std_logic_vector(0 to 3);
+signal f1f0_dec, f1f0_reg														: std_logic_vector(0 to 1);
+signal se6_reg, pc_reg, se9_reg, z7_reg, d1_reg, ir_reg, d2_reg, RF_d1, RF_d2, RF_d3 							: std_logic_vector(0 to 15);
 signal RF_a1, RF_a2															: std_logic_vector(0 to 2);
-signal RF_WR_reg, mem_WR_reg, mem_RD_reg, valid_reg, RF_RD_reg			 : std_logic;
-signal src1_reg, src2_reg, dest1_reg										: std_logic_vector(0 to 3);
-signal se6_ex, pc_ex, se9_ex, z7_ex, d1_ex, d1_ex_forw, ir_ex, d2_ex, d2_ex_forw   : std_logic_vector(0 to 15);
-signal src1_ex, src2_ex, dest1_ex										: std_logic_vector(0 to 3);
-signal d1_mem, z7_mem, d2_mem, alu_out_mem, ir_mem, pc_mem 		   : std_logic_vector(0 to 15);
-signal src1_mem, src2_mem, dest1_mem										: std_logic_vector(0 to 3);
-signal ir_WB, alu_out_WB, z7_WB, pc_WB, memdata_WB 			   : std_logic_vector(0 to 15); 
-signal src1_WB, src2_WB, dest1_WB										: std_logic_vector(0 to 3);
-signal RF_WR_ex, mem_WR_ex, RF_WR_mem, mem_WR_mem, RF_WR_WB		       : std_logic;
-signal RF_RD_ex, mem_RD_ex, RF_RD_mem, mem_RD_mem, RF_RD_WB,z_mux_mem : std_logic;
-signal pe3_ex, pe3_mem, pe3_WB, pe3_dec, pe3_reg				   : std_logic_vector(0 to 2);
-signal alu_a,alu_b,alu_out, mem_di, mem_addr, mem_do, WB_d3		   : std_logic_vector(0 to 15);
-signal WB_a3								   : std_logic_vector(0 to 2);
-signal a_zero_ex, z_ex, z_mem, z_WB, c_ex, c_mem, c_WB : std_logic;
-signal cin, zin, c_out, z_out, valid_mux_ex, valid_ex, valid_mem, valid_mux_mem, valid_WB, valid_mux_reg, valid_mux_dec, valid_mux_if : std_logic;
-signal alu_sel, valid_alu_sel						   : std_logic_vector(0 to 1);
+signal RF_WR_reg, mem_WR_reg, mem_RD_reg, valid_reg, RF_RD_reg			 							: std_logic;
+signal src1_reg, src2_reg, dest1_reg													: std_logic_vector(0 to 3);
+signal se6_ex, pc_ex, se9_ex, z7_ex, d1_ex, d1_ex_forw, ir_ex, d2_ex, d2_ex_forw   							: std_logic_vector(0 to 15);
+signal src1_ex, src2_ex, dest1_ex													: std_logic_vector(0 to 3);
+signal d1_mem, z7_mem, d2_mem, alu_out_mem, ir_mem, pc_mem 		   								: std_logic_vector(0 to 15);
+signal src1_mem, src2_mem, dest1_mem													: std_logic_vector(0 to 3);
+signal ir_WB, alu_out_WB, z7_WB, pc_WB, memdata_WB 			   								: std_logic_vector(0 to 15); 
+signal src1_WB, src2_WB, dest1_WB													: std_logic_vector(0 to 3);
+signal RF_WR_ex, mem_WR_ex, RF_WR_mem, mem_WR_mem, RF_WR_WB		       								: std_logic;
+signal RF_RD_ex, mem_RD_ex, RF_RD_mem, mem_RD_mem, RF_RD_WB,z_mux_mem 									: std_logic;
+signal pe3_ex, pe3_mem, pe3_WB, pe3_dec, pe3_reg				   							: std_logic_vector(0 to 2);
+signal alu_a,alu_b,alu_out, mem_di, mem_addr, mem_do, WB_d3		   								: std_logic_vector(0 to 15);
+signal WB_a3								   								: std_logic_vector(0 to 2);
+signal a_zero_ex, z_ex, z_mem, z_WB, c_ex, c_mem, c_WB 											: std_logic;
+signal cin, zin, c_out, z_out, valid_mux_ex, valid_ex, valid_mem, valid_mux_mem, valid_WB, valid_mux_reg, valid_mux_dec, valid_mux_if 	: std_logic;
+signal alu_sel, valid_alu_sel						   							      	: std_logic_vector(0 to 1);
 --Hazardous signals
-signal h11, h21, h31, h41, h12, h22, h32, h42, alu_op_ex, alu_op_mem: std_logic;
+signal h11, h21, h31, h41, h12, h22, h32, h42, alu_op_ex, alu_op_mem								      	: std_logic;
 ---------------------------------------------------------------------------------------------------------------
 
 begin
@@ -171,10 +181,14 @@ begin
 ir_pip1      : reg_16bit port map( d => ir_if, clk => clk, reset =>  reset, enable => (not m12_pip1), q => ir_dec);
 pc_pip1      : reg_16bit port map( d => pc_if, clk => clk, reset =>  reset, enable => (not m12_pip1), q => pc_dec);
 valid_pip1   : reg_1bit  port map( d => valid_mux_if, clk => clk, reset =>  reset, enable => (not m12_pip1), q => valid_dec);
+valid_mux_if <= not(m10 or m11_pip1);
 ---------------------------------
 -- Instruction Decoder
 PE  : priority_encoder port map(ir => ir_dec(8 to 15), clk=>clk, rst=>reset, Z=>pe3_dec, F1=>f1f0_dec(0), F0 =>f1f0_dec(1));
-
+ins_decode : instr_dec port map(ir=>ir_dec, Mem_rd=>mem_RD_dec, Mem_wr=>mem_WR_dec, RF_rd=>RF_RD_dec, RF_wr=>RF_WR_dec,
+m3=> m3_dec, m4 => m4_dec, m5 => m5_dec, m6 => m6_dec, m7 => m7_dec, m8 => m8_dec, src1 => src1_dec, src2 => src2_dec,
+dst1 => dest1_dec, m1 => m1_dec, m2 => m2_dec, ALUsel => alu_sel_dec);
+valid_mux_dec <= not(m10 or m11_pip2) and valid_dec;
 ---------------------------------
 -- Pipeline register of Decode/Reg_read
 ir_pip2      : reg_16bit port map( d => ir_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => ir_reg);
@@ -186,13 +200,20 @@ mem_RD_pip2  : reg_1bit  port map( d => mem_RD_dec, clk => clk, reset =>  reset,
 valid_pip2   : reg_1bit  port map( d => valid_mux_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => valid_reg);
 z7_pip2      : reg_16bit port map( d => z7_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => z7_reg);
 pe3_pip2     : reg_3bit  port map( d => pe3_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => pe3_reg);
-f1f0_pip2	 : reg_2bit  port map( d => f1f0_dec, clk => clk, reset=>reset, enable => (not m12_pip2), q=> f1f0_reg);
+f1f0_pip2    : reg_2bit  port map( d => f1f0_dec, clk => clk, reset=>reset, enable => (not m12_pip2), q=> f1f0_reg);
 se6_pip2     : reg_16bit port map( d => se6_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => se6_reg);
 se9_pip2     : reg_16bit port map( d => se9_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => se9_reg);
-src_1_pip2 	 : reg_4bit  port map( d => src1_dec, clk => clk, reset => reset, enable => (not m12_pip2), q=> src1_reg);
-src_2_pip2 	 : reg_4bit  port map( d => src2_dec, clk => clk, reset => reset, enable => (not m12_pip2), q=> src2_reg);
-dest_1_pip2	 : reg_4bit  port map( d => dest1_dec, clk => clk, reset => reset, enable => (not m12_pip2), q=> dest1_reg);
-
+src_1_pip2   : reg_4bit  port map( d => src1_dec, clk => clk, reset => reset, enable => (not m12_pip2), q=> src1_reg);
+src_2_pip2   : reg_4bit  port map( d => src2_dec, clk => clk, reset => reset, enable => (not m12_pip2), q=> src2_reg);
+dest_1_pip2  : reg_4bit  port map( d => dest1_dec, clk => clk, reset => reset, enable => (not m12_pip2), q=> dest1_reg);
+m1_pip2      : reg_2bit port map( d => m1_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => m1_reg);
+m2_pip2      : reg_2bit port map( d => m2_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => m2_reg);
+m3_pip2      : reg_1bit port map( d => m3_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => m3_reg);
+m4_pip2      : reg_1bit port map( d => m4_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => m4_reg);
+m5_pip2      : reg_1bit port map( d => m5_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => m5_reg);
+m6_pip2      : reg_1bit port map( d => m6_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => m6_reg);
+m7_pip2      : reg_1bit port map( d => m7_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => m7);
+m8_pip2      : reg_1bit port map( d => m8_dec, clk => clk, reset =>  reset, enable => (not m12_pip2), q => m8_reg);
 ---------------------------------
 -- Register Read
 RF_a1 <= ir_reg(4 to 6);
@@ -200,8 +221,8 @@ mux_reg_a    : mux3bit2to1 port map(in_1 =>ir_reg(7 to 9), in_2 =>pe3_reg, sel =
 --mux_reg_b    : mux3to1 port map(in_1 => alu_out, in_2 => RF_d1, in_3 => mem_do, sel => m14, mux_out => d1_reg);
 --mux_reg_c   : mux2to1 port map(in_1 => RF_d2, in_2 => R7, sel => reg_m1, mux_out => RF_d2_2);
 --mux_reg_d    : mux3to1 port map(in_1 => alu_out, in_2 => RF_d2_2, in_3 => mem_do, sel => m13, mux_out => d2_reg);
-RegFile     : reg_file port map(a1=>RF_a1, a2=>RF_a2, a3=>WB_a3, wr_en=>(RF_WR_WB and valid_reg), d3=>WB_d3, clk=>clk,reset=>reset, d1=>RF_d1, d2=>RF_d2);
-valid_mux_reg <= (not m11_pip3);
+RegFile      : reg_file    port map(a1=>RF_a1, a2=>RF_a2, a3=>WB_a3, wr_en=>(RF_WR_WB and valid_reg), d3=>WB_d3, clk=>clk,reset=>reset, d1=>RF_d1, d2=>RF_d2);
+valid_mux_reg <= not(m10 or m11_pip3 or stall_pip3) and valid_reg;
 ---------------------------------
 -- Pipeline register of Reg_read/Ex
 d1_pip3      : reg_16bit port map( d => d1_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => d1_ex);
@@ -217,9 +238,17 @@ z7_pip3      : reg_16bit port map( d => z7_reg, clk => clk, reset =>  reset, ena
 pe3_pip3     : reg_3bit  port map( d => pe3_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => pe3_ex);
 se6_pip3     : reg_16bit port map( d => se6_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => se6_ex);
 se9_pip3     : reg_16bit port map( d => se9_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => se9_ex);
-src_1_pip3 	 : reg_4bit  port map( d => src1_reg, clk => clk, reset => reset, enable => (not m12_pip3), q=> src1_ex);
-src_2_pip3 	 : reg_4bit  port map( d => src2_reg, clk => clk, reset => reset, enable => (not m12_pip3), q=> src2_ex);
-dest_1_pip3	 : reg_4bit  port map( d => dest1_reg, clk => clk, reset => reset, enable => (not m12_pip3), q=> dest1_ex);
+src_1_pip3   : reg_4bit  port map( d => src1_reg, clk => clk, reset => reset, enable => (not m12_pip3), q=> src1_ex);
+src_2_pip3   : reg_4bit  port map( d => src2_reg, clk => clk, reset => reset, enable => (not m12_pip3), q=> src2_ex);
+dest_1_pip3  : reg_4bit  port map( d => dest1_reg, clk => clk, reset => reset, enable => (not m12_pip3), q=> dest1_ex);
+m1_pip3      : reg_2bit port map( d => m1_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => m1_ex);
+m2_pip3      : reg_2bit port map( d => m2_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => m2_ex);
+m3_pip3      : reg_1bit port map( d => m3_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => m3_ex);
+m4_pip3      : reg_1bit port map( d => m4_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => m4_ex);
+m5_pip3      : reg_1bit port map( d => m5_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => m5);
+m6_pip3      : reg_1bit port map( d => m6_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => m6);
+m8_pip3      : reg_1bit port map( d => m8_reg, clk => clk, reset =>  reset, enable => (not m12_pip3), q => m8);
+r7_chge_pip3    : reg_1bit port map( d=> '0'
 
 ---------------------------------
 -- ALU
@@ -229,14 +258,14 @@ mux_alu_a    : mux2to1 port map(in_1 =>d1_ex, in_2 =>se6_ex, sel=>m5, mux_out=>a
 mux_alu_b    : mux2to1 port map(in_1 =>d2_ex, in_2 =>"0000000000000001", sel => m6, mux_out => alu_b);
 ArithLU	     : ALU     port map(alu_a => alu_a, alu_b => alu_b, sel=>valid_alu_sel, reset => reset, carry_in => c_mem, 
 zero_in => z_mem, alu_out => alu_out, carry => c_out, zero => z_out, a_zero => a_zero_ex);
---valid_mux_ex <= (not m11_pip4) and valid_ex;
+valid_mux_ex <= not(m11_pip4 or adc_adz) and valid_ex;
 ---------------------------------
 -- Pipeline register of Ex/Mem
 d1_pip4      : reg_16bit port map( d => d1_ex_forw, clk => clk, reset =>  reset, enable => (not m12_pip4), q => d1_mem);
 d2_pip4      : reg_16bit port map( d => d2_ex_forw, clk => clk, reset =>  reset, enable => (not m12_pip4), q => d2_mem);
 alu_out_pip4 : reg_16bit port map( d => alu_out, clk => clk, reset =>  reset, enable => (not m12_pip4), q => alu_out_mem);
 ir_pip4      : reg_16bit port map( d => ir_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => ir_mem);
-pc_pip4      : reg_16bit port map( d => pc_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => pc_mem);
+pc_pip4      : reg_16bit port map( d => pc_mux_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => pc_mem);
 RF_WR_pip4   : reg_1bit  port map( d => RF_WR_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => RF_WR_mem);
 --RF_RD_pip4   : reg_1bit  port map( d => RF_RD_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => RF_RD_mem);
 mem_WR_pip4  : reg_1bit  port map( d => mem_WR_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => mem_WR_mem);
@@ -245,17 +274,22 @@ valid_pip4   : reg_1bit  port map( d => valid_mux_ex, clk => clk, reset =>  rese
 zero_pip4    : reg_1bit  port map( d => z_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => z_mem);
 carry_pip4   : reg_1bit  port map( d => c_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => c_mem);
 z7_pip4      : reg_16bit port map( d => z7_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => z7_mem);
-pe3_pip4     : reg_3bit port map( d => pe3_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => pe3_mem);
-src_1_pip4 	 : reg_4bit  port map( d => src1_ex, clk => clk, reset => reset, enable => (not m12_pip4), q=> src1_mem);
-src_2_pip4 	 : reg_4bit  port map( d => src2_ex, clk => clk, reset => reset, enable => (not m12_pip4), q=> src2_mem);
-dest1_pip4	 : reg_4bit  port map( d => dest1_ex, clk => clk, reset => reset, enable => (not m12_pip4), q=> dest1_mem);
-
+pe3_pip4     : reg_3bit  port map( d => pe3_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => pe3_mem);
+src_1_pip4   : reg_4bit  port map( d => src1_ex, clk => clk, reset => reset, enable => (not m12_pip4), q=> src1_mem);
+src_2_pip4   : reg_4bit  port map( d => src2_ex, clk => clk, reset => reset, enable => (not m12_pip4), q=> src2_mem);
+dest1_pip4   : reg_4bit  port map( d => dest1_ex, clk => clk, reset => reset, enable => (not m12_pip4), q=> dest1_mem);
+m1_pip4      : reg_2bit port map( d => m1_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => m1_mem);
+m2_pip4      : reg_2bit port map( d => m2_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => m2_mem);
+m3_pip4      : reg_1bit port map( d => m3_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => m3);
+m4_pip4      : reg_1bit port map( d => m4_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => m4);
+r7_chge_pip4 : reg_1bit port map( d=> r7_mux_ex, clk=>clk, reset=>reset, enable=>(not m12_pip4), q => r7_mem);
 ---------------------------------
 -- Reading, writing from memory
 mux_di    : mux2to1     port map(in_1 =>d2_mem, in_2 =>d1_mem, sel => m3, mux_out => mem_di);
 mux_addr  : mux2to1     port map(in_1 =>alu_out_mem, in_2 =>d1_mem, sel => m4, mux_out => mem_addr);
 memory    : data_memory port map(Mem_di => mem_di, Mem_addr => mem_addr, clk => clk, Mem_we => (mem_WR_mem and valid_mem),
 Mem_re => (mem_RD_mem and valid_mem), Mem_do => mem_do);
+valid_mux_mem <= not(m11_pip5) and valid_mem;
 ---------------------------------
 -- Pipeline register of Mem/WB 
 process(all)
@@ -273,18 +307,20 @@ end process;
 		
 alu_out_pip5 : reg_16bit port map( d => alu_out_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => alu_out_WB);
 ir_pip5      : reg_16bit port map( d => ir_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => ir_WB);
-pc_pip5      : reg_16bit port map( d => pc_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => pc_WB);
+pc_pip5      : reg_16bit port map( d => pc_mux_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => pc_WB);
 memdata_pip5 : reg_16bit port map( d => mem_do, clk => clk, reset =>  reset, enable => (not m12_pip5), q => memdata_WB);
 RF_WR_pip5   : reg_1bit  port map( d => RF_WR_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => RF_WR_WB);
-valid_pip5   : reg_1bit  port map( d => valid_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => valid_WB);
+valid_pip5   : reg_1bit  port map( d => valid_mux_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => valid_WB);
 zero_pip5    : reg_1bit  port map( d => z_mux_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => z_WB);
 carry_pip5   : reg_1bit  port map( d => c_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => c_WB);
 z7_pip5      : reg_16bit port map( d => z7_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => z7_WB);
-pe3_pip5     : reg_3bit port map( d => pe3_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => pe3_WB);
-src_1_pip5 	 : reg_4bit  port map( d => src1_mem, clk => clk, reset => reset, enable => (not m12_pip5), q=> src1_WB);
-src_2_pip5 	 : reg_4bit  port map( d => src2_mem, clk => clk, reset => reset, enable => (not m12_pip5), q=> src2_WB);
-dest1_pip5	 : reg_4bit  port map( d => dest1_mem, clk => clk, reset => reset, enable => (not m12_pip5), q=> dest1_WB);
-
+pe3_pip5     : reg_3bit  port map( d => pe3_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => pe3_WB);
+src_1_pip5   : reg_4bit  port map( d => src1_mem, clk => clk, reset => reset, enable => (not m12_pip5), q=> src1_WB);
+src_2_pip5   : reg_4bit  port map( d => src2_mem, clk => clk, reset => reset, enable => (not m12_pip5), q=> src2_WB);
+dest1_pip5   : reg_4bit  port map( d => dest1_mem, clk => clk, reset => reset, enable => (not m12_pip5), q=> dest1_WB);
+m1_pip5      : reg_2bit port map( d => m1_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => m1);
+m2_pip5      : reg_2bit port map( d => m2_mem, clk => clk, reset =>  reset, enable => (not m12_pip5), q => m2);
+r7_chge_pip5 : reg_1bit port map( d=> r7_mux_mem, clk=>clk, reset=>reset, enable=>(not m12_pip5), q => r7_WB);
 ---------------------------------
 -- Write back (passing apppropriate a3,d3, rf_write_enable)because reg_file already there in reg read stage
 mux_a3 : mux3bit4to1 port map(in_1 => ir_WB(4 to 6), in_2 => ir_WB(7 to 9), in_3 => ir_WB(10 to 12), in_4 => pe3_WB, sel => m1, mux_out => WB_a3);
@@ -380,11 +416,13 @@ begin
 	--cond2 := c_mem='0' and ir_ex(0 to 1)="00" and ir_ex(3)='0' and ir(13 to 15)="010";
 	cond2 := not (c_mem or ir_ex(0) or ir_ex(1) or ir_ex(3) or ir_ex(13) or ir_ex(15)) and ir_ex(14);
 	
-	if (cond1='1' or cond2='1') then
-		valid_mux_ex<='0';
-	else
-		valid_mux_ex<=valid_ex;
-	end if;
+	adc_adz <= cond1 or cond2;
+	
+--	if (cond1='1' or cond2='1') then
+--		valid_mux_ex<='0';
+--	else
+--		valid_mux_ex<=valid_ex;
+--	end if;
 end process;
 
 --  Stall 
@@ -395,28 +433,126 @@ begin
 		if(ir_reg(0 to 3) = "0101") then -- not stalling for source 1
 			m12_pip1<='0';
 			m12_pip2<='0';
-			m11_pip3<='0';
+			stall_pip3<='0';
 		else -- not SW then stall 
 			m12_pip1<='1';
 			m12_pip2<='1';
-			m11_pip3<='1';
+			stall_pip3<='1';
 		end if;
 	else
 		m12_pip1<='0';
 		m12_pip2<='0';
-		m11_pip3<='0';
+		stall_pip3<='0';
 	end if;
 	-- no SW exception for Source 2 as S2 of SW also uses ALU.
 	if(h12='1' and RF_WR_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
 		m12_pip1<='1';
 		m12_pip2<='1';
-		m11_pip3<='1';
+		stall_pip3<='1';
 	else
 		m12_pip1<='0';
 		m12_pip2<='0';
-		m11_pip3<='0';
+		stall_pip3<='0';
 	end if;			
-		
 end process;
+-- END OF HAZARDOUS AREA
+
+-- BEGINS THE TERRITORY OF R7
+offset_adder: adder port map(a=>pc_ex, b=>offset, sum=>pc_plus_offset);
+mux_m8: mux2to1 port map(inp1=>se6_ex, inp2=>se9_ex, sel=>m8, mux_out=>offset);
+mux_m9: mux2to1 port map(inp1=>pc_plus_offset, inp2=>d2_ex, sel=>m9, mux_out=>jmp_addr);
+mux_m10: mux2to1 port map(inp1=>pc_plus_1, inp2=> jmp_addr, sel=>m10, mux_out=>next_pc);
+mux_m11: mux2to1 port map(inp1=>next_pc, inp2=> r7_value, sel=>m11, mux_out=>pc_in);
+pc_incrementer: adder port map(a=>pc_if, b=>"0000000000000001", sum=>pc_plus_1);
+
+-- 1 if JLR ir_ex(0 to 3)="1001"
+jlr_op_ex <= ir_ex(0) and ir_ex(3) and (not ir_ex(1)) and (not ir_ex(2));
+jal_op_ex <= ir_ex(0) and not(ir_ex(1) or ir_ex(2) or ir_ex(3));
+m9 <= jlr_op_ex
+m10 <= valid_mux_ex and (a_zero_ex or jlr_op_ex or jal_op_ex);
+-- R7 modify business
+m11 <= r7_select_ex or r7_select_mem or r7_select_WB;
+
+process(all)
+begin 
+	-- EX stage ALU operation or LHI
+	if(valid_mux_ex='1' and dest1_ex="1111" and (alu_op_ex='1' or ir_ex="0011")) then
+		r7_mux_ex<='1';
+		r7_select_ex<='1';
+	else
+		r7_select_ex<='0';
+		if(m10='1') then -- beq or jlr or jal
+			r7_mux_ex<='1';
+		else 
+			r7_mux_ex<='0';
+		end if;
+	end if;
+	
+	--MEM stage  LW or LM
+	if(r7_mem='1') then
+		r7_mux_mem<='1';
+		r7_select_mem<='0';
+	elsif(valid_mux_mem='1' and dest1_mem="1111" and (ir_mem="0110" or ir_mem="0100")) then
+		r7_mux_mem<='1';
+		r7_select_mem<='1';
+	else
+		r7_mux_mem<='0';
+		r7_select_mem<='0';
+	end if;
+	
+	--WB stage 
+	if (r7_WB='1') then
+		r7_select_WB ='0';
+	elsif(WB_a3="111" and valid_WB='1') then
+		r7_select_WB ='1';
+	else
+		r7_select_WB ='0';
+	end if;
+	
+	-- correct PC going into pip4 for Ex stage
+	if(r7_select_ex='1') then
+		pc_mux_ex <= r7_data_ex;
+	elsif(m10='1') then
+		pc_mux_ex <= pc_plus_offset;
+	else
+		pc_mux_ex <= pc_ex;
+	end if;
+	
+	-- correct PC going into pip5 for mem stage
+	if(r7_select_mem='1') then
+		pc_mux_mem <= mem_do;
+	else
+		pc_mux_mem <= pc_mem;
+	end if;
+	
+	-- correct PC going into reg-file for WB stage
+	if(r7_select_WB='1') then
+		pc_mux_WB <= WB_d3;
+	else
+		pc_mux_WB <= pc_WB;
+	end if;
+	
+	-- correct value of R7 to be loaded into PC register
+	if(alu_op_ex='1') then
+		r7_data_ex <= alu_out;
+	else
+		r7_data_ex <= z7_ex;
+	end if;
+	
+	if(r7_select_ex='1') then
+		r7_value<=r7_data_ex;
+	elsif(r7_select_mem='1') then
+		r7_value <= mem_do;
+	else
+		r7_value <= WB_d3
+	
+	
+	
+	
+end process;
+
+
+
+
 
 end behave;
