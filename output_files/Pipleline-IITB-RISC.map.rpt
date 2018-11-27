@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pipleline-IITB-RISC
-Tue Nov 27 22:00:22 2018
+Tue Nov 27 23:33:15 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -108,77 +108,78 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 100. Parameter Settings for User Entity Instance: reg_2bit:m1_pip5
 101. Parameter Settings for User Entity Instance: reg_2bit:m2_pip5
 102. Parameter Settings for User Entity Instance: reg_1bit:r7_chge_pip5
-103. Parameter Settings for User Entity Instance: adder:offset_adder
-104. Parameter Settings for User Entity Instance: adder:pc_incrementer
-105. Port Connectivity Checks: "adder:pc_incrementer"
-106. Port Connectivity Checks: "mux2to1:mux_m11"
-107. Port Connectivity Checks: "reg_1bit:r7_chge_pip5"
-108. Port Connectivity Checks: "reg_2bit:m2_pip5"
-109. Port Connectivity Checks: "reg_2bit:m1_pip5"
-110. Port Connectivity Checks: "reg_4bit:dest1_pip5"
-111. Port Connectivity Checks: "reg_4bit:src_2_pip5"
-112. Port Connectivity Checks: "reg_4bit:src_1_pip5"
-113. Port Connectivity Checks: "reg_3bit:pe3_pip5"
-114. Port Connectivity Checks: "reg_16bit:z7_pip5"
-115. Port Connectivity Checks: "reg_1bit:carry_pip5"
-116. Port Connectivity Checks: "reg_1bit:zero_pip5"
-117. Port Connectivity Checks: "reg_1bit:valid_pip5"
-118. Port Connectivity Checks: "reg_1bit:RF_WR_pip5"
-119. Port Connectivity Checks: "reg_16bit:memdata_pip5"
-120. Port Connectivity Checks: "reg_16bit:pc_pip5"
-121. Port Connectivity Checks: "reg_16bit:ir_pip5"
-122. Port Connectivity Checks: "reg_16bit:alu_out_pip5"
-123. Port Connectivity Checks: "reg_1bit:r7_chge_pip4"
-124. Port Connectivity Checks: "reg_1bit:m4_pip4"
-125. Port Connectivity Checks: "reg_1bit:m3_pip4"
-126. Port Connectivity Checks: "reg_2bit:m2_pip4"
-127. Port Connectivity Checks: "reg_2bit:m1_pip4"
-128. Port Connectivity Checks: "reg_4bit:dest1_pip4"
-129. Port Connectivity Checks: "reg_4bit:src_2_pip4"
-130. Port Connectivity Checks: "reg_4bit:src_1_pip4"
-131. Port Connectivity Checks: "reg_3bit:pe3_pip4"
-132. Port Connectivity Checks: "reg_16bit:z7_pip4"
-133. Port Connectivity Checks: "reg_1bit:carry_pip4"
-134. Port Connectivity Checks: "reg_1bit:zero_pip4"
-135. Port Connectivity Checks: "reg_1bit:valid_pip4"
-136. Port Connectivity Checks: "reg_1bit:mem_RD_pip4"
-137. Port Connectivity Checks: "reg_1bit:mem_WR_pip4"
-138. Port Connectivity Checks: "reg_1bit:RF_WR_pip4"
-139. Port Connectivity Checks: "reg_16bit:pc_pip4"
-140. Port Connectivity Checks: "reg_16bit:ir_pip4"
-141. Port Connectivity Checks: "reg_16bit:alu_out_pip4"
-142. Port Connectivity Checks: "reg_16bit:d2_pip4"
-143. Port Connectivity Checks: "reg_16bit:d1_pip4"
-144. Port Connectivity Checks: "alu:ArithLU"
-145. Port Connectivity Checks: "mux2to1:mux_alu_b"
-146. Port Connectivity Checks: "reg_1bit:m8_pip3"
-147. Port Connectivity Checks: "reg_1bit:m6_pip3"
-148. Port Connectivity Checks: "reg_1bit:m5_pip3"
-149. Port Connectivity Checks: "reg_1bit:m4_pip3"
-150. Port Connectivity Checks: "reg_1bit:m3_pip3"
-151. Port Connectivity Checks: "reg_2bit:m2_pip3"
-152. Port Connectivity Checks: "reg_2bit:m1_pip3"
-153. Port Connectivity Checks: "reg_4bit:dest_1_pip3"
-154. Port Connectivity Checks: "reg_4bit:src_2_pip3"
-155. Port Connectivity Checks: "reg_4bit:src_1_pip3"
-156. Port Connectivity Checks: "reg_16bit:se9_pip3"
-157. Port Connectivity Checks: "reg_16bit:se6_pip3"
-158. Port Connectivity Checks: "reg_3bit:pe3_pip3"
-159. Port Connectivity Checks: "reg_16bit:z7_pip3"
-160. Port Connectivity Checks: "reg_1bit:valid_pip3"
-161. Port Connectivity Checks: "reg_1bit:mem_RD_pip3"
-162. Port Connectivity Checks: "reg_1bit:mem_WR_pip3"
-163. Port Connectivity Checks: "reg_1bit:RF_WR_pip3"
-164. Port Connectivity Checks: "reg_16bit:pc_pip3"
-165. Port Connectivity Checks: "reg_16bit:ir_pip3"
-166. Port Connectivity Checks: "reg_16bit:d2_pip3"
-167. Port Connectivity Checks: "reg_16bit:d1_pip3"
-168. Port Connectivity Checks: "reg_file:RegFile"
-169. Port Connectivity Checks: "reg_2bit:f1f0_pip2"
-170. Port Connectivity Checks: "instr_dec:ins_decode"
-171. Post-Synthesis Netlist Statistics for Top Partition
-172. Elapsed Time Per Partition
-173. Analysis & Synthesis Messages
+103. Parameter Settings for User Entity Instance: adder:r7_write
+104. Parameter Settings for User Entity Instance: adder:offset_adder
+105. Parameter Settings for User Entity Instance: adder:pc_incrementer
+106. Port Connectivity Checks: "adder:pc_incrementer"
+107. Port Connectivity Checks: "mux2to1:mux_m11"
+108. Port Connectivity Checks: "adder:r7_write"
+109. Port Connectivity Checks: "reg_1bit:r7_chge_pip5"
+110. Port Connectivity Checks: "reg_2bit:m2_pip5"
+111. Port Connectivity Checks: "reg_2bit:m1_pip5"
+112. Port Connectivity Checks: "reg_4bit:dest1_pip5"
+113. Port Connectivity Checks: "reg_4bit:src_2_pip5"
+114. Port Connectivity Checks: "reg_4bit:src_1_pip5"
+115. Port Connectivity Checks: "reg_3bit:pe3_pip5"
+116. Port Connectivity Checks: "reg_16bit:z7_pip5"
+117. Port Connectivity Checks: "reg_1bit:carry_pip5"
+118. Port Connectivity Checks: "reg_1bit:zero_pip5"
+119. Port Connectivity Checks: "reg_1bit:valid_pip5"
+120. Port Connectivity Checks: "reg_1bit:RF_WR_pip5"
+121. Port Connectivity Checks: "reg_16bit:memdata_pip5"
+122. Port Connectivity Checks: "reg_16bit:pc_pip5"
+123. Port Connectivity Checks: "reg_16bit:ir_pip5"
+124. Port Connectivity Checks: "reg_16bit:alu_out_pip5"
+125. Port Connectivity Checks: "reg_1bit:r7_chge_pip4"
+126. Port Connectivity Checks: "reg_1bit:m4_pip4"
+127. Port Connectivity Checks: "reg_1bit:m3_pip4"
+128. Port Connectivity Checks: "reg_2bit:m2_pip4"
+129. Port Connectivity Checks: "reg_2bit:m1_pip4"
+130. Port Connectivity Checks: "reg_4bit:dest1_pip4"
+131. Port Connectivity Checks: "reg_4bit:src_2_pip4"
+132. Port Connectivity Checks: "reg_4bit:src_1_pip4"
+133. Port Connectivity Checks: "reg_3bit:pe3_pip4"
+134. Port Connectivity Checks: "reg_16bit:z7_pip4"
+135. Port Connectivity Checks: "reg_1bit:carry_pip4"
+136. Port Connectivity Checks: "reg_1bit:zero_pip4"
+137. Port Connectivity Checks: "reg_1bit:valid_pip4"
+138. Port Connectivity Checks: "reg_1bit:mem_RD_pip4"
+139. Port Connectivity Checks: "reg_1bit:mem_WR_pip4"
+140. Port Connectivity Checks: "reg_1bit:RF_WR_pip4"
+141. Port Connectivity Checks: "reg_16bit:pc_pip4"
+142. Port Connectivity Checks: "reg_16bit:ir_pip4"
+143. Port Connectivity Checks: "reg_16bit:alu_out_pip4"
+144. Port Connectivity Checks: "reg_16bit:d2_pip4"
+145. Port Connectivity Checks: "reg_16bit:d1_pip4"
+146. Port Connectivity Checks: "alu:ArithLU"
+147. Port Connectivity Checks: "mux2to1:mux_alu_b"
+148. Port Connectivity Checks: "reg_1bit:m8_pip3"
+149. Port Connectivity Checks: "reg_1bit:m6_pip3"
+150. Port Connectivity Checks: "reg_1bit:m5_pip3"
+151. Port Connectivity Checks: "reg_1bit:m4_pip3"
+152. Port Connectivity Checks: "reg_1bit:m3_pip3"
+153. Port Connectivity Checks: "reg_2bit:m2_pip3"
+154. Port Connectivity Checks: "reg_2bit:m1_pip3"
+155. Port Connectivity Checks: "reg_4bit:dest_1_pip3"
+156. Port Connectivity Checks: "reg_4bit:src_2_pip3"
+157. Port Connectivity Checks: "reg_4bit:src_1_pip3"
+158. Port Connectivity Checks: "reg_16bit:se9_pip3"
+159. Port Connectivity Checks: "reg_16bit:se6_pip3"
+160. Port Connectivity Checks: "reg_3bit:pe3_pip3"
+161. Port Connectivity Checks: "reg_16bit:z7_pip3"
+162. Port Connectivity Checks: "reg_1bit:valid_pip3"
+163. Port Connectivity Checks: "reg_1bit:mem_RD_pip3"
+164. Port Connectivity Checks: "reg_1bit:mem_WR_pip3"
+165. Port Connectivity Checks: "reg_1bit:RF_WR_pip3"
+166. Port Connectivity Checks: "reg_16bit:pc_pip3"
+167. Port Connectivity Checks: "reg_16bit:ir_pip3"
+168. Port Connectivity Checks: "reg_16bit:d2_pip3"
+169. Port Connectivity Checks: "reg_16bit:d1_pip3"
+170. Port Connectivity Checks: "reg_2bit:f1f0_pip2"
+171. Port Connectivity Checks: "instr_dec:ins_decode"
+172. Post-Synthesis Netlist Statistics for Top Partition
+173. Elapsed Time Per Partition
+174. Analysis & Synthesis Messages
 
 
 
@@ -205,7 +206,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 27 22:00:22 2018       ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 27 23:33:15 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; Pipleline-IITB-RISC                         ;
 ; Top-level Entity Name              ; main                                        ;
@@ -1440,6 +1441,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: adder:r7_write ;
++----------------+------------------+-------------------------+
+; Parameter Name ; Value            ; Type                    ;
++----------------+------------------+-------------------------+
+; one16          ; 0000000000000001 ; Unsigned Binary         ;
++----------------+------------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: adder:offset_adder ;
 +----------------+------------------+-----------------------------+
@@ -1477,6 +1488,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; mux_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "adder:r7_write" ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; b[0..14] ; Input ; Info     ; Stuck at GND ;
+; b[15]    ; Input ; Info     ; Stuck at VCC ;
++----------+-------+----------+--------------+
 
 
 +---------------------------------------------------+
@@ -2036,15 +2057,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "reg_file:RegFile"                                                                   ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; r7   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "reg_2bit:f1f0_pip2"                                                                 ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
@@ -2089,7 +2101,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Tue Nov 27 22:00:07 2018
+    Info: Processing started: Tue Nov 27 23:32:56 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pipleline-IITB-RISC -c Pipleline-IITB-RISC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -2163,47 +2175,46 @@ Info (12021): Found 2 design units, including 1 entities, in source file ALU.vhd
     Info (12022): Found design unit 1: alu-behave File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd Line: 18
     Info (12023): Found entity 1: alu File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd Line: 5
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(140): object "alu_sel_dec" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 140
-Warning (10540): VHDL Signal Declaration warning at main.vhd(144): used explicit default value for signal "m12_pip4" because signal was never assigned a value File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 144
-Warning (10540): VHDL Signal Declaration warning at main.vhd(144): used explicit default value for signal "m12_pip5" because signal was never assigned a value File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 144
-Warning (10540): VHDL Signal Declaration warning at main.vhd(144): used explicit default value for signal "m12_pip3" because signal was never assigned a value File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 144
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(149): object "pc_in" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 149
-Warning (10541): VHDL Signal Declaration warning at main.vhd(149): used implicit default value for signal "pc_if" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 149
-Warning (10541): VHDL Signal Declaration warning at main.vhd(149): used implicit default value for signal "ir_if" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 149
-Warning (10541): VHDL Signal Declaration warning at main.vhd(150): used implicit default value for signal "se6_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 150
-Warning (10541): VHDL Signal Declaration warning at main.vhd(150): used implicit default value for signal "se9_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 150
-Warning (10541): VHDL Signal Declaration warning at main.vhd(150): used implicit default value for signal "z7_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 150
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(153): object "f1f0_reg" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 153
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(163): object "src1_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 163
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(163): object "src2_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 163
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(169): object "z_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 169
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(169): object "c_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 169
-Warning (10541): VHDL Signal Declaration warning at main.vhd(171): used implicit default value for signal "alu_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 171
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(176): object "pc_mux_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 176
-Info (12128): Elaborating entity "reg_16bit" for hierarchy "reg_16bit:ir_pip1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 184
-Info (12128): Elaborating entity "reg_1bit" for hierarchy "reg_1bit:valid_pip1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 186
-Info (12128): Elaborating entity "priority_encoder" for hierarchy "priority_encoder:PE" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 191
-Info (12128): Elaborating entity "instr_dec" for hierarchy "instr_dec:ins_decode" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 192
-Info (12128): Elaborating entity "reg_3bit" for hierarchy "reg_3bit:pe3_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 207
-Info (12128): Elaborating entity "reg_2bit" for hierarchy "reg_2bit:f1f0_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 208
-Info (12128): Elaborating entity "reg_4bit" for hierarchy "reg_4bit:src_1_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 211
-Info (12128): Elaborating entity "mux3bit2to1" for hierarchy "mux3bit2to1:mux_reg_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 225
-Info (12128): Elaborating entity "reg_file" for hierarchy "reg_file:RegFile" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 229
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(141): object "alu_sel_dec" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 141
+Warning (10540): VHDL Signal Declaration warning at main.vhd(145): used explicit default value for signal "m12_pip4" because signal was never assigned a value File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 145
+Warning (10540): VHDL Signal Declaration warning at main.vhd(145): used explicit default value for signal "m12_pip5" because signal was never assigned a value File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 145
+Warning (10540): VHDL Signal Declaration warning at main.vhd(145): used explicit default value for signal "m12_pip3" because signal was never assigned a value File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 145
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(150): object "pc_in" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 150
+Warning (10541): VHDL Signal Declaration warning at main.vhd(150): used implicit default value for signal "pc_if" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 150
+Warning (10541): VHDL Signal Declaration warning at main.vhd(150): used implicit default value for signal "ir_if" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 150
+Warning (10541): VHDL Signal Declaration warning at main.vhd(151): used implicit default value for signal "se6_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 151
+Warning (10541): VHDL Signal Declaration warning at main.vhd(151): used implicit default value for signal "se9_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 151
+Warning (10541): VHDL Signal Declaration warning at main.vhd(151): used implicit default value for signal "z7_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 151
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(154): object "f1f0_reg" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 154
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(164): object "src1_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 164
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(164): object "src2_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 164
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(170): object "z_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 170
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(170): object "c_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 170
+Warning (10541): VHDL Signal Declaration warning at main.vhd(172): used implicit default value for signal "alu_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 172
+Info (12128): Elaborating entity "reg_16bit" for hierarchy "reg_16bit:ir_pip1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 186
+Info (12128): Elaborating entity "reg_1bit" for hierarchy "reg_1bit:valid_pip1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 188
+Info (12128): Elaborating entity "priority_encoder" for hierarchy "priority_encoder:PE" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 193
+Info (12128): Elaborating entity "instr_dec" for hierarchy "instr_dec:ins_decode" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 194
+Info (12128): Elaborating entity "reg_3bit" for hierarchy "reg_3bit:pe3_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 209
+Info (12128): Elaborating entity "reg_2bit" for hierarchy "reg_2bit:f1f0_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 210
+Info (12128): Elaborating entity "reg_4bit" for hierarchy "reg_4bit:src_1_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 213
+Info (12128): Elaborating entity "mux3bit2to1" for hierarchy "mux3bit2to1:mux_reg_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 227
+Info (12128): Elaborating entity "reg_file" for hierarchy "reg_file:RegFile" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 231
 Warning (10492): VHDL Process Statement warning at reg_file.vhd(46): signal "registers_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 46
 Warning (10492): VHDL Process Statement warning at reg_file.vhd(49): signal "registers_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 49
 Info (12128): Elaborating entity "reg_16bit" for hierarchy "reg_file:RegFile|reg_16bit:r0" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 30
-Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:mux_alu_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 263
-Info (12128): Elaborating entity "alu" for hierarchy "alu:ArithLU" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 265
+Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:mux_alu_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 266
+Info (12128): Elaborating entity "alu" for hierarchy "alu:ArithLU" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 268
 Warning (10492): VHDL Process Statement warning at ALU.vhd(27): signal "carry_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd Line: 27
 Warning (10492): VHDL Process Statement warning at ALU.vhd(28): signal "zero_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd Line: 28
 Warning (10492): VHDL Process Statement warning at ALU.vhd(47): signal "carry_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd Line: 47
 Warning (10492): VHDL Process Statement warning at ALU.vhd(57): signal "carry_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd Line: 57
 Warning (10492): VHDL Process Statement warning at ALU.vhd(58): signal "zero_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd Line: 58
-Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:memory" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 297
-Info (12128): Elaborating entity "mux3bit4to1" for hierarchy "mux3bit4to1:mux_a3" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 334
-Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:mux_d3" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 335
-Info (12128): Elaborating entity "dep_check" for hierarchy "dep_check:dc1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 339
-Info (12128): Elaborating entity "adder" for hierarchy "adder:offset_adder" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 471
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:memory" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 300
+Info (12128): Elaborating entity "mux3bit4to1" for hierarchy "mux3bit4to1:mux_a3" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 337
+Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:mux_d3" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 338
+Info (12128): Elaborating entity "adder" for hierarchy "adder:r7_write" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 340
+Info (12128): Elaborating entity "dep_check" for hierarchy "dep_check:dc1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 345
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
@@ -2213,10 +2224,10 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
 Info (21057): Implemented 3 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 964 megabytes
-    Info: Processing ended: Tue Nov 27 22:00:22 2018
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:34
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 962 megabytes
+    Info: Processing ended: Tue Nov 27 23:33:15 2018
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:39
 
 

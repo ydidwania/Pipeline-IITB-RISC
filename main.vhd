@@ -26,10 +26,11 @@ component ALU
 end component;
 -- carry_in and zero_in will be  from the pipekine register of Ex/Mem 
 component reg_file is
-	port(	a1,a2,a3				: in std_logic_vector (0 to 2);
-			d3						: in std_logic_vector (0 to 15);
-			wr_en,clk, reset	: in std_logic;
-			d1,d2,R7				: out std_logic_vector(0 to 15)
+	port (
+		a1,a2,a3: in std_logic_vector (0 to 2);
+		d3, d_R7: in std_logic_vector (0 to 15);
+		wr_en,clk, reset, valid: in std_logic;
+		d1,d2: out std_logic_vector(0 to 15)
 	);
 end component;
 component code_memory is
@@ -173,7 +174,8 @@ signal alu_sel, valid_alu_sel						   							      	: std_logic_vector(0 to 1);
 signal h11, h21, h31, h41, h12, h22, h32, h42, alu_op_ex, alu_op_mem, m10, m11_pip1, m11, m11_pip2, stall_pip3	: std_logic;
 signal r7_mux_ex, r7_select_ex, r7_select_mem, r7_select_WB, r7_mem, r7_WB, adc_adz : std_logic;
 signal r7_mux_mem, jlr_op_ex, jal_op_ex: std_logic;
-signal pc_mux_ex, pc_mux_mem,pc_mux_WB,pc_mux_reg, pc_plus_1, offset, pc_plus_offset, jmp_addr, next_pc, r7_value,r7_data_ex : std_logic_vector(0 to 15);
+signal pc_mux_ex, pc_mux_mem,pc_mux_WB,pc_mux_reg, pc_plus_1, offset, pc_plus_offset, jmp_addr : std_logic_vector(0 to 15);
+signal r7_RF_input, next_pc, r7_value,r7_data_ex, pc_WB_plus_1 : std_logic_vector(0 to 15);
 ---------------------------------------------------------------------------------------------------------------
 
 begin
@@ -226,7 +228,8 @@ mux_reg_a    : mux3bit2to1 port map(in_1 =>ir_reg(7 to 9), in_2 =>pe3_reg, sel =
 --mux_reg_b    : mux3to1 port map(in_1 => alu_out, in_2 => RF_d1, in_3 => mem_do, sel => m14, mux_out => d1_reg);
 --mux_reg_c   : mux2to1 port map(in_1 => RF_d2, in_2 => R7, sel => reg_m1, mux_out => RF_d2_2);
 --mux_reg_d    : mux3to1 port map(in_1 => alu_out, in_2 => RF_d2_2, in_3 => mem_do, sel => m13, mux_out => d2_reg);
-RegFile      : reg_file    port map(a1=>RF_a1, a2=>RF_a2, a3=>WB_a3, wr_en=>(RF_WR_WB and valid_reg), d3=>WB_d3, clk=>clk,reset=>reset, d1=>RF_d1, d2=>RF_d2);
+RegFile      : reg_file    port map(a1=>RF_a1, a2=>RF_a2, a3=>WB_a3, wr_en=>(RF_WR_WB and valid_reg), d3=>WB_d3,
+d_R7=>r7_RF_input,valid=>valid_WB, clk=>clk,reset=>reset, d1=>RF_d1, d2=>RF_d2);
 valid_mux_reg <= not(m10 or m11_pip3 or stall_pip3) and valid_reg;
 m11_pip3 <= m11;
 ---------------------------------
@@ -334,6 +337,9 @@ r7_chge_pip5 : reg_1bit port map( d=> r7_mux_mem, clk=>clk, reset=>reset, enable
 mux_a3 : mux3bit4to1 port map(in_1 => ir_WB(4 to 6), in_2 => ir_WB(7 to 9), in_3 => ir_WB(10 to 12), in_4 => pe3_WB, sel => m1, mux_out => WB_a3);
 mux_d3 : mux4to1     port map(in_1 => pc_WB, in_2 => memdata_WB, in_3 => z7_WB, in_4 => alu_out_WB, sel =>m2, mux_out => WB_d3);
 -- corresponding outputs will be connected to RF   
+r7_write: adder port map(a=>pc_WB, b=>"0000000000000001", sum=>pc_WB_plus_1);
+RF_r7_inp: mux2to1 port map(in_1=>pc_WB_plus_1, in_2=>pc_mux_WB, sel=>(r7_WB or r7_select_WB), mux_out=>r7_RF_input);
+
 ---------------------------------
 -- Hazardous - keep out of reach of children
 dc1: dep_check port map(src=> src1_reg, dest=>dest1_ex, check=>h11);
@@ -556,7 +562,6 @@ begin
 	else
 		r7_value <= WB_d3;
 	end if;
-	
 end process;
 
 
