@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pipleline-IITB-RISC
-Wed Nov 28 02:30:52 2018
+Wed Nov 28 06:22:16 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -156,31 +156,31 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 148. Port Connectivity Checks: "reg_16bit:d2_pip4"
 149. Port Connectivity Checks: "reg_16bit:d1_pip4"
 150. Port Connectivity Checks: "mux4to1:mux_alu_b"
-151. Port Connectivity Checks: "reg_1bit:m8_pip3"
-152. Port Connectivity Checks: "reg_2bit:m6_pip3"
-153. Port Connectivity Checks: "reg_1bit:m5_pip3"
-154. Port Connectivity Checks: "reg_1bit:m4_pip3"
-155. Port Connectivity Checks: "reg_1bit:m3_pip3"
-156. Port Connectivity Checks: "reg_2bit:m2_pip3"
-157. Port Connectivity Checks: "reg_2bit:m1_pip3"
-158. Port Connectivity Checks: "reg_4bit:dest_1_pip3"
-159. Port Connectivity Checks: "reg_4bit:src_2_pip3"
-160. Port Connectivity Checks: "reg_4bit:src_1_pip3"
-161. Port Connectivity Checks: "reg_16bit:se9_pip3"
-162. Port Connectivity Checks: "reg_16bit:se6_pip3"
-163. Port Connectivity Checks: "reg_3bit:pe3_pip3"
-164. Port Connectivity Checks: "reg_16bit:z7_pip3"
-165. Port Connectivity Checks: "reg_1bit:valid_pip3"
-166. Port Connectivity Checks: "reg_1bit:mem_RD_pip3"
-167. Port Connectivity Checks: "reg_1bit:mem_WR_pip3"
-168. Port Connectivity Checks: "reg_1bit:RF_WR_pip3"
-169. Port Connectivity Checks: "reg_16bit:pc_pip3"
-170. Port Connectivity Checks: "reg_16bit:ir_pip3"
-171. Port Connectivity Checks: "reg_16bit:d2_pip3"
-172. Port Connectivity Checks: "reg_16bit:d1_pip3"
-173. Port Connectivity Checks: "reg_file:RegFile|reg_1bit:carryReg"
-174. Port Connectivity Checks: "reg_file:RegFile|reg_1bit:zeroReg"
-175. Port Connectivity Checks: "reg_2bit:f1f0_pip2"
+151. Port Connectivity Checks: "reg_2bit:alu_sel_pip3"
+152. Port Connectivity Checks: "reg_1bit:m8_pip3"
+153. Port Connectivity Checks: "reg_2bit:m6_pip3"
+154. Port Connectivity Checks: "reg_1bit:m5_pip3"
+155. Port Connectivity Checks: "reg_1bit:m4_pip3"
+156. Port Connectivity Checks: "reg_1bit:m3_pip3"
+157. Port Connectivity Checks: "reg_2bit:m2_pip3"
+158. Port Connectivity Checks: "reg_2bit:m1_pip3"
+159. Port Connectivity Checks: "reg_4bit:dest_1_pip3"
+160. Port Connectivity Checks: "reg_4bit:src_2_pip3"
+161. Port Connectivity Checks: "reg_4bit:src_1_pip3"
+162. Port Connectivity Checks: "reg_16bit:se9_pip3"
+163. Port Connectivity Checks: "reg_16bit:se6_pip3"
+164. Port Connectivity Checks: "reg_3bit:pe3_pip3"
+165. Port Connectivity Checks: "reg_16bit:z7_pip3"
+166. Port Connectivity Checks: "reg_1bit:valid_pip3"
+167. Port Connectivity Checks: "reg_1bit:mem_RD_pip3"
+168. Port Connectivity Checks: "reg_1bit:mem_WR_pip3"
+169. Port Connectivity Checks: "reg_1bit:RF_WR_pip3"
+170. Port Connectivity Checks: "reg_16bit:pc_pip3"
+171. Port Connectivity Checks: "reg_16bit:ir_pip3"
+172. Port Connectivity Checks: "reg_16bit:d2_pip3"
+173. Port Connectivity Checks: "reg_16bit:d1_pip3"
+174. Port Connectivity Checks: "reg_file:RegFile|reg_1bit:carryReg"
+175. Port Connectivity Checks: "reg_file:RegFile|reg_1bit:zeroReg"
 176. Port Connectivity Checks: "code_memory:code_mem"
 177. Post-Synthesis Netlist Statistics for Top Partition
 178. Elapsed Time Per Partition
@@ -211,7 +211,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 28 02:30:52 2018       ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov 28 06:22:16 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; Pipleline-IITB-RISC                         ;
 ; Top-level Entity Name              ; main                                        ;
@@ -1903,6 +1903,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+-------+----------+--------------+
 
 
++---------------------------------------------------+
+; Port Connectivity Checks: "reg_2bit:alu_sel_pip3" ;
++--------+-------+----------+-----------------------+
+; Port   ; Type  ; Severity ; Details               ;
++--------+-------+----------+-----------------------+
+; enable ; Input ; Info     ; Stuck at VCC          ;
++--------+-------+----------+-----------------------+
+
+
 +----------------------------------------------+
 ; Port Connectivity Checks: "reg_1bit:m8_pip3" ;
 +--------+-------+----------+------------------+
@@ -2119,15 +2128,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "reg_2bit:f1f0_pip2"                                                                 ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +--------------------------------------------------+
 ; Port Connectivity Checks: "code_memory:code_mem" ;
 +--------+-------+----------+----------------------+
@@ -2164,7 +2164,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Wed Nov 28 02:30:38 2018
+    Info: Processing started: Wed Nov 28 06:22:00 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pipleline-IITB-RISC -c Pipleline-IITB-RISC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -2241,34 +2241,33 @@ Info (12127): Elaborating entity "main" for the top level hierarchy
 Warning (10540): VHDL Signal Declaration warning at main.vhd(166): used explicit default value for signal "m12_pip4" because signal was never assigned a value File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 166
 Warning (10540): VHDL Signal Declaration warning at main.vhd(166): used explicit default value for signal "m12_pip5" because signal was never assigned a value File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 166
 Warning (10540): VHDL Signal Declaration warning at main.vhd(166): used explicit default value for signal "m12_pip3" because signal was never assigned a value File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 166
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(175): object "f1f0_reg" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 175
 Warning (10036): Verilog HDL or VHDL warning at main.vhd(185): object "src1_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 185
 Warning (10036): Verilog HDL or VHDL warning at main.vhd(185): object "src2_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 185
-Info (12128): Elaborating entity "reg_16bit" for hierarchy "reg_16bit:ProgC" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 203
-Info (12128): Elaborating entity "code_memory" for hierarchy "code_memory:code_mem" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 206
-Info (12128): Elaborating entity "reg_1bit" for hierarchy "reg_1bit:valid_pip1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 211
-Info (12128): Elaborating entity "priority_encoder" for hierarchy "priority_encoder:PE" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 216
-Info (12128): Elaborating entity "instr_dec" for hierarchy "instr_dec:ins_decode" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 217
-Info (12128): Elaborating entity "se9" for hierarchy "se9:se9_gen" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 222
-Info (12128): Elaborating entity "se6" for hierarchy "se6:se6_gen" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 223
-Info (12128): Elaborating entity "z9" for hierarchy "z9:z7_gen" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 224
-Info (12128): Elaborating entity "reg_3bit" for hierarchy "reg_3bit:pe3_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 235
-Info (12128): Elaborating entity "reg_2bit" for hierarchy "reg_2bit:f1f0_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 236
-Info (12128): Elaborating entity "reg_4bit" for hierarchy "reg_4bit:src_1_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 239
-Info (12128): Elaborating entity "mux3bit2to1" for hierarchy "mux3bit2to1:mux_reg_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 254
-Info (12128): Elaborating entity "reg_file" for hierarchy "reg_file:RegFile" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 258
+Info (12128): Elaborating entity "reg_16bit" for hierarchy "reg_16bit:ProgC" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 222
+Info (12128): Elaborating entity "code_memory" for hierarchy "code_memory:code_mem" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 225
+Info (12128): Elaborating entity "reg_1bit" for hierarchy "reg_1bit:valid_pip1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 232
+Info (12128): Elaborating entity "priority_encoder" for hierarchy "priority_encoder:PE" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 237
+Info (12128): Elaborating entity "instr_dec" for hierarchy "instr_dec:ins_decode" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 238
+Info (12128): Elaborating entity "se9" for hierarchy "se9:se9_gen" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 243
+Info (12128): Elaborating entity "se6" for hierarchy "se6:se6_gen" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 244
+Info (12128): Elaborating entity "z9" for hierarchy "z9:z7_gen" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 245
+Info (12128): Elaborating entity "reg_3bit" for hierarchy "reg_3bit:pe3_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 258
+Info (12128): Elaborating entity "reg_2bit" for hierarchy "reg_2bit:f1f0_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 259
+Info (12128): Elaborating entity "reg_4bit" for hierarchy "reg_4bit:src_1_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 262
+Info (12128): Elaborating entity "mux3bit2to1" for hierarchy "mux3bit2to1:mux_reg_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 277
+Info (12128): Elaborating entity "reg_file" for hierarchy "reg_file:RegFile" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 281
 Warning (10036): Verilog HDL or VHDL warning at reg_file.vhd(34): object "carry_flag" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 34
 Warning (10036): Verilog HDL or VHDL warning at reg_file.vhd(34): object "zero_flag" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 34
 Warning (10492): VHDL Process Statement warning at reg_file.vhd(56): signal "registers_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 56
 Warning (10492): VHDL Process Statement warning at reg_file.vhd(59): signal "registers_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 59
 Info (12128): Elaborating entity "reg_16bit" for hierarchy "reg_file:RegFile|reg_16bit:r0" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 38
-Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:mux_alu_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 294
-Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:mux_alu_b" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 295
-Info (12128): Elaborating entity "alu" for hierarchy "alu:ArithLU" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 296
-Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:memory" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 328
-Info (12128): Elaborating entity "mux3bit4to1" for hierarchy "mux3bit4to1:mux_a3" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 365
-Info (12128): Elaborating entity "adder" for hierarchy "adder:r7_write" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 368
-Info (12128): Elaborating entity "dep_check" for hierarchy "dep_check:dc1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 373
+Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:mux_alu_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 320
+Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:mux_alu_b" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 321
+Info (12128): Elaborating entity "alu" for hierarchy "alu:ArithLU" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 322
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:memory" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 354
+Info (12128): Elaborating entity "mux3bit4to1" for hierarchy "mux3bit4to1:mux_a3" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 391
+Info (12128): Elaborating entity "adder" for hierarchy "adder:r7_write" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 394
+Info (12128): Elaborating entity "dep_check" for hierarchy "dep_check:dc1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 399
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
@@ -2278,10 +2277,10 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
 Info (21057): Implemented 3 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
     Info: Peak virtual memory: 964 megabytes
-    Info: Processing ended: Wed Nov 28 02:30:52 2018
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:34
+    Info: Processing ended: Wed Nov 28 06:22:16 2018
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:36
 
 
