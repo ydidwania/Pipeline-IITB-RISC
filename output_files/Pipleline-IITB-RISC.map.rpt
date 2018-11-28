@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pipleline-IITB-RISC
-Wed Nov 28 08:24:13 2018
+Wed Nov 28 21:02:26 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -26,165 +26,163 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
  18. Parameter Settings for User Entity Instance: reg_1bit:mem_RD_pip2
  19. Parameter Settings for User Entity Instance: reg_1bit:valid_pip2
  20. Parameter Settings for User Entity Instance: reg_16bit:z7_pip2
- 21. Parameter Settings for User Entity Instance: reg_3bit:pe3_pip2
- 22. Parameter Settings for User Entity Instance: reg_2bit:f1f0_pip2
- 23. Parameter Settings for User Entity Instance: reg_16bit:se6_pip2
- 24. Parameter Settings for User Entity Instance: reg_16bit:se9_pip2
- 25. Parameter Settings for User Entity Instance: reg_4bit:src_1_pip2
- 26. Parameter Settings for User Entity Instance: reg_4bit:src_2_pip2
- 27. Parameter Settings for User Entity Instance: reg_4bit:dest_1_pip2
- 28. Parameter Settings for User Entity Instance: reg_2bit:m1_pip2
- 29. Parameter Settings for User Entity Instance: reg_2bit:m2_pip2
- 30. Parameter Settings for User Entity Instance: reg_1bit:m3_pip2
- 31. Parameter Settings for User Entity Instance: reg_1bit:m4_pip2
- 32. Parameter Settings for User Entity Instance: reg_1bit:m5_pip2
- 33. Parameter Settings for User Entity Instance: reg_2bit:m6_pip2
- 34. Parameter Settings for User Entity Instance: reg_1bit:m7_pip2
- 35. Parameter Settings for User Entity Instance: reg_1bit:m8_pip2
- 36. Parameter Settings for User Entity Instance: reg_2bit:alu_sel_pip2
- 37. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r0
- 38. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r1
- 39. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r2
- 40. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r3
- 41. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r4
- 42. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r5
- 43. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r6
- 44. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:reg7
- 45. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_1bit:zeroReg
- 46. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_1bit:carryReg
- 47. Parameter Settings for User Entity Instance: reg_16bit:d1_pip3
- 48. Parameter Settings for User Entity Instance: reg_16bit:d2_pip3
- 49. Parameter Settings for User Entity Instance: reg_16bit:ir_pip3
- 50. Parameter Settings for User Entity Instance: reg_16bit:pc_pip3
- 51. Parameter Settings for User Entity Instance: reg_1bit:RF_WR_pip3
- 52. Parameter Settings for User Entity Instance: reg_1bit:mem_WR_pip3
- 53. Parameter Settings for User Entity Instance: reg_1bit:mem_RD_pip3
- 54. Parameter Settings for User Entity Instance: reg_1bit:valid_pip3
- 55. Parameter Settings for User Entity Instance: reg_16bit:z7_pip3
- 56. Parameter Settings for User Entity Instance: reg_3bit:pe3_pip3
- 57. Parameter Settings for User Entity Instance: reg_16bit:se6_pip3
- 58. Parameter Settings for User Entity Instance: reg_16bit:se9_pip3
- 59. Parameter Settings for User Entity Instance: reg_4bit:src_1_pip3
- 60. Parameter Settings for User Entity Instance: reg_4bit:src_2_pip3
- 61. Parameter Settings for User Entity Instance: reg_4bit:dest_1_pip3
- 62. Parameter Settings for User Entity Instance: reg_2bit:m1_pip3
- 63. Parameter Settings for User Entity Instance: reg_2bit:m2_pip3
- 64. Parameter Settings for User Entity Instance: reg_1bit:m3_pip3
- 65. Parameter Settings for User Entity Instance: reg_1bit:m4_pip3
- 66. Parameter Settings for User Entity Instance: reg_1bit:m5_pip3
- 67. Parameter Settings for User Entity Instance: reg_2bit:m6_pip3
- 68. Parameter Settings for User Entity Instance: reg_1bit:m8_pip3
- 69. Parameter Settings for User Entity Instance: reg_2bit:alu_sel_pip3
- 70. Parameter Settings for User Entity Instance: alu:ArithLU
- 71. Parameter Settings for User Entity Instance: reg_16bit:d1_pip4
- 72. Parameter Settings for User Entity Instance: reg_16bit:d2_pip4
- 73. Parameter Settings for User Entity Instance: reg_16bit:alu_out_pip4
- 74. Parameter Settings for User Entity Instance: reg_16bit:ir_pip4
- 75. Parameter Settings for User Entity Instance: reg_16bit:pc_pip4
- 76. Parameter Settings for User Entity Instance: reg_1bit:RF_WR_pip4
- 77. Parameter Settings for User Entity Instance: reg_1bit:mem_WR_pip4
- 78. Parameter Settings for User Entity Instance: reg_1bit:mem_RD_pip4
- 79. Parameter Settings for User Entity Instance: reg_1bit:valid_pip4
- 80. Parameter Settings for User Entity Instance: reg_1bit:zero_pip4
- 81. Parameter Settings for User Entity Instance: reg_1bit:carry_pip4
- 82. Parameter Settings for User Entity Instance: reg_16bit:z7_pip4
- 83. Parameter Settings for User Entity Instance: reg_3bit:pe3_pip4
- 84. Parameter Settings for User Entity Instance: reg_4bit:src_1_pip4
- 85. Parameter Settings for User Entity Instance: reg_4bit:src_2_pip4
- 86. Parameter Settings for User Entity Instance: reg_4bit:dest1_pip4
- 87. Parameter Settings for User Entity Instance: reg_2bit:m1_pip4
- 88. Parameter Settings for User Entity Instance: reg_2bit:m2_pip4
- 89. Parameter Settings for User Entity Instance: reg_1bit:m3_pip4
- 90. Parameter Settings for User Entity Instance: reg_1bit:m4_pip4
- 91. Parameter Settings for User Entity Instance: reg_1bit:r7_chge_pip4
- 92. Parameter Settings for User Entity Instance: reg_16bit:alu_out_pip5
- 93. Parameter Settings for User Entity Instance: reg_16bit:ir_pip5
- 94. Parameter Settings for User Entity Instance: reg_16bit:pc_pip5
- 95. Parameter Settings for User Entity Instance: reg_16bit:memdata_pip5
- 96. Parameter Settings for User Entity Instance: reg_1bit:RF_WR_pip5
- 97. Parameter Settings for User Entity Instance: reg_1bit:valid_pip5
- 98. Parameter Settings for User Entity Instance: reg_1bit:zero_pip5
- 99. Parameter Settings for User Entity Instance: reg_1bit:carry_pip5
-100. Parameter Settings for User Entity Instance: reg_16bit:z7_pip5
-101. Parameter Settings for User Entity Instance: reg_3bit:pe3_pip5
-102. Parameter Settings for User Entity Instance: reg_4bit:src_1_pip5
-103. Parameter Settings for User Entity Instance: reg_4bit:src_2_pip5
-104. Parameter Settings for User Entity Instance: reg_4bit:dest1_pip5
-105. Parameter Settings for User Entity Instance: reg_2bit:m1_pip5
-106. Parameter Settings for User Entity Instance: reg_2bit:m2_pip5
-107. Parameter Settings for User Entity Instance: reg_1bit:r7_chge_pip5
-108. Parameter Settings for User Entity Instance: adder:r7_write
-109. Parameter Settings for User Entity Instance: adder:offset_adder
-110. Parameter Settings for User Entity Instance: adder:pc_incrementer
-111. Port Connectivity Checks: "adder:pc_incrementer"
-112. Port Connectivity Checks: "adder:r7_write"
-113. Port Connectivity Checks: "reg_1bit:r7_chge_pip5"
-114. Port Connectivity Checks: "reg_2bit:m2_pip5"
-115. Port Connectivity Checks: "reg_2bit:m1_pip5"
-116. Port Connectivity Checks: "reg_4bit:dest1_pip5"
-117. Port Connectivity Checks: "reg_4bit:src_2_pip5"
-118. Port Connectivity Checks: "reg_4bit:src_1_pip5"
-119. Port Connectivity Checks: "reg_3bit:pe3_pip5"
-120. Port Connectivity Checks: "reg_16bit:z7_pip5"
-121. Port Connectivity Checks: "reg_1bit:carry_pip5"
-122. Port Connectivity Checks: "reg_1bit:zero_pip5"
-123. Port Connectivity Checks: "reg_1bit:valid_pip5"
-124. Port Connectivity Checks: "reg_1bit:RF_WR_pip5"
-125. Port Connectivity Checks: "reg_16bit:memdata_pip5"
-126. Port Connectivity Checks: "reg_16bit:pc_pip5"
-127. Port Connectivity Checks: "reg_16bit:ir_pip5"
-128. Port Connectivity Checks: "reg_16bit:alu_out_pip5"
-129. Port Connectivity Checks: "reg_1bit:r7_chge_pip4"
-130. Port Connectivity Checks: "reg_1bit:m4_pip4"
-131. Port Connectivity Checks: "reg_1bit:m3_pip4"
-132. Port Connectivity Checks: "reg_2bit:m2_pip4"
-133. Port Connectivity Checks: "reg_2bit:m1_pip4"
-134. Port Connectivity Checks: "reg_4bit:dest1_pip4"
-135. Port Connectivity Checks: "reg_4bit:src_2_pip4"
-136. Port Connectivity Checks: "reg_4bit:src_1_pip4"
-137. Port Connectivity Checks: "reg_3bit:pe3_pip4"
-138. Port Connectivity Checks: "reg_16bit:z7_pip4"
-139. Port Connectivity Checks: "reg_1bit:carry_pip4"
-140. Port Connectivity Checks: "reg_1bit:zero_pip4"
-141. Port Connectivity Checks: "reg_1bit:valid_pip4"
-142. Port Connectivity Checks: "reg_1bit:mem_RD_pip4"
-143. Port Connectivity Checks: "reg_1bit:mem_WR_pip4"
-144. Port Connectivity Checks: "reg_1bit:RF_WR_pip4"
-145. Port Connectivity Checks: "reg_16bit:pc_pip4"
-146. Port Connectivity Checks: "reg_16bit:ir_pip4"
-147. Port Connectivity Checks: "reg_16bit:alu_out_pip4"
-148. Port Connectivity Checks: "reg_16bit:d2_pip4"
-149. Port Connectivity Checks: "reg_16bit:d1_pip4"
-150. Port Connectivity Checks: "mux4to1:mux_alu_b"
-151. Port Connectivity Checks: "reg_2bit:alu_sel_pip3"
-152. Port Connectivity Checks: "reg_1bit:m8_pip3"
-153. Port Connectivity Checks: "reg_2bit:m6_pip3"
-154. Port Connectivity Checks: "reg_1bit:m5_pip3"
-155. Port Connectivity Checks: "reg_1bit:m4_pip3"
-156. Port Connectivity Checks: "reg_1bit:m3_pip3"
-157. Port Connectivity Checks: "reg_2bit:m2_pip3"
-158. Port Connectivity Checks: "reg_2bit:m1_pip3"
-159. Port Connectivity Checks: "reg_4bit:dest_1_pip3"
-160. Port Connectivity Checks: "reg_4bit:src_2_pip3"
-161. Port Connectivity Checks: "reg_4bit:src_1_pip3"
-162. Port Connectivity Checks: "reg_16bit:se9_pip3"
-163. Port Connectivity Checks: "reg_16bit:se6_pip3"
-164. Port Connectivity Checks: "reg_3bit:pe3_pip3"
-165. Port Connectivity Checks: "reg_16bit:z7_pip3"
-166. Port Connectivity Checks: "reg_1bit:valid_pip3"
-167. Port Connectivity Checks: "reg_1bit:mem_RD_pip3"
-168. Port Connectivity Checks: "reg_1bit:mem_WR_pip3"
-169. Port Connectivity Checks: "reg_1bit:RF_WR_pip3"
-170. Port Connectivity Checks: "reg_16bit:pc_pip3"
-171. Port Connectivity Checks: "reg_16bit:ir_pip3"
-172. Port Connectivity Checks: "reg_16bit:d2_pip3"
-173. Port Connectivity Checks: "reg_16bit:d1_pip3"
-174. Port Connectivity Checks: "reg_file:RegFile|reg_1bit:carryReg"
-175. Port Connectivity Checks: "reg_file:RegFile|reg_1bit:zeroReg"
-176. Port Connectivity Checks: "code_memory:code_mem"
-177. Post-Synthesis Netlist Statistics for Top Partition
-178. Elapsed Time Per Partition
-179. Analysis & Synthesis Messages
+ 21. Parameter Settings for User Entity Instance: reg_16bit:se6_pip2
+ 22. Parameter Settings for User Entity Instance: reg_16bit:se9_pip2
+ 23. Parameter Settings for User Entity Instance: reg_4bit:src_1_pip2
+ 24. Parameter Settings for User Entity Instance: reg_4bit:src_2_pip2
+ 25. Parameter Settings for User Entity Instance: reg_4bit:dest_1_pip2
+ 26. Parameter Settings for User Entity Instance: reg_2bit:m1_pip2
+ 27. Parameter Settings for User Entity Instance: reg_2bit:m2_pip2
+ 28. Parameter Settings for User Entity Instance: reg_1bit:m3_pip2
+ 29. Parameter Settings for User Entity Instance: reg_1bit:m4_pip2
+ 30. Parameter Settings for User Entity Instance: reg_1bit:m5_pip2
+ 31. Parameter Settings for User Entity Instance: reg_2bit:m6_pip2
+ 32. Parameter Settings for User Entity Instance: reg_1bit:m7_pip2
+ 33. Parameter Settings for User Entity Instance: reg_1bit:m8_pip2
+ 34. Parameter Settings for User Entity Instance: reg_2bit:alu_sel_pip2
+ 35. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r0
+ 36. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r1
+ 37. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r2
+ 38. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r3
+ 39. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r4
+ 40. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r5
+ 41. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:r6
+ 42. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_16bit:reg7
+ 43. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_1bit:zeroReg
+ 44. Parameter Settings for User Entity Instance: reg_file:RegFile|reg_1bit:carryReg
+ 45. Parameter Settings for User Entity Instance: reg_16bit:d1_pip3
+ 46. Parameter Settings for User Entity Instance: reg_16bit:d2_pip3
+ 47. Parameter Settings for User Entity Instance: reg_16bit:ir_pip3
+ 48. Parameter Settings for User Entity Instance: reg_16bit:pc_pip3
+ 49. Parameter Settings for User Entity Instance: reg_1bit:RF_WR_pip3
+ 50. Parameter Settings for User Entity Instance: reg_1bit:mem_WR_pip3
+ 51. Parameter Settings for User Entity Instance: reg_1bit:mem_RD_pip3
+ 52. Parameter Settings for User Entity Instance: reg_1bit:valid_pip3
+ 53. Parameter Settings for User Entity Instance: reg_16bit:z7_pip3
+ 54. Parameter Settings for User Entity Instance: reg_3bit:pe3_pip3
+ 55. Parameter Settings for User Entity Instance: reg_16bit:se6_pip3
+ 56. Parameter Settings for User Entity Instance: reg_16bit:se9_pip3
+ 57. Parameter Settings for User Entity Instance: reg_4bit:src_1_pip3
+ 58. Parameter Settings for User Entity Instance: reg_4bit:src_2_pip3
+ 59. Parameter Settings for User Entity Instance: reg_4bit:dest_1_pip3
+ 60. Parameter Settings for User Entity Instance: reg_2bit:m1_pip3
+ 61. Parameter Settings for User Entity Instance: reg_2bit:m2_pip3
+ 62. Parameter Settings for User Entity Instance: reg_1bit:m3_pip3
+ 63. Parameter Settings for User Entity Instance: reg_1bit:m4_pip3
+ 64. Parameter Settings for User Entity Instance: reg_1bit:m5_pip3
+ 65. Parameter Settings for User Entity Instance: reg_2bit:m6_pip3
+ 66. Parameter Settings for User Entity Instance: reg_1bit:m8_pip3
+ 67. Parameter Settings for User Entity Instance: reg_2bit:alu_sel_pip3
+ 68. Parameter Settings for User Entity Instance: alu:ArithLU
+ 69. Parameter Settings for User Entity Instance: reg_16bit:d1_pip4
+ 70. Parameter Settings for User Entity Instance: reg_16bit:d2_pip4
+ 71. Parameter Settings for User Entity Instance: reg_16bit:alu_out_pip4
+ 72. Parameter Settings for User Entity Instance: reg_16bit:ir_pip4
+ 73. Parameter Settings for User Entity Instance: reg_16bit:pc_pip4
+ 74. Parameter Settings for User Entity Instance: reg_1bit:RF_WR_pip4
+ 75. Parameter Settings for User Entity Instance: reg_1bit:mem_WR_pip4
+ 76. Parameter Settings for User Entity Instance: reg_1bit:mem_RD_pip4
+ 77. Parameter Settings for User Entity Instance: reg_1bit:valid_pip4
+ 78. Parameter Settings for User Entity Instance: reg_1bit:zero_pip4
+ 79. Parameter Settings for User Entity Instance: reg_1bit:carry_pip4
+ 80. Parameter Settings for User Entity Instance: reg_16bit:z7_pip4
+ 81. Parameter Settings for User Entity Instance: reg_3bit:pe3_pip4
+ 82. Parameter Settings for User Entity Instance: reg_4bit:src_1_pip4
+ 83. Parameter Settings for User Entity Instance: reg_4bit:src_2_pip4
+ 84. Parameter Settings for User Entity Instance: reg_4bit:dest1_pip4
+ 85. Parameter Settings for User Entity Instance: reg_2bit:m1_pip4
+ 86. Parameter Settings for User Entity Instance: reg_2bit:m2_pip4
+ 87. Parameter Settings for User Entity Instance: reg_1bit:m3_pip4
+ 88. Parameter Settings for User Entity Instance: reg_1bit:m4_pip4
+ 89. Parameter Settings for User Entity Instance: reg_1bit:r7_chge_pip4
+ 90. Parameter Settings for User Entity Instance: reg_16bit:alu_out_pip5
+ 91. Parameter Settings for User Entity Instance: reg_16bit:ir_pip5
+ 92. Parameter Settings for User Entity Instance: reg_16bit:pc_pip5
+ 93. Parameter Settings for User Entity Instance: reg_16bit:memdata_pip5
+ 94. Parameter Settings for User Entity Instance: reg_1bit:RF_WR_pip5
+ 95. Parameter Settings for User Entity Instance: reg_1bit:valid_pip5
+ 96. Parameter Settings for User Entity Instance: reg_1bit:zero_pip5
+ 97. Parameter Settings for User Entity Instance: reg_1bit:carry_pip5
+ 98. Parameter Settings for User Entity Instance: reg_16bit:z7_pip5
+ 99. Parameter Settings for User Entity Instance: reg_3bit:pe3_pip5
+100. Parameter Settings for User Entity Instance: reg_4bit:src_1_pip5
+101. Parameter Settings for User Entity Instance: reg_4bit:src_2_pip5
+102. Parameter Settings for User Entity Instance: reg_4bit:dest1_pip5
+103. Parameter Settings for User Entity Instance: reg_2bit:m1_pip5
+104. Parameter Settings for User Entity Instance: reg_2bit:m2_pip5
+105. Parameter Settings for User Entity Instance: reg_1bit:r7_chge_pip5
+106. Parameter Settings for User Entity Instance: adder:r7_write
+107. Parameter Settings for User Entity Instance: adder:offset_adder
+108. Parameter Settings for User Entity Instance: adder:pc_incrementer
+109. Port Connectivity Checks: "adder:pc_incrementer"
+110. Port Connectivity Checks: "adder:r7_write"
+111. Port Connectivity Checks: "reg_1bit:r7_chge_pip5"
+112. Port Connectivity Checks: "reg_2bit:m2_pip5"
+113. Port Connectivity Checks: "reg_2bit:m1_pip5"
+114. Port Connectivity Checks: "reg_4bit:dest1_pip5"
+115. Port Connectivity Checks: "reg_4bit:src_2_pip5"
+116. Port Connectivity Checks: "reg_4bit:src_1_pip5"
+117. Port Connectivity Checks: "reg_3bit:pe3_pip5"
+118. Port Connectivity Checks: "reg_16bit:z7_pip5"
+119. Port Connectivity Checks: "reg_1bit:carry_pip5"
+120. Port Connectivity Checks: "reg_1bit:zero_pip5"
+121. Port Connectivity Checks: "reg_1bit:valid_pip5"
+122. Port Connectivity Checks: "reg_1bit:RF_WR_pip5"
+123. Port Connectivity Checks: "reg_16bit:memdata_pip5"
+124. Port Connectivity Checks: "reg_16bit:pc_pip5"
+125. Port Connectivity Checks: "reg_16bit:ir_pip5"
+126. Port Connectivity Checks: "reg_16bit:alu_out_pip5"
+127. Port Connectivity Checks: "reg_1bit:r7_chge_pip4"
+128. Port Connectivity Checks: "reg_1bit:m4_pip4"
+129. Port Connectivity Checks: "reg_1bit:m3_pip4"
+130. Port Connectivity Checks: "reg_2bit:m2_pip4"
+131. Port Connectivity Checks: "reg_2bit:m1_pip4"
+132. Port Connectivity Checks: "reg_4bit:dest1_pip4"
+133. Port Connectivity Checks: "reg_4bit:src_2_pip4"
+134. Port Connectivity Checks: "reg_4bit:src_1_pip4"
+135. Port Connectivity Checks: "reg_3bit:pe3_pip4"
+136. Port Connectivity Checks: "reg_16bit:z7_pip4"
+137. Port Connectivity Checks: "reg_1bit:carry_pip4"
+138. Port Connectivity Checks: "reg_1bit:zero_pip4"
+139. Port Connectivity Checks: "reg_1bit:valid_pip4"
+140. Port Connectivity Checks: "reg_1bit:mem_RD_pip4"
+141. Port Connectivity Checks: "reg_1bit:mem_WR_pip4"
+142. Port Connectivity Checks: "reg_1bit:RF_WR_pip4"
+143. Port Connectivity Checks: "reg_16bit:pc_pip4"
+144. Port Connectivity Checks: "reg_16bit:ir_pip4"
+145. Port Connectivity Checks: "reg_16bit:alu_out_pip4"
+146. Port Connectivity Checks: "reg_16bit:d2_pip4"
+147. Port Connectivity Checks: "reg_16bit:d1_pip4"
+148. Port Connectivity Checks: "mux4to1:mux_alu_b"
+149. Port Connectivity Checks: "reg_2bit:alu_sel_pip3"
+150. Port Connectivity Checks: "reg_1bit:m8_pip3"
+151. Port Connectivity Checks: "reg_2bit:m6_pip3"
+152. Port Connectivity Checks: "reg_1bit:m5_pip3"
+153. Port Connectivity Checks: "reg_1bit:m4_pip3"
+154. Port Connectivity Checks: "reg_1bit:m3_pip3"
+155. Port Connectivity Checks: "reg_2bit:m2_pip3"
+156. Port Connectivity Checks: "reg_2bit:m1_pip3"
+157. Port Connectivity Checks: "reg_4bit:dest_1_pip3"
+158. Port Connectivity Checks: "reg_4bit:src_2_pip3"
+159. Port Connectivity Checks: "reg_4bit:src_1_pip3"
+160. Port Connectivity Checks: "reg_16bit:se9_pip3"
+161. Port Connectivity Checks: "reg_16bit:se6_pip3"
+162. Port Connectivity Checks: "reg_3bit:pe3_pip3"
+163. Port Connectivity Checks: "reg_16bit:z7_pip3"
+164. Port Connectivity Checks: "reg_1bit:valid_pip3"
+165. Port Connectivity Checks: "reg_1bit:mem_RD_pip3"
+166. Port Connectivity Checks: "reg_1bit:mem_WR_pip3"
+167. Port Connectivity Checks: "reg_1bit:RF_WR_pip3"
+168. Port Connectivity Checks: "reg_16bit:pc_pip3"
+169. Port Connectivity Checks: "reg_16bit:ir_pip3"
+170. Port Connectivity Checks: "reg_16bit:d2_pip3"
+171. Port Connectivity Checks: "reg_16bit:d1_pip3"
+172. Port Connectivity Checks: "reg_file:RegFile|reg_1bit:carryReg"
+173. Port Connectivity Checks: "reg_file:RegFile|reg_1bit:zeroReg"
+174. Port Connectivity Checks: "code_memory:code_mem"
+175. Post-Synthesis Netlist Statistics for Top Partition
+176. Elapsed Time Per Partition
+177. Analysis & Synthesis Messages
 
 
 
@@ -211,7 +209,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 28 08:24:13 2018       ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov 28 21:02:26 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; Pipleline-IITB-RISC                         ;
 ; Top-level Entity Name              ; main                                        ;
@@ -545,28 +543,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; zero16         ; 0000000000000000 ; Unsigned Binary            ;
 ; one16          ; 0000000000000001 ; Unsigned Binary            ;
 +----------------+------------------+----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: reg_3bit:pe3_pip2 ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; zero3          ; 000   ; Unsigned Binary                       ;
-; one3           ; 001   ; Unsigned Binary                       ;
-+----------------+-------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: reg_2bit:f1f0_pip2 ;
-+----------------+-------+----------------------------------------+
-; Parameter Name ; Value ; Type                                   ;
-+----------------+-------+----------------------------------------+
-; zero2          ; 00    ; Unsigned Binary                        ;
-; one2           ; 01    ; Unsigned Binary                        ;
-+----------------+-------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -2164,7 +2140,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Wed Nov 28 08:23:59 2018
+    Info: Processing started: Wed Nov 28 21:02:11 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pipleline-IITB-RISC -c Pipleline-IITB-RISC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -2243,31 +2219,31 @@ Warning (10540): VHDL Signal Declaration warning at main.vhd(166): used explicit
 Warning (10540): VHDL Signal Declaration warning at main.vhd(166): used explicit default value for signal "m12_pip3" because signal was never assigned a value File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 166
 Warning (10036): Verilog HDL or VHDL warning at main.vhd(185): object "src1_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 185
 Warning (10036): Verilog HDL or VHDL warning at main.vhd(185): object "src2_WB" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 185
-Info (12128): Elaborating entity "reg_16bit" for hierarchy "reg_16bit:ProgC" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 222
-Info (12128): Elaborating entity "code_memory" for hierarchy "code_memory:code_mem" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 225
-Info (12128): Elaborating entity "reg_1bit" for hierarchy "reg_1bit:valid_pip1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 232
-Info (12128): Elaborating entity "priority_encoder" for hierarchy "priority_encoder:PE" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 237
-Info (12128): Elaborating entity "instr_dec" for hierarchy "instr_dec:ins_decode" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 238
-Info (12128): Elaborating entity "se9" for hierarchy "se9:se9_gen" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 243
-Info (12128): Elaborating entity "se6" for hierarchy "se6:se6_gen" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 244
-Info (12128): Elaborating entity "z9" for hierarchy "z9:z7_gen" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 245
-Info (12128): Elaborating entity "reg_3bit" for hierarchy "reg_3bit:pe3_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 258
-Info (12128): Elaborating entity "reg_2bit" for hierarchy "reg_2bit:f1f0_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 259
-Info (12128): Elaborating entity "reg_4bit" for hierarchy "reg_4bit:src_1_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 262
-Info (12128): Elaborating entity "mux3bit2to1" for hierarchy "mux3bit2to1:mux_reg_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 277
-Info (12128): Elaborating entity "reg_file" for hierarchy "reg_file:RegFile" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 281
+Info (12128): Elaborating entity "reg_16bit" for hierarchy "reg_16bit:ProgC" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 238
+Info (12128): Elaborating entity "code_memory" for hierarchy "code_memory:code_mem" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 241
+Info (12128): Elaborating entity "reg_1bit" for hierarchy "reg_1bit:valid_pip1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 248
+Info (12128): Elaborating entity "priority_encoder" for hierarchy "priority_encoder:PE" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 253
+Info (12128): Elaborating entity "instr_dec" for hierarchy "instr_dec:ins_decode" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 254
+Info (12128): Elaborating entity "se9" for hierarchy "se9:se9_gen" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 259
+Info (12128): Elaborating entity "se6" for hierarchy "se6:se6_gen" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 260
+Info (12128): Elaborating entity "z9" for hierarchy "z9:z7_gen" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 261
+Info (12128): Elaborating entity "reg_4bit" for hierarchy "reg_4bit:src_1_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 278
+Info (12128): Elaborating entity "reg_2bit" for hierarchy "reg_2bit:m1_pip2" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 281
+Info (12128): Elaborating entity "mux3bit2to1" for hierarchy "mux3bit2to1:mux_reg_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 293
+Info (12128): Elaborating entity "reg_file" for hierarchy "reg_file:RegFile" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 297
 Warning (10036): Verilog HDL or VHDL warning at reg_file.vhd(34): object "carry_flag" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 34
 Warning (10036): Verilog HDL or VHDL warning at reg_file.vhd(34): object "zero_flag" assigned a value but never read File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 34
 Warning (10492): VHDL Process Statement warning at reg_file.vhd(56): signal "registers_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 56
 Warning (10492): VHDL Process Statement warning at reg_file.vhd(59): signal "registers_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 59
 Info (12128): Elaborating entity "reg_16bit" for hierarchy "reg_file:RegFile|reg_16bit:r0" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd Line: 38
-Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:mux_alu_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 320
-Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:mux_alu_b" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 321
-Info (12128): Elaborating entity "alu" for hierarchy "alu:ArithLU" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 322
-Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:memory" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 355
-Info (12128): Elaborating entity "mux3bit4to1" for hierarchy "mux3bit4to1:mux_a3" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 392
-Info (12128): Elaborating entity "adder" for hierarchy "adder:r7_write" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 395
-Info (12128): Elaborating entity "dep_check" for hierarchy "dep_check:dc1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 400
+Info (12128): Elaborating entity "reg_3bit" for hierarchy "reg_3bit:pe3_pip3" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 316
+Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:mux_alu_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 336
+Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:mux_alu_b" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 337
+Info (12128): Elaborating entity "alu" for hierarchy "alu:ArithLU" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 338
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:memory" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 371
+Info (12128): Elaborating entity "mux3bit4to1" for hierarchy "mux3bit4to1:mux_a3" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 408
+Info (12128): Elaborating entity "adder" for hierarchy "adder:r7_write" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 411
+Info (12128): Elaborating entity "dep_check" for hierarchy "dep_check:dc1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 416
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
@@ -2278,9 +2254,9 @@ Info (21057): Implemented 3 device resources after synthesis - the final resourc
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 0 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 962 megabytes
-    Info: Processing ended: Wed Nov 28 08:24:13 2018
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:33
+    Info: Peak virtual memory: 963 megabytes
+    Info: Processing ended: Wed Nov 28 21:02:26 2018
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:34
 
 

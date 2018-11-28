@@ -13,8 +13,6 @@ clk => reg_1bit:mem_WR_pip2.clk
 clk => reg_1bit:mem_RD_pip2.clk
 clk => reg_1bit:valid_pip2.clk
 clk => reg_16bit:z7_pip2.clk
-clk => reg_3bit:pe3_pip2.clk
-clk => reg_2bit:f1f0_pip2.clk
 clk => reg_16bit:se6_pip2.clk
 clk => reg_16bit:se9_pip2.clk
 clk => reg_4bit:src_1_pip2.clk
@@ -95,7 +93,6 @@ reset => reg_16bit:ProgC.reset
 reset => reg_16bit:ir_pip1.reset
 reset => reg_16bit:pc_pip1.reset
 reset => reg_1bit:valid_pip1.reset
-reset => priority_encoder:PE.rst
 reset => reg_16bit:ir_pip2.reset
 reset => reg_16bit:pc_pip2.reset
 reset => reg_1bit:RF_WR_pip2.reset
@@ -104,8 +101,6 @@ reset => reg_1bit:mem_WR_pip2.reset
 reset => reg_1bit:mem_RD_pip2.reset
 reset => reg_1bit:valid_pip2.reset
 reset => reg_16bit:z7_pip2.reset
-reset => reg_3bit:pe3_pip2.reset
-reset => reg_2bit:f1f0_pip2.reset
 reset => reg_16bit:se6_pip2.reset
 reset => reg_16bit:se9_pip2.reset
 reset => reg_4bit:src_1_pip2.reset
@@ -997,37 +992,6 @@ q[5] <= q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[4] <= q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|main|reg_3bit:pe3_pip2
-d[2] => q[2]~reg0.DATAIN
-d[1] => q[1]~reg0.DATAIN
-d[0] => q[0]~reg0.DATAIN
-clk => q[2]~reg0.CLK
-clk => q[1]~reg0.CLK
-clk => q[0]~reg0.CLK
-reset => q[2]~reg0.ACLR
-reset => q[1]~reg0.ACLR
-reset => q[0]~reg0.ACLR
-enable => q[2]~reg0.ENA
-enable => q[1]~reg0.ENA
-enable => q[0]~reg0.ENA
-q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|main|reg_2bit:f1f0_pip2
-d[1] => q[1]~reg0.DATAIN
-d[0] => q[0]~reg0.DATAIN
-clk => q[1]~reg0.CLK
-clk => q[0]~reg0.CLK
-reset => q[1]~reg0.ACLR
-reset => q[0]~reg0.ACLR
-enable => q[1]~reg0.ENA
-enable => q[0]~reg0.ENA
 q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
