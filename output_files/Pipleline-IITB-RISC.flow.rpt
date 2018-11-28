@@ -1,9 +1,5 @@
 Flow report for Pipleline-IITB-RISC
-<<<<<<< HEAD
-Wed Nov 28 06:22:30 2018
-=======
-Wed Nov 28 08:07:35 2018
->>>>>>> master
+Wed Nov 28 08:24:27 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -45,11 +41,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-<<<<<<< HEAD
-; Flow Status                        ; Successful - Wed Nov 28 06:22:30 2018       ;
-=======
-; Flow Status                        ; Successful - Wed Nov 28 08:07:35 2018       ;
->>>>>>> master
+; Flow Status                        ; Successful - Wed Nov 28 08:24:27 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; Pipleline-IITB-RISC                         ;
 ; Top-level Entity Name              ; main                                        ;
@@ -73,11 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-<<<<<<< HEAD
-; Start date & time ; 11/28/2018 06:22:00 ;
-=======
-; Start date & time ; 11/28/2018 08:07:08 ;
->>>>>>> master
+; Start date & time ; 11/28/2018 08:23:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Pipleline-IITB-RISC ;
 +-------------------+---------------------+
@@ -88,11 +76,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value       ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------------+-------------+----------------+
-<<<<<<< HEAD
-; COMPILER_SIGNATURE_ID               ; 220295162002240.154336632014127        ; --                  ; --          ; --             ;
-=======
-; COMPILER_SIGNATURE_ID               ; 220295162002240.154337262818038        ; --                  ; --          ; --             ;
->>>>>>> master
+; COMPILER_SIGNATURE_ID               ; 220295162002240.154337363918736        ; --                  ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --                  ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>              ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --                  ; --          ; eda_simulation ;
@@ -116,21 +100,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-<<<<<<< HEAD
-; Analysis & Synthesis      ; 00:00:15     ; 1.0                     ; 964 MB              ; 00:00:36                           ;
-; Fitter                    ; 00:00:07     ; 1.0                     ; 1164 MB             ; 00:00:06                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 815 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 831 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 1042 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:26     ; --                      ; --                  ; 00:00:46                           ;
-=======
 ; Analysis & Synthesis      ; 00:00:14     ; 1.0                     ; 960 MB              ; 00:00:33                           ;
-; Fitter                    ; 00:00:05     ; 1.0                     ; 1164 MB             ; 00:00:06                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 816 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 833 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 1042 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:21     ; --                      ; --                  ; 00:00:43                           ;
->>>>>>> master
+; Fitter                    ; 00:00:05     ; 1.0                     ; 1167 MB             ; 00:00:06                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 814 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 828 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1042 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:24     ; --                      ; --                  ; 00:00:43                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
