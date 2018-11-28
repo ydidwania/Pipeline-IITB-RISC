@@ -11,7 +11,7 @@
 # 
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/instr_decod.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:19 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/instr_decod.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -19,11 +19,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity instr_dec
 # -- Compiling architecture behave of instr_dec
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:19 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/adder.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:19 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/adder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -31,88 +31,88 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity adder
 # -- Compiling architecture behave of adder
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:19 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/dep_check.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:19 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/dep_check.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity dep_check
 # -- Compiling architecture behave of dep_check
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:19 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/priority_encoder.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:19 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/priority_encoder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity priority_encoder
 # -- Compiling architecture behave of priority_encoder
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:19 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_4bit.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:19 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_4bit.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity reg_4bit
 # -- Compiling architecture behave of reg_4bit
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:19 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux3bit4to1.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:19 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux3bit4to1.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mux3bit4to1
 # -- Compiling architecture behave of mux3bit4to1
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:19 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_3bit.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:19 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_3bit.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity reg_3bit
 # -- Compiling architecture behave of reg_3bit
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_2bit.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:20 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_2bit.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity reg_2bit
 # -- Compiling architecture behave of reg_2bit
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_1bit.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:20 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_1bit.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity reg_1bit
 # -- Compiling architecture behave of reg_1bit
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/data_memory.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:20 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/data_memory.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -120,11 +120,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity data_memory
 # -- Compiling architecture comb of data_memory
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/code_memory.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:20 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/code_memory.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -132,55 +132,55 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity code_memory
 # -- Compiling architecture comb of code_memory
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:20 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity main
 # -- Compiling architecture behave of main
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/z9.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:20 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/z9.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity z9
 # -- Compiling architecture behave of z9
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/se9.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:20 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/se9.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity se9
 # -- Compiling architecture behave of se9
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/se6.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:20 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/se6.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity se6
 # -- Compiling architecture behave of se6
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:20 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -188,55 +188,55 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity reg_file
 # -- Compiling architecture behave of reg_file
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_16bit.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:20 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_16bit.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity reg_16bit
 # -- Compiling architecture behave of reg_16bit
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux4to1.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:20 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux4to1.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mux4to1
 # -- Compiling architecture behave of mux4to1
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux3bit2to1.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:20 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux3bit2to1.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mux3bit2to1
 # -- Compiling architecture behave of mux3bit2to1
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux2to1.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:20 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux2to1.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mux2to1
 # -- Compiling architecture behave of mux2to1
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -2008 -work work {/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:15:24 on Nov 28,2018
+# Start time: 08:08:20 on Nov 28,2018
 # vcom -reportprogress 300 -2008 -work work /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -244,14 +244,14 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity alu
 # -- Compiling architecture behave of alu
-# End time: 01:15:24 on Nov 28,2018, Elapsed time: 0:00:00
+# End time: 08:08:20 on Nov 28,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # 
 # stdin: <EOF>
 vsim work.main(behave)
 # vsim work.main(behave) 
-# Start time: 01:15:31 on Nov 28,2018
+# Start time: 08:08:29 on Nov 28,2018
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -271,200 +271,28 @@ vsim work.main(behave)
 # Loading work.mux3bit2to1(behave)
 # Loading work.reg_file(behave)
 # Loading work.mux2to1(behave)
+# Loading work.mux4to1(behave)
 # Loading work.alu(behave)
 # Loading work.data_memory(comb)
 # Loading work.mux3bit4to1(behave)
-# Loading work.mux4to1(behave)
 # Loading work.adder(behave)
 # Loading work.dep_check(behave)
 add wave -position insertpoint  \
-sim:/main/clk \
-sim:/main/reset \
-sim:/main/clk_50 \
-sim:/main/m1 \
-sim:/main/m2 \
-sim:/main/alu_sel_dec \
-sim:/main/alu_sel_reg \
-sim:/main/m3 \
-sim:/main/m4 \
-sim:/main/m5 \
-sim:/main/m6 \
-sim:/main/m7 \
-sim:/main/m7_dec \
-sim:/main/m8_dec \
-sim:/main/m8_Reg \
-sim:/main/m8 \
-sim:/main/m5_dec \
-sim:/main/m5_Reg \
-sim:/main/m9 \
-sim:/main/m6_dec \
-sim:/main/m6_reg \
-sim:/main/m3_dec \
-sim:/main/m3_reg \
-sim:/main/m3_ex \
-sim:/main/m4_dec \
-sim:/main/m4_reg \
-sim:/main/m4_ex \
-sim:/main/m1_dec \
-sim:/main/m1_reg \
-sim:/main/m1_ex \
-sim:/main/m1_mem \
-sim:/main/m2_dec \
-sim:/main/m2_reg \
-sim:/main/m2_ex \
-sim:/main/m2_mem \
-sim:/main/m11_pip4 \
-sim:/main/m12_pip4 \
-sim:/main/m12_pip5 \
-sim:/main/m11_pip3 \
-sim:/main/m12_pip1 \
-sim:/main/m12_pip2 \
-sim:/main/m12_pip3 \
-sim:/main/m11_pip5 \
-sim:/main/m12_pc \
-sim:/main/pc_in \
-sim:/main/pc_if \
-sim:/main/ir_if \
-sim:/main/se6_dec \
-sim:/main/pc_dec \
-sim:/main/se9_dec \
-sim:/main/z7_dec \
-sim:/main/ir_dec \
-sim:/main/valid_dec \
-sim:/main/RF_WR_dec \
-sim:/main/mem_WR_dec \
-sim:/main/mem_RD_dec \
-sim:/main/RF_RD_dec \
-sim:/main/src1_dec \
-sim:/main/src2_dec \
-sim:/main/dest1_dec \
-sim:/main/f1f0_dec \
-sim:/main/f1f0_reg \
-sim:/main/se6_reg \
-sim:/main/pc_reg \
-sim:/main/se9_reg \
-sim:/main/z7_reg \
-sim:/main/d1_reg \
-sim:/main/ir_reg \
-sim:/main/d2_reg \
-sim:/main/RF_d1 \
-sim:/main/RF_d2 \
-sim:/main/RF_a1 \
-sim:/main/RF_a2 \
-sim:/main/RF_WR_reg \
-sim:/main/mem_WR_reg \
-sim:/main/mem_RD_reg \
-sim:/main/valid_reg \
-sim:/main/RF_RD_reg \
-sim:/main/src1_reg \
-sim:/main/src2_reg \
-sim:/main/dest1_reg \
-sim:/main/se6_ex \
-sim:/main/pc_ex \
-sim:/main/se9_ex \
-sim:/main/z7_ex \
-sim:/main/d1_ex \
-sim:/main/d1_ex_forw \
-sim:/main/ir_ex \
-sim:/main/d2_ex \
-sim:/main/d2_ex_forw \
-sim:/main/src1_ex \
-sim:/main/src2_ex \
-sim:/main/dest1_ex \
-sim:/main/d1_mem \
-sim:/main/z7_mem \
-sim:/main/d2_mem \
-sim:/main/alu_out_mem \
-sim:/main/ir_mem \
-sim:/main/pc_mem \
-sim:/main/src1_mem \
-sim:/main/src2_mem \
-sim:/main/dest1_mem \
-sim:/main/ir_WB \
-sim:/main/alu_out_WB \
-sim:/main/z7_WB \
-sim:/main/pc_WB \
-sim:/main/memdata_WB \
-sim:/main/src1_WB \
-sim:/main/src2_WB \
-sim:/main/dest1_WB \
-sim:/main/RF_WR_ex \
-sim:/main/mem_WR_ex \
-sim:/main/RF_WR_mem \
-sim:/main/mem_WR_mem \
-sim:/main/RF_WR_WB \
-sim:/main/mem_RD_ex \
-sim:/main/mem_RD_mem \
-sim:/main/z_mux_mem \
-sim:/main/pe3_ex \
-sim:/main/pe3_mem \
-sim:/main/pe3_WB \
-sim:/main/pe3_dec \
-sim:/main/pe3_reg \
-sim:/main/alu_a \
-sim:/main/alu_b \
-sim:/main/alu_out \
-sim:/main/mem_di \
-sim:/main/mem_addr \
-sim:/main/mem_do \
-sim:/main/WB_d3 \
-sim:/main/WB_a3 \
-sim:/main/a_zero_ex \
-sim:/main/z_ex \
-sim:/main/z_mem \
-sim:/main/z_WB \
-sim:/main/c_ex \
-sim:/main/c_mem \
-sim:/main/c_WB \
-sim:/main/c_out \
-sim:/main/z_out \
-sim:/main/valid_mux_ex \
-sim:/main/valid_ex \
-sim:/main/valid_mem \
-sim:/main/valid_mux_mem \
-sim:/main/valid_WB \
-sim:/main/valid_mux_reg \
-sim:/main/valid_mux_dec \
-sim:/main/valid_mux_if \
-sim:/main/alu_sel \
-sim:/main/valid_alu_sel \
-sim:/main/h11 \
-sim:/main/h21 \
-sim:/main/h31 \
-sim:/main/h41 \
-sim:/main/h12 \
-sim:/main/h22 \
-sim:/main/h32 \
-sim:/main/h42 \
-sim:/main/alu_op_ex \
-sim:/main/alu_op_mem \
-sim:/main/m10 \
-sim:/main/m11_pip1 \
-sim:/main/m11 \
-sim:/main/m11_pip2 \
-sim:/main/stall_pip3 \
-sim:/main/r7_mux_ex \
-sim:/main/r7_select_ex \
-sim:/main/r7_select_mem \
-sim:/main/r7_select_WB \
-sim:/main/r7_mem \
-sim:/main/r7_WB \
-sim:/main/adc_adz \
-sim:/main/r7_mux_mem \
-sim:/main/jlr_op_ex \
-sim:/main/jal_op_ex \
-sim:/main/pc_mux_ex \
-sim:/main/pc_mux_mem \
-sim:/main/pc_mux_WB \
-sim:/main/pc_plus_1 \
-sim:/main/offset \
-sim:/main/pc_plus_offset \
-sim:/main/jmp_addr \
-sim:/main/r7_RF_input \
-sim:/main/next_pc \
-sim:/main/r7_value \
-sim:/main/r7_data_ex \
-sim:/main/pc_WB_plus_1
+sim:/main/clk
+add wave -position insertpoint  \
+sim:/main/reset
+add wave -position insertpoint  \
+sim:/main/pc_if
+add wave -position insertpoint  \
+sim:/main/pc_WB
+add wave -position insertpoint  \
+sim:/main/pc_plus_offset
+add wave -position insertpoint  \
+sim:/main/jmp_addr
+add wave -position insertpoint  \
+sim:/main/pc_mux_ex
+add wave -position insertpoint  \
+sim:/main/r7_RF_input
 force -freeze sim:/main/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/main/reset 1 0
 run
@@ -494,3 +322,152 @@ run
 run
 run
 run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/memory
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/RegFile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /main/code_mem
+run
+run
+run
+run
+force -freeze sim:/main/reset 1 0
+force -freeze sim:/main/clk 1 0, 0 {50 ps} -r 100
+run
+run
+force -freeze sim:/main/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/main/pc_dec
+add wave -position insertpoint  \
+sim:/main/pc_reg
+add wave -position insertpoint  \
+sim:/main/pc_ex
+add wave -position insertpoint  \
+sim:/main/pc_mem
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 08:13:48 on Nov 28,2018, Elapsed time: 0:05:19
+# Errors: 0, Warnings: 10

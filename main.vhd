@@ -388,7 +388,7 @@ begin
 --alu_out, alu_out_mem, WB_d3, mem_do, pc_reg
 	if(RF_a1="111") then  -- querying for R7
 		d1_reg <= pc_reg;
-	elsif(h11='1' and RF_WR_ex='1' and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and alu_op_ex='1') then -- ALU ALU dep
+	elsif(h11='1' and RF_WR_mux_ex='1' and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and alu_op_ex='1') then -- ALU ALU dep
 		d1_reg <= alu_out;
 	elsif(h11='1' and ir_ex(0 to 3)="0011" and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg='1') then -- (anysrc) LHI dep
 		d1_reg <= z7_ex;
@@ -409,7 +409,7 @@ process(all) -- d2 forwarding at RR
 begin
 	if(RF_a2="111") then -- querying for R7
 		d2_reg <= pc_reg;
-	elsif(h12='1' and RF_WR_ex='1' and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and alu_op_ex='1') then -- ALU -ALU dep
+	elsif(h12='1' and RF_WR_mux_ex='1' and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and alu_op_ex='1') then -- ALU -ALU dep
 		d2_reg <= alu_out;
 	elsif(h12='1' and ir_ex(0 to 3)="0011" and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg ='1') then -- (anysrc) LHI dep
 		d2_reg <= z7_ex;
@@ -417,8 +417,8 @@ begin
 		d2_reg <= alu_out_mem;
 	elsif(h22 ='1' and RF_WR_mem='1' and RF_RD_reg ='1' and mem_RD_mem='1' and valid_mux_reg='1' and valid_mux_mem='1') then-- ALU X LOAD dep
 		d2_reg <= mem_do;
-	elsif(h22='1' and RF_WR_mem='1' and valid_mux_mem ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and ir_mem(0 to 3)="0011") then
-		d2_reg <= z7_ex;
+	elsif(h22='1' and RF_WR_mem='1' and valid_mux_mem ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and ir_mem(0 to 3)="0011") then --(anysrc)()LHI in mem 
+		d2_reg <= z7_mem;
 	elsif(h32 = '1' and RF_WR_WB='1' and RF_RD_reg ='1' and valid_WB='1' and valid_mux_reg='1')	then-- ALU X X any dep
 		d2_reg <= WB_d3;
 	else	-- normal 
@@ -472,36 +472,37 @@ end process;
 
 --  Stall 
 process(all)
+variable pc_s1,pip1_s1, pip2_s1, pip3_s1, pc_s2, pip1_s2, pip2_s2, pip3_s2 : std_logic;
 begin
 	-- LW in EX stage any register reader instruction in RR stage
-	if(h11='1' and RF_WR_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
-		if(ir_reg(0 to 3) = "0101") then -- not stalling for source 1
-			m12_pc<='0';
-			m12_pip1<='0';
-			m12_pip2<='0';
-			stall_pip3<='0';
-		else -- not SW then stall 
-			m12_pc<='1';
-			m12_pip1<='1';
-			m12_pip2<='1';
-			stall_pip3<='1';
-		end if;
+	if(h11='1' and RF_WR_mux_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1' and ir_reg(0 to 3)/="0101") then
+		-- not SW then stall 
+		pc_s1  :='1';
+		pip1_s1:='1';
+		pip2_s1:='1';
+		pip3_s1:='1';
 	else
-		m12_pc<='0';
-		m12_pip1<='0';
-		m12_pip2<='0';
-		stall_pip3<='0';
+		pc_s1  :='0';
+		pip1_s1:='0';
+		pip2_s1:='0';
+		pip3_s1:='0';
 	end if;
 	-- no SW exception for Source 2 as S2 of SW also uses ALU.
-	if(h12='1' and RF_WR_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
-		m12_pip1<='1';
-		m12_pip2<='1';
-		stall_pip3<='1';
+	if(h12='1' and RF_WR_mux_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
+		pc_s2  :='1';
+		pip1_s2:='1';
+		pip2_s2:='1';
+		pip3_s2:='1';
 	else
-		m12_pip1<='0';
-		m12_pip2<='0';
-		stall_pip3<='0';
-	end if;			
+		pc_s2  :='0';
+		pip1_s2:='0';
+		pip2_s2:='0';
+		pip3_s2:='0';
+	end if;	
+	m12_pc <= pc_s1 or pc_s2;
+	m12_pip1 <= pip1_s1 or pip1_s2;
+	m12_pip2 <= pip2_s1 or pip2_s2;
+	stall_pip3 <= pip3_s1 or pip3_s2;
 end process;
 -- END OF HAZARDOUS AREA
 
@@ -561,7 +562,7 @@ begin
 	if(r7_select_ex='1') then
 		pc_mux_ex <= r7_data_ex;
 	elsif(m10='1') then
-		pc_mux_ex <= pc_plus_offset;
+		pc_mux_ex <= jmp_addr;
 	else
 		pc_mux_ex <= pc_ex;
 	end if;
