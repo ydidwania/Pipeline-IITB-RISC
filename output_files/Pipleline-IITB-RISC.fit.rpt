@@ -1,5 +1,5 @@
 Fitter report for Pipleline-IITB-RISC
-Thu Nov 29 04:27:45 2018
+Thu Nov 29 04:54:35 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -58,7 +58,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Thu Nov 29 04:27:45 2018       ;
+; Fitter Status                      ; Successful - Thu Nov 29 04:54:35 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; Pipleline-IITB-RISC                         ;
 ; Top-level Entity Name              ; main                                        ;
@@ -863,10 +863,10 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/output_files/Pipleline-IITB-RISC.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1162 megabytes
-    Info: Processing ended: Thu Nov 29 04:27:45 2018
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Peak virtual memory: 1166 megabytes
+    Info: Processing ended: Thu Nov 29 04:54:35 2018
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +----------------------------+

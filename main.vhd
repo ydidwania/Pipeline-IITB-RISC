@@ -478,7 +478,7 @@ begin
 	end if;
 end process;
 
-process(all) -- d1 forw at Ex for SW, d2 forw at Ex for JLR
+process(all) -- d1 forw at Ex for SW, d2 forw at Ex for JLR/SM
 begin
 	if(h41='1' and mem_RD_mem='1' and RF_WR_mem='1' and mem_WR_mem='1' and valid_mux_mem='1' and valid_mux_ex='1') then -- SW LW forw
 		d1_ex_forw <= mem_do;
@@ -541,8 +541,10 @@ begin
 		pip2_s1:='0';
 		pip3_s1:='0';
 	end if;
-	-- no SW exception for Source 2 as S2 of SW also uses ALU but S2 of SM should be exempted
-	if(h12='1' and RF_WR_mux_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1' and ir_reg(0 to 3)/="0111") then
+	
+	--jlr ka alu se forward kro and mem se forw kro, stall mat kro
+	-- no SW exception for Source 2 as S2 of SW also uses ALU but S2 of SM/JLR should be exempted
+	if(h12='1' and RF_WR_mux_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1' and ir_reg(0 to 3)/="0111" and ir_reg(0 to 3)/="1001") then
 		pc_s2  :='1';
 		pip1_s2:='1';
 		pip2_s2:='1';
@@ -563,7 +565,8 @@ end process;
 -- BEGINS THE TERRITORY OF R7
 offset_adder: adder port map(a=>pc_ex, b=>offset, sum=>pc_plus_offset);
 mux_m8: mux2to1 port map(in_1=>se6_ex, in_2=>se9_ex, sel=>m8, mux_out=>offset);
-mux_m9: mux2to1 port map(in_1=>pc_plus_offset, in_2=>d2_ex, sel=>m9, mux_out=>jmp_addr);
+-- passing d2_ex_forw instead of d2_ex because JLR LW dep
+mux_m9: mux2to1 port map(in_1=>pc_plus_offset, in_2=>d2_ex_forw, sel=>m9, mux_out=>jmp_addr);
 mux_m10: mux2to1 port map(in_1=>pc_plus_1, in_2=> jmp_addr, sel=>m10, mux_out=>next_pc);
 mux_m11: mux2to1 port map(in_1=>next_pc, in_2=> r7_value, sel=>m11, mux_out=>pc_in);
 pc_incrementer: adder port map(a=>pc_if, b=>"0000000000000001", sum=>pc_plus_1);
