@@ -30,7 +30,11 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "main")
+<<<<<<< HEAD
   (DATE "11/28/2018 06:22:30")
+=======
+  (DATE "11/28/2018 08:07:35")
+>>>>>>> master
   (VENDOR "Altera")
   (PROGRAM "Quartus Prime")
   (VERSION "Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition")

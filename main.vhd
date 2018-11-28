@@ -183,7 +183,7 @@ signal d1_mem, z7_mem, d2_mem, alu_out_mem, ir_mem, pc_mem 		   								: std_lo
 signal src1_mem, src2_mem, dest1_mem													: std_logic_vector(0 to 3);
 signal ir_WB, alu_out_WB, z7_WB, pc_WB, memdata_WB 			   								: std_logic_vector(0 to 15); 
 signal src1_WB, src2_WB, dest1_WB													: std_logic_vector(0 to 3);
-signal RF_WR_ex, mem_WR_ex, RF_WR_mem, mem_WR_mem, RF_WR_WB		       								: std_logic;
+signal RF_WR_ex,RF_WR_mux_ex, mem_WR_ex, RF_WR_mem, mem_WR_mem, RF_WR_WB		       								: std_logic;
 signal mem_RD_ex, mem_RD_mem,z_mux_mem 									: std_logic;
 signal pe3_ex, pe3_mem, pe3_WB, pe3_dec, pe3_reg				   							: std_logic_vector(0 to 2);
 signal alu_a,alu_b,alu_out, mem_di, mem_addr, mem_do, WB_d3		   								: std_logic_vector(0 to 15);
@@ -321,7 +321,8 @@ mux_alu_a    : mux2to1 port map(in_1 =>d1_ex, in_2 =>se6_ex, sel=>m5, mux_out=>a
 mux_alu_b    : mux4to1 port map(in_1 =>d2_ex, in_2 =>X"0001",in_3=>d1_ex, in_4=>X"0000", sel => m6, mux_out => alu_b);
 ArithLU	     : ALU     port map(alu_a => alu_a, alu_b => alu_b, sel=>valid_alu_sel, reset => reset, carry_in => c_mem, 
 zero_in => z_mem, alu_out => alu_out, carry => c_out, zero => z_out, a_zero => a_zero_ex);
-valid_mux_ex <= not(m11_pip4 or adc_adz) and valid_ex;
+valid_mux_ex <= not(m11_pip4) and valid_ex;
+RF_WR_mux_ex <= not(adc_adz) and RF_WR_ex;
 m11_pip4 <= r7_select_mem or r7_select_WB;
 ---------------------------------
 -- Pipeline register of Ex/Mem
@@ -330,7 +331,7 @@ d2_pip4      : reg_16bit port map( d => d2_ex_forw, clk => clk, reset =>  reset,
 alu_out_pip4 : reg_16bit port map( d => alu_out, clk => clk, reset =>  reset, enable => (not m12_pip4), q => alu_out_mem);
 ir_pip4      : reg_16bit port map( d => ir_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => ir_mem);
 pc_pip4      : reg_16bit port map( d => pc_mux_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => pc_mem);
-RF_WR_pip4   : reg_1bit  port map( d => RF_WR_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => RF_WR_mem);
+RF_WR_pip4   : reg_1bit  port map( d => RF_WR_mux_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => RF_WR_mem);
 --RF_RD_pip4   : reg_1bit  port map( d => RF_RD_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => RF_RD_mem);
 mem_WR_pip4  : reg_1bit  port map( d => mem_WR_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => mem_WR_mem);
 mem_RD_pip4  : reg_1bit  port map( d => mem_RD_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => mem_RD_mem);
@@ -413,7 +414,7 @@ begin
 --alu_out, alu_out_mem, WB_d3, mem_do, pc_reg
 	if(RF_a1="111") then  -- querying for R7
 		d1_reg <= pc_reg;
-	elsif(h11='1' and RF_WR_ex='1' and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and alu_op_ex='1') then -- ALU ALU dep
+	elsif(h11='1' and RF_WR_mux_ex='1' and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and alu_op_ex='1') then -- ALU ALU dep
 		d1_reg <= alu_out;
 	elsif(h11='1' and ir_ex(0 to 3)="0011" and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg='1') then -- (anysrc) LHI dep
 		d1_reg <= z7_ex;
@@ -436,7 +437,7 @@ process(all) -- d2 forwarding at RR
 begin
 	if(RF_a2="111") then -- querying for R7
 		d2_reg <= pc_reg;
-	elsif(h12='1' and RF_WR_ex='1' and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and alu_op_ex='1') then -- ALU -ALU dep
+	elsif(h12='1' and RF_WR_mux_ex='1' and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and alu_op_ex='1') then -- ALU -ALU dep
 		d2_reg <= alu_out;
 	elsif(h12='1' and ir_ex(0 to 3)="0011" and valid_mux_ex ='1' and valid_mux_reg='1' and RF_RD_reg ='1') then -- (anysrc) LHI dep
 		d2_reg <= z7_ex;
@@ -444,8 +445,8 @@ begin
 		d2_reg <= alu_out_mem;
 	elsif(h22 ='1' and RF_WR_mem='1' and RF_RD_reg ='1' and mem_RD_mem='1' and valid_mux_reg='1' and valid_mux_mem='1') then-- ALU X LOAD dep
 		d2_reg <= mem_do;
-	elsif(h22='1' and RF_WR_mem='1' and valid_mux_mem ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and ir_mem(0 to 3)="0011") then
-		d2_reg <= z7_ex;
+	elsif(h22='1' and RF_WR_mem='1' and valid_mux_mem ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and ir_mem(0 to 3)="0011") then --(anysrc)()LHI in mem 
+		d2_reg <= z7_mem;
 	elsif(h32 = '1' and RF_WR_WB='1' and RF_RD_reg ='1' and valid_WB='1' and valid_mux_reg='1')	then-- ALU X X any dep
 		d2_reg <= WB_d3;
 	else	-- normal 
@@ -471,7 +472,7 @@ end process;
 process(all)
 variable cond1, cond2 : std_logic;
 begin
-	if (valid_mux_ex='0') then
+	if (RF_WR_mux_ex='0') then
 		z_ex <= z_mux_mem;
 	elsif (alu_op_ex='1') then
 		z_ex <= z_out;
@@ -499,37 +500,38 @@ end process;
 
 --  Stall 
 process(all)
+variable pc_s1,pip1_s1, pip2_s1, pip3_s1, pc_s2, pip1_s2, pip2_s2, pip3_s2 : std_logic;
 begin
 	
 	-- LW in EX stage any register reader instruction in RR stage
-	if(h11='1' and RF_WR_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
-		if(ir_reg(0 to 3) = "0101") then -- not stalling for source 1
-			m12_pc<='0'; 
-			m12_pip1<='0';
-			m12_pip2<='0';
-			stall_pip3<='0';
-		else -- not SW then stall 
-			m12_pc<='1'; --  stall pc
-			m12_pip1<='1'; -- stall pip1
-			m12_pip2<='1'; -- stall pip2
-			stall_pip3<='1'; -- invalidate pip3
-		end if;
+	if(h11='1' and RF_WR_mux_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1' and ir_reg(0 to 3)/="0101") then
+		-- not SW then stall 
+		pc_s1  :='1';
+		pip1_s1:='1';
+		pip2_s1:='1';
+		pip3_s1:='1';
 	else
-		m12_pc<='0';
-		m12_pip1<='0';
-		m12_pip2<='0';
-		stall_pip3<='0';
+		pc_s1  :='0';
+		pip1_s1:='0';
+		pip2_s1:='0';
+		pip3_s1:='0';
 	end if;
 	-- no SW exception for Source 2 as S2 of SW also uses ALU.
-	if(h12='1' and RF_WR_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
-		m12_pip1<='1';
-		m12_pip2<='1';
-		stall_pip3<='1';
+	if(h12='1' and RF_WR_mux_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
+		pc_s2  :='1';
+		pip1_s2:='1';
+		pip2_s2:='1';
+		pip3_s2:='1';
 	else
-		m12_pip1<='0';
-		m12_pip2<='0';
-		stall_pip3<='0';
-	end if;			
+		pc_s2  :='0';
+		pip1_s2:='0';
+		pip2_s2:='0';
+		pip3_s2:='0';
+	end if;	
+	m12_pc <= pc_s1 or pc_s2;
+	m12_pip1 <= pip1_s1 or pip1_s2;
+	m12_pip2 <= pip2_s1 or pip2_s2;
+	stall_pip3 <= pip3_s1 or pip3_s2;
 end process;
 -- END OF HAZARDOUS AREA
 
@@ -589,7 +591,7 @@ begin
 	if(r7_select_ex='1') then
 		pc_mux_ex <= r7_data_ex;
 	elsif(m10='1') then
-		pc_mux_ex <= pc_plus_offset;
+		pc_mux_ex <= jmp_addr;
 	else
 		pc_mux_ex <= pc_ex;
 	end if;
