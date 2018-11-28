@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pipleline-IITB-RISC
-Wed Nov 28 02:30:52 2018
+Wed Nov 28 06:26:16 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -211,7 +211,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 28 02:30:52 2018       ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov 28 06:26:16 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; Pipleline-IITB-RISC                         ;
 ; Top-level Entity Name              ; main                                        ;
@@ -2164,7 +2164,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Wed Nov 28 02:30:38 2018
+    Info: Processing started: Wed Nov 28 06:26:02 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pipleline-IITB-RISC -c Pipleline-IITB-RISC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -2265,10 +2265,10 @@ Info (12128): Elaborating entity "reg_16bit" for hierarchy "reg_file:RegFile|reg
 Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:mux_alu_a" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 294
 Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:mux_alu_b" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 295
 Info (12128): Elaborating entity "alu" for hierarchy "alu:ArithLU" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 296
-Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:memory" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 328
-Info (12128): Elaborating entity "mux3bit4to1" for hierarchy "mux3bit4to1:mux_a3" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 365
-Info (12128): Elaborating entity "adder" for hierarchy "adder:r7_write" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 368
-Info (12128): Elaborating entity "dep_check" for hierarchy "dep_check:dc1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 373
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:memory" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 329
+Info (12128): Elaborating entity "mux3bit4to1" for hierarchy "mux3bit4to1:mux_a3" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 366
+Info (12128): Elaborating entity "adder" for hierarchy "adder:r7_write" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 369
+Info (12128): Elaborating entity "dep_check" for hierarchy "dep_check:dc1" File: /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd Line: 374
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
@@ -2279,8 +2279,8 @@ Info (21057): Implemented 3 device resources after synthesis - the final resourc
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 0 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 964 megabytes
-    Info: Processing ended: Wed Nov 28 02:30:52 2018
+    Info: Peak virtual memory: 960 megabytes
+    Info: Processing ended: Wed Nov 28 06:26:16 2018
     Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:34
 

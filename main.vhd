@@ -183,7 +183,7 @@ signal d1_mem, z7_mem, d2_mem, alu_out_mem, ir_mem, pc_mem 		   								: std_lo
 signal src1_mem, src2_mem, dest1_mem													: std_logic_vector(0 to 3);
 signal ir_WB, alu_out_WB, z7_WB, pc_WB, memdata_WB 			   								: std_logic_vector(0 to 15); 
 signal src1_WB, src2_WB, dest1_WB													: std_logic_vector(0 to 3);
-signal RF_WR_ex, mem_WR_ex, RF_WR_mem, mem_WR_mem, RF_WR_WB		       								: std_logic;
+signal RF_WR_ex,RF_WR_mux_ex, mem_WR_ex, RF_WR_mem, mem_WR_mem, RF_WR_WB		       								: std_logic;
 signal mem_RD_ex, mem_RD_mem,z_mux_mem 									: std_logic;
 signal pe3_ex, pe3_mem, pe3_WB, pe3_dec, pe3_reg				   							: std_logic_vector(0 to 2);
 signal alu_a,alu_b,alu_out, mem_di, mem_addr, mem_do, WB_d3		   								: std_logic_vector(0 to 15);
@@ -295,7 +295,8 @@ mux_alu_a    : mux2to1 port map(in_1 =>d1_ex, in_2 =>se6_ex, sel=>m5, mux_out=>a
 mux_alu_b    : mux4to1 port map(in_1 =>d2_ex, in_2 =>X"0001",in_3=>d1_ex, in_4=>X"0000", sel => m6, mux_out => alu_b);
 ArithLU	     : ALU     port map(alu_a => alu_a, alu_b => alu_b, sel=>valid_alu_sel, reset => reset, carry_in => c_mem, 
 zero_in => z_mem, alu_out => alu_out, carry => c_out, zero => z_out, a_zero => a_zero_ex);
-valid_mux_ex <= not(m11_pip4 or adc_adz) and valid_ex;
+valid_mux_ex <= not(m11_pip4) and valid_ex;
+RF_WR_mux_ex <= not(adc_adz) and RF_WR_ex;
 m11_pip4 <= r7_select_mem or r7_select_WB;
 ---------------------------------
 -- Pipeline register of Ex/Mem
@@ -304,7 +305,7 @@ d2_pip4      : reg_16bit port map( d => d2_ex_forw, clk => clk, reset =>  reset,
 alu_out_pip4 : reg_16bit port map( d => alu_out, clk => clk, reset =>  reset, enable => (not m12_pip4), q => alu_out_mem);
 ir_pip4      : reg_16bit port map( d => ir_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => ir_mem);
 pc_pip4      : reg_16bit port map( d => pc_mux_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => pc_mem);
-RF_WR_pip4   : reg_1bit  port map( d => RF_WR_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => RF_WR_mem);
+RF_WR_pip4   : reg_1bit  port map( d => RF_WR_mux_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => RF_WR_mem);
 --RF_RD_pip4   : reg_1bit  port map( d => RF_RD_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => RF_RD_mem);
 mem_WR_pip4  : reg_1bit  port map( d => mem_WR_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => mem_WR_mem);
 mem_RD_pip4  : reg_1bit  port map( d => mem_RD_ex, clk => clk, reset =>  reset, enable => (not m12_pip4), q => mem_RD_mem);
@@ -443,7 +444,7 @@ end process;
 process(all)
 variable cond1, cond2 : std_logic;
 begin
-	if (valid_mux_ex='0') then
+	if (RF_WR_mux_ex='0') then
 		z_ex <= z_mux_mem;
 	elsif (alu_op_ex='1') then
 		z_ex <= z_out;
