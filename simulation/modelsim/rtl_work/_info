@@ -22,9 +22,9 @@ VP57Y:dE_HN@:fF=ESZgOj0
 !s100 GlSkIeTJ:1FQSm>D3]PoM0
 Z7 OV;C;10.5b;63
 33
-Z8 !s110 1543419188
+Z8 !s110 1543445879
 !i10b 1
-Z9 !s108 1543419188.000000
+Z9 !s108 1543445879.000000
 Z10 !s90 -reportprogress|300|-2008|-work|work|/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/adder.vhd|
 Z11 !s107 /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/adder.vhd|
 !i113 1
@@ -63,9 +63,9 @@ V98@8`4V7zYO;1`USmzPa:0
 !s100 66L=T_@hYK=melj6X=W4<0
 R7
 33
-Z17 !s110 1543419189
+Z17 !s110 1543445880
 !i10b 1
-Z18 !s108 1543419189.000000
+Z18 !s108 1543445880.000000
 Z19 !s90 -reportprogress|300|-2008|-work|work|/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd|
 Z20 !s107 /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd|
 !i113 1
@@ -91,7 +91,7 @@ R20
 R12
 R13
 Ecode_memory
-Z21 w1543408616
+Z21 w1543445806
 R2
 R3
 R4
@@ -104,9 +104,9 @@ VCdlHM9LRXA6n4UGG9hdho0
 !s100 Be;^0RGAjeM?@;BV>lN`a0
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 Z24 !s90 -reportprogress|300|-2008|-work|work|/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/code_memory.vhd|
 Z25 !s107 /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/code_memory.vhd|
 !i113 1
@@ -117,15 +117,15 @@ R2
 R3
 R4
 DEx4 work 11 code_memory 0 22 CdlHM9LRXA6n4UGG9hdho0
-l66
+l69
 L14
-V_2Na@lhI8^?kY^m<983WM0
-!s100 T<OET6lh@2_Acb9jY5OH`2
+VO;XXbM=ADl3fYijA?9=gP1
+!s100 Qn:LW=Q<Y>ZLj7l^?m_9j1
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 R24
 R25
 !i113 1
@@ -145,9 +145,9 @@ VW:okVP4986[7XYeJ7M]b32
 !s100 ISIgZ3Y0UK:0Jg9Rgl_]f2
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 Z29 !s90 -reportprogress|300|-2008|-work|work|/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/data_memory.vhd|
 Z30 !s107 /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/data_memory.vhd|
 !i113 1
@@ -164,9 +164,9 @@ V1J<FC:FMA7lm]AEidhD>k3
 !s100 Dk0Y:=?5G9VB3T<Zo9E_o1
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 R29
 R30
 !i113 1
@@ -253,7 +253,7 @@ R40
 R12
 R13
 Emain
-Z41 w1543419130
+Z41 w1543445842
 R3
 R4
 R0
@@ -265,9 +265,9 @@ VdSl7KYd50`B12zLFd1oRY3
 !s100 @d?ZV3VGfg]7a9oB`nF^:3
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 Z44 !s90 -reportprogress|300|-2008|-work|work|/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd|
 Z45 !s107 /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/main.vhd|
 !i113 1
@@ -279,13 +279,13 @@ R4
 DEx4 work 4 main 0 22 dSl7KYd50`B12zLFd1oRY3
 l203
 L11
-V[@9;zR0gT@nPk_j5AF2S01
-!s100 h>goWE^WZ=jdMkN[S@G6z3
+VM=PaV6hA:PXoh5FY5>T>O3
+!s100 LIYFg:3`@Q;zY1_IzOeS00
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 R44
 R45
 !i113 1
@@ -382,7 +382,7 @@ V]^0:6dMdQ[@];ihPQge1d3
 !s100 P:kTHfNRA18]3DUAzHcR51
 R7
 33
-R8
+R17
 !i10b 1
 R9
 Z59 !s90 -reportprogress|300|-2008|-work|work|/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux3bit4to1.vhd|
@@ -400,7 +400,7 @@ VaEkSXY>Q30E5]VRzjQSD41
 !s100 GKQJ<D6TK09QP@m;XkU``2
 R7
 33
-R8
+R17
 !i10b 1
 R9
 R59
@@ -501,7 +501,7 @@ R7
 33
 R17
 !i10b 1
-R9
+R18
 Z74 !s90 -reportprogress|300|-2008|-work|work|/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_16bit.vhd|
 Z75 !s107 /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_16bit.vhd|
 !i113 1
@@ -519,7 +519,7 @@ R7
 33
 R17
 !i10b 1
-R9
+R18
 R74
 R75
 !i113 1
@@ -538,9 +538,9 @@ VbYU7lMz2M>YEi>koVTHB82
 !s100 5KJQXEo4h>B0bDG>GMfN00
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 Z79 !s90 -reportprogress|300|-2008|-work|work|/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_1bit.vhd|
 Z80 !s107 /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_1bit.vhd|
 !i113 1
@@ -556,9 +556,9 @@ VY7]dB`81P@5;]89ik7DI53
 !s100 0=zm_IG2JzFPFV8Ua^O8_1
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 R79
 R80
 !i113 1
@@ -577,9 +577,9 @@ VlE1o=9lJE<in[P96cA_cX3
 !s100 0jHWXo8X;h]F^YP>>M@>U3
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 Z84 !s90 -reportprogress|300|-2008|-work|work|/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_2bit.vhd|
 Z85 !s107 /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_2bit.vhd|
 !i113 1
@@ -595,9 +595,9 @@ V:GS1DA1cdPfjKo]>Z0ggL0
 !s100 `=IS7AJZm:1`aVNWJZ6[b3
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 R84
 R85
 !i113 1
@@ -616,9 +616,9 @@ V=k19]cZ1G=mCaR7bWZ`Zc0
 !s100 K9_l7?5OHhk5nVi<laFJ@1
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 Z89 !s90 -reportprogress|300|-2008|-work|work|/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_3bit.vhd|
 Z90 !s107 /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_3bit.vhd|
 !i113 1
@@ -634,9 +634,9 @@ Vo?h`]IXM[SeM4k8JddgFh3
 !s100 K7c7LBlYR@3Gm42Ro7:8z2
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 R89
 R90
 !i113 1
@@ -695,9 +695,9 @@ VGeOGLWn<91nKmd:;Mg85N1
 !s100 :mEK^1KW2[TGYCHSHBcM]2
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 Z99 !s90 -reportprogress|300|-2008|-work|work|/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd|
 Z100 !s107 /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/reg_file.vhd|
 !i113 1
@@ -714,9 +714,9 @@ V^BM6V052KGT`d=0PLi:R=2
 !s100 2FK34hZao<db<ekMBW0;50
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 R99
 R100
 !i113 1
@@ -735,9 +735,9 @@ VCn5M`bGTH?QTOf47[^?031
 !s100 eK>9A>iZ<cOHF:l5:Zghm0
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 Z104 !s90 -reportprogress|300|-2008|-work|work|/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/se6.vhd|
 Z105 !s107 /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/se6.vhd|
 !i113 1
@@ -753,9 +753,9 @@ VzoB0mz]eeZBj4c4mQ[Q;^2
 !s100 AX3c@og79d4?Bh97^NRF]2
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 R104
 R105
 !i113 1
@@ -774,9 +774,9 @@ Vm<aUH05h[IJZeR?JB5e];2
 !s100 SjEbiQVRUKMC1G[i`7K:C0
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 Z109 !s90 -reportprogress|300|-2008|-work|work|/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/se9.vhd|
 Z110 !s107 /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/se9.vhd|
 !i113 1
@@ -792,9 +792,9 @@ V?hz1L9zF3VmS9?h=7kTiB1
 !s100 @SJohWab<:i=5QJ0hgK3G2
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 R109
 R110
 !i113 1
@@ -813,9 +813,9 @@ VedPcd2XOalgZH;i`3Fzei0
 !s100 <ZiM78W3EiP0ImfgEOQ1=0
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 Z114 !s90 -reportprogress|300|-2008|-work|work|/home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/z9.vhd|
 Z115 !s107 /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/z9.vhd|
 !i113 1
@@ -831,9 +831,9 @@ VL33XPcZD<2h<jW38=VVY<0
 !s100 TLmJc:nG2[OQNYi_2N;^=3
 R7
 33
-R8
+R17
 !i10b 1
-R9
+R18
 R114
 R115
 !i113 1

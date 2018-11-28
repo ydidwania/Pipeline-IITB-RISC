@@ -193,7 +193,7 @@ signal c_out, z_out, valid_mux_ex, valid_ex, valid_mem, valid_mux_mem, valid_WB,
 signal alu_sel, valid_alu_sel						   							      	: std_logic_vector(0 to 1);
 --Hazardous signals
 signal h11, h21, h31, h41, h12, h22, h32, h42, alu_op_ex, alu_op_mem, m10, m11_pip1, m11, m11_pip2, stall_pip3	: std_logic;
-signal r7_mux_ex, r7_select_ex, r7_select_mem, r7_select_WB, r7_mem, r7_WB, adc_adz : std_logic;
+signal r7_mux_ex, r7_select_ex, r7_select_mem, r7_select_WB, r7_mem, r7_WB, adc_adz, mid_iter_lm_sm : std_logic;
 signal r7_mux_mem, jlr_op_ex, jal_op_ex, lm_sm_reg, lm_sm_dec, pe_cond,pc_reg_equals_ex : std_logic;
 signal pc_mux_ex, pc_mux_mem,pc_mux_WB, pc_plus_1, offset, pc_plus_offset, jmp_addr : std_logic_vector(0 to 15);
 signal r7_RF_input, next_pc, r7_value,r7_data_ex, pc_WB_plus_1 : std_logic_vector(0 to 15);
@@ -226,7 +226,7 @@ begin
 		pc_reg_equals_ex<='0';
 	end if;
 	
-	if(lm_sm_dec='1') then
+	if(lm_sm_dec='1' or f1f0_reg(0)='1' or f1f0_reg(1)='1') then
 		pr_en_in <= ir_dec(8 to 15);
 	else
 		pr_en_in <= ir_reg(8 to 15);
@@ -250,7 +250,7 @@ valid_mux_if <= not(m10 or m11_pip1);
 m11_pip1 <= m11;
 ---------------------------------
 -- Instruction Decoder
-PE  : priority_encoder port map(ir => pr_en_in, clk=>clk, rst=>(lm_sm_dec), Z=>pe3_reg, F1=>f1f0_reg(0), F0 =>f1f0_reg(1));
+PE  : priority_encoder port map(ir => pr_en_in, clk=>clk, rst=>(lm_sm_dec or f1f0_reg(0) or f1f0_reg(1)), Z=>pe3_reg, F1=>f1f0_reg(0), F0 =>f1f0_reg(1));
 ins_decode : instr_dec port map(ir=>ir_dec, Mem_rd=>mem_RD_dec, Mem_wr=>mem_WR_dec, RF_rd=>RF_RD_dec, RF_wr=>RF_WR_dec,
 m3=> m3_dec, m4 => m4_dec, m5 => m5_dec, m6 => m6_dec, m7 => m7_dec, m8 => m8_dec, src1 => src1_dec, src2 => src2_dec,
 dst1 => dest1_dec, m1 => m1_dec, m2 => m2_dec, ALUsel => alu_sel_dec);
@@ -295,7 +295,7 @@ mux_reg_a    : mux3bit2to1 port map(in_1 =>ir_reg(7 to 9), in_2 =>pe3_reg, sel =
 --mux_reg_c   : mux2to1 port map(in_1 => RF_d2, in_2 => R7, sel => reg_m1, mux_out => RF_d2_2);
 --mux_reg_d    : mux3to1 port map(in_1 => alu_out, in_2 => RF_d2_2, in_3 => mem_do, sel => m13, mux_out => d2_reg);
 RegFile      : reg_file    port map(a1=>RF_a1, a2=>RF_a2, a3=>WB_a3, wr_en=>(RF_WR_WB and valid_WB), d3=>WB_d3,
-d_R7=>r7_RF_input,valid=>valid_WB, clk=>clk,reset=>reset, c_in=>c_WB, z_in=>z_WB, d1=>RF_d1, d2=>RF_d2);
+d_R7=>r7_RF_input,valid=>(valid_WB and not mid_iter_lm_sm), clk=>clk,reset=>reset, c_in=>c_WB, z_in=>z_WB, d1=>RF_d1, d2=>RF_d2);
 valid_mux_reg <= not(m10 or m11_pip3 or stall_pip3) and valid_reg;
 RF_WR_mux_reg <= not(lm_sm_reg and f1f0_reg(1)) and RF_WR_reg;
 mem_WR_mux_reg <= not(lm_sm_reg and f1f0_reg(1)) and mem_WR_reg;
@@ -409,6 +409,14 @@ mux_a3 : mux3bit4to1 port map(in_1 => ir_WB(4 to 6), in_2 => ir_WB(7 to 9), in_3
 mux_d3 : mux4to1     port map(in_1 => pc_WB, in_2 => memdata_WB, in_3 => z7_WB, in_4 => alu_out_WB, sel =>m2, mux_out => WB_d3);
 -- corresponding outputs will be connected to RF   
 r7_write: adder port map(a=>pc_WB, b=>"0000000000000001", sum=>pc_WB_plus_1);
+process(all)
+begin
+	if(ir_WB=ir_mem and ir_WB(0 to 2)="011") then
+		mid_iter_lm_sm <= '1';
+	else
+		mid_iter_lm_sm <=  '0';
+	end if;
+end process;
 RF_r7_inp: mux2to1 port map(in_1=>pc_WB_plus_1, in_2=>pc_mux_WB, sel=>(r7_WB or r7_select_WB), mux_out=>r7_RF_input);
 
 ---------------------------------
@@ -441,7 +449,7 @@ begin
 	elsif(h21 ='1' and RF_WR_mem='1' and RF_RD_reg ='1' and mem_RD_mem='1' and valid_mux_reg='1' and valid_mux_mem='1')  then-- (any RF_RD) X LOAD dep
 		d1_reg <= mem_do;
 	elsif(h21='1' and RF_WR_mem='1' and valid_mux_mem ='1' and valid_mux_reg='1' and RF_RD_reg ='1' and ir_mem(0 to 3)="0011") then
-		d1_reg <= z7_ex;
+		d1_reg <= z7_mem;
 	elsif(h31 = '1' and RF_WR_WB='1' and RF_RD_reg ='1' and valid_WB='1' and valid_mux_reg='1')	then -- ALU X X any dep
 		d1_reg <= WB_d3;
 	else -- normal 
@@ -478,7 +486,8 @@ begin
 		d1_ex_forw <= d1_ex;
 	end if;
 	
-	if (h42='1' and mem_RD_mem='1' and RF_WR_mem='1' and ir_ex(0 to 3)="1001" and valid_mux_mem='1' and valid_mux_ex='1')  then -- JLR LW forw
+	--JLR or SM
+	if (h42='1' and mem_RD_mem='1' and RF_WR_mem='1' and (ir_ex(0 to 3)="1001" or ir_ex(0 to 3)="0111") and valid_mux_mem='1' and valid_mux_ex='1')  then -- JLR LW forw
 		d2_ex_forw <= mem_do;
 	else -- normal
 		d2_ex_forw <= d2_ex;
@@ -532,8 +541,8 @@ begin
 		pip2_s1:='0';
 		pip3_s1:='0';
 	end if;
-	-- no SW exception for Source 2 as S2 of SW also uses ALU.
-	if(h12='1' and RF_WR_mux_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1') then
+	-- no SW exception for Source 2 as S2 of SW also uses ALU but S2 of SM should be exempted
+	if(h12='1' and RF_WR_mux_ex='1' and valid_ex='1' and valid_reg='1' and RF_RD_reg='1' and mem_RD_ex='1' and ir_reg(0 to 3)/="0111") then
 		pc_s2  :='1';
 		pip1_s2:='1';
 		pip2_s2:='1';
