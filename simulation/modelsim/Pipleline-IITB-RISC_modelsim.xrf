@@ -22,6 +22,7 @@ source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux
 source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux3bit2to1.vhd
 source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/mux2to1.vhd
 source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/ALU.vhd
+source_file = 1, /home/jukebox/Desktop/Acads/5-Sem/EE 309/Pipeline-IITB-RISC/output_files/Chain2.cdf
 source_file = 1, /home/jukebox/intelFPGA_lite/16.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, /home/jukebox/intelFPGA_lite/16.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, /home/jukebox/intelFPGA_lite/16.1/quartus/libraries/vhdl/ieee/timing_b.vhd

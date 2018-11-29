@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition"
 
-// DATE "11/29/2018 04:54:41"
+// DATE "11/29/2018 07:57:33"
 
 // 
 // Device: Altera EP4CE22F17C6 Package FBGA256
@@ -38,9 +38,9 @@ input 	reset;
 input 	clk_50;
 
 // Design Ports Information
-// clk	=>  Location: PIN_L13,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// reset	=>  Location: PIN_B13,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// clk_50	=>  Location: PIN_B11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// clk	=>  Location: PIN_J15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// reset	=>  Location: PIN_M1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// clk_50	=>  Location: PIN_R8,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 wire gnd;
@@ -68,7 +68,7 @@ hard_block auto_generated_inst(
 	.devclrn(devclrn),
 	.devoe(devoe));
 
-// Location: IOIBUF_X53_Y10_N15
+// Location: IOIBUF_X53_Y14_N1
 cycloneive_io_ibuf \clk~input (
 	.i(clk),
 	.ibar(gnd),
@@ -78,7 +78,7 @@ defparam \clk~input .bus_hold = "false";
 defparam \clk~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: IOIBUF_X49_Y34_N8
+// Location: IOIBUF_X0_Y16_N22
 cycloneive_io_ibuf \reset~input (
 	.i(reset),
 	.ibar(gnd),
@@ -88,7 +88,7 @@ defparam \reset~input .bus_hold = "false";
 defparam \reset~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: IOIBUF_X40_Y34_N8
+// Location: IOIBUF_X27_Y0_N22
 cycloneive_io_ibuf \clk_50~input (
 	.i(clk_50),
 	.ibar(gnd),

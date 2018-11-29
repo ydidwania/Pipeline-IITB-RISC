@@ -78,6 +78,10 @@ set_global_assignment -name VHDL_FILE mux3bit6to1.vhd
 set_global_assignment -name VHDL_FILE mux3bit2to1.vhd
 set_global_assignment -name VHDL_FILE mux2to1.vhd
 set_global_assignment -name VHDL_FILE ALU.vhd
+set_location_assignment PIN_R8 -to clk_50
+set_location_assignment PIN_J15 -to clk
+set_location_assignment PIN_M1 -to reset
+set_global_assignment -name CDF_FILE output_files/Chain2.cdf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

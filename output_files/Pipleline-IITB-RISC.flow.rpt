@@ -1,5 +1,5 @@
 Flow report for Pipleline-IITB-RISC
-Thu Nov 29 04:54:41 2018
+Thu Nov 29 07:57:33 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Nov 29 04:54:41 2018       ;
+; Flow Status                        ; Successful - Thu Nov 29 07:57:33 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; Pipleline-IITB-RISC                         ;
 ; Top-level Entity Name              ; main                                        ;
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/29/2018 04:54:17 ;
+; Start date & time ; 11/29/2018 07:57:07 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Pipleline-IITB-RISC ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value       ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 220295162002240.154344745731196        ; --                  ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 220295162002240.154345842721011        ; --                  ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --                  ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>              ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --                  ; --          ; eda_simulation ;
@@ -100,12 +100,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:14     ; 1.0                     ; 963 MB              ; 00:00:32                           ;
-; Fitter                    ; 00:00:04     ; 1.0                     ; 1166 MB             ; 00:00:05                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 814 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 832 MB              ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:14     ; 1.0                     ; 964 MB              ; 00:00:34                           ;
+; Fitter                    ; 00:00:05     ; 1.0                     ; 1166 MB             ; 00:00:05                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 813 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 829 MB              ; 00:00:02                           ;
 ; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1042 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:21     ; --                      ; --                  ; 00:00:40                           ;
+; Total                     ; 00:00:22     ; --                      ; --                  ; 00:00:43                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

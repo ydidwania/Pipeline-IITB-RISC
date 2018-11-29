@@ -42,13 +42,13 @@ begin
     r4: reg_16bit port map(d=>registers_in(4), clk=>clk, reset=>reset, enable=>enable(4), q=>registers_out(4));
     r5: reg_16bit port map(d=>registers_in(5), clk=>clk, reset=>reset, enable=>enable(5), q=>registers_out(5));
     r6: reg_16bit port map(d=>registers_in(6), clk=>clk, reset=>reset, enable=>enable(6), q=>registers_out(6));
-    reg7: reg_16bit port map(d=>registers_in(7), clk=>clk, reset=>reset, enable=>valid, q=>registers_out(7));
+    reg7: reg_16bit port map(d=>d_R7, clk=>clk, reset=>reset, enable=>valid, q=>registers_out(7));
 	 zeroReg :  reg_1bit port map(d=>z_in, clk=>clk, reset=>reset, enable=>valid, q=>zero_flag);
 	 carryReg :  reg_1bit port map(d=>c_in, clk=>clk, reset=>reset, enable=>valid, q=>carry_flag);
 	 
-	 registers_in(7) <= d_R7;
+	 --registers_in(7) <= d_R7;
 	 
-    process(a1,a2,a3,d3,wr_en, d_R7)
+    process(a1,a2,a3,d3,wr_en, d_R7, z_in, c_in)
 		  variable reg_no1, reg_no2, reg_no3 : integer;
 		  variable reg_enable : std_logic_vector(0 to 7);
     begin
@@ -58,11 +58,10 @@ begin
 		reg_no2 := to_integer(unsigned(a2));
 		d2<=registers_out(reg_no2);
 		
-		reg_enable := "00000000";
 		reg_no3 := to_integer(unsigned(a3));
+		reg_enable := "00000000";
 		reg_enable(reg_no3):=wr_en;
-		
 		enable<=reg_enable;
-		registers_in<=(7=>d_R7, others=>d3);
+		registers_in<=(others=>d3);
     end process;
 end behave;
